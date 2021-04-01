@@ -6,19 +6,8 @@
   font-family: 'Lora', serif;
 }
 
-.hero-text {
-  padding-top: 100px;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-
-}
-
-.hero {
-  background-image: url(https://www.dawsons.co.uk/templates/dawsons.co.uk/_images/media/blog_content/closeup-hands-playing-classical-guitar.jpg);
+.header__hero {
+  background-image: url(../images/sr1.jpg);
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -26,7 +15,9 @@
   z-index: 10;
 }
 
-.hero::after {
+/* hero overlay */
+
+.header__hero::after {
   content: '';
   position: absolute;
   left: 0;
@@ -36,6 +27,25 @@
   background-color: black;
   opacity: .4;
   z-index: -1;
+}
+
+.header__hero-text {
+  padding-top: 100px;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+
+.page-two {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(31, 29, 29);
 }
 
 .btn {
@@ -104,12 +114,6 @@
   transform: scale(0.1, 1);
 }
 
-.box2 {
-  height: 100vh;
-  background-color: rgb(31, 29, 29);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 
