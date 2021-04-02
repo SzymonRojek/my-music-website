@@ -24,12 +24,8 @@ function smoothScroll(tar, duration) {
   requestAnimationFrame(animation);
 }
  
-let section1 = document.querySelector('.section-one');
-let section2 = document.querySelector('.section-two');
 
-// section1.addEventListener('click', function() {
-//   smoothScroll('.section-two', 1000);
-// });
+const section2 = document.querySelector('.section-two');
 
 section2.addEventListener('click', function() {
   smoothScroll('.scroll-top', 1000);
