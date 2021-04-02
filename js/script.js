@@ -32,5 +32,5 @@ let section2 = document.querySelector('.section-two');
 // });
 
 section2.addEventListener('click', function() {
-  smoothScroll('header', 1000);
+  smoothScroll('.scroll-top', 1000);
 });
