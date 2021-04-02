@@ -4,7 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Lora', serif;
-}
+} 
 
 .header__hero {
   background-image: url(../images/sr1.jpg);
@@ -39,13 +39,9 @@
   color: white;
 }
 
-
-.page-two {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(31, 29, 29);
+.header__hero-text-heading {
+  margin-bottom: 10px;
+  letter-spacing: 5px;
 }
 
 .btn {
@@ -83,8 +79,6 @@
   border-bottom-width: 1px;
   border-top-style: solid;
   border-bottom-style: solid;
-  border-top-color: rgba(255,255,255, 0.5);
-  border-bottom-color: rgba(255,255,255, 0.5);
   transform: scale(0.1, 1);
 }
 
@@ -106,7 +100,6 @@
   height: 100%;
   z-index: 1;
   transition: all .3s;
-  background-color: rgba(255,255,255, 0.1);
 }
 
 .btn:hover::after {
@@ -114,6 +107,67 @@
   transform: scale(0.1, 1);
 }
 
+/* btn one */
+
+.btn-one::before {
+  border-top-color: rgba(255,255,255, 0.5);
+  border-bottom-color: rgba(255,255,255, 0.5);
+}
+
+.btn-one::after {
+  background-color: rgba(255,255,255, 0.1);
+}
+
+/* btn two */
+
+.btn-two::before {
+  border-top-color: rgba(56, 51, 51, 0.5);
+  border-bottom-color: rgba(56, 51, 51, 0.5);
+}
+
+.btn-two::after {
+  background-color: rgba(104, 94, 94, 0.1);
+}
+
+.btn-two {
+  color: rgb(56, 51, 51);
+}
+
+.main-container {
+  padding: 20px;
+  background-color: rgb(233, 222, 222);
+}
+.page__two {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(56, 51, 51);
+}
+
+.page__two-heading {
+  margin: 20px 0 30px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.page__two-subheading {
+  color: rgb(156, 78, 143);
+}
+.page__two-img {
+  height: auto;
+  width: 100%;
+}
 
 
+.page__two-description {
+  padding: 30px 20px 20px 20px;
+}
+
+.subhead::first-letter {
+  font-size: 22px ;
+  font-weight: 700;
+  color: rgb(145, 44, 128);
+}
 
