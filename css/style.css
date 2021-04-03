@@ -6,44 +6,57 @@
   font-family: 'Lora', serif;
 } 
 
-.header__hero {
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.header__wrapper {
+  min-height: 100vh;
   background-image: url(../images/sr1.jpg);
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 
 /* hero overlay */
 
-.header__hero::after {
+.header__wrapper::after {
   content: '';
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: hsla(180, 12%, 13%, 0.911);
   opacity: .4;
   z-index: -1;
 }
 
 /* header content */
-.header__hero-content {
-  padding-top: 100px;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
+.header__hero {
+  padding: 100px 10px 0 10px;
   text-align: center;
-  flex-direction: column;
-  color: white;
+  color: #fff;
 }
 
-.header__hero-text-heading {
-  margin-bottom: 10px;
-  letter-spacing: 5px;
+.header__hero-heading {
+  margin-top: 60px;
+}
+
+.header__hero-heading-main {
+  letter-spacing: 2px;
+  word-spacing: 4px;
+}
+
+.header__hero-heading-sub {
+  display: block;
+  padding-top: 20px;
+  font-size: .6em;
+  font-weight: normal;
 }
 
 .header__hero-quote {
@@ -69,33 +82,56 @@
   z-index: -1;
 }
 
-.header__hero-sentence {
+.header__hero-quote-motivational {
   font-size: 2em;
   padding: 10px;
 }
 
-.header__hero-sentence::after {
+.header__hero-quote-motivational::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 3px;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  transition: all .3s;
+  background-color: rgba(255, 255, 255, 0.089);
+  z-index: -10;
 }
 
-.header__hero-sentence::after {
-  background-color: rgba(255,255,255, 0.1);
+.header__hero-quote-motivational-sub {
+  display: block;
 }
 
-.main-container {
-  padding: 20px;
-  background-color: rgb(233, 222, 222);
+@media (min-width: 640px) {
+  .header__hero-heading-main {
+    font-size: 1.5em;
+  }
+  .header__hero-quote {
+    font-size: 1.4em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__hero-heading-main {
+    font-size: 1.8em;
+  }
+
+  .header__hero-heading-sub {
+    font-size: .8em;
+  }
+  .header__hero-quote {
+    font-size: 1.7em;
+  }
 }
 
 
 /* section two*/
+.main-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color: rgb(233, 222, 222);
+}
 
 .page__two {
   min-height: 100vh;
