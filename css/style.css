@@ -6,6 +6,7 @@
   font-family: 'Lora', serif;
 } 
 
+/* do not forget about bcg img - get more info about positioning and keep my person in the centre on the mobile */
 .container {
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@
   min-height: 100vh;
   background-image: url(../images/sr1.jpg);
   background-size: cover;
-  /* background-position: top center; */
+  background-position: right;
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
@@ -40,13 +41,13 @@
   width: 100%;
   max-width: 1110px;
   margin: 0 auto;
-  /* background-color: red; */
-  min-height: 70vh;
+  min-height: 80vh;
   position: relative;
 }
+
 /* header content */
 .header {
-  padding: 100px 10px 0 10px;
+  padding: 20px 10px 0 10px;
   text-align: center;
   color: #fff;
 }
@@ -68,9 +69,6 @@
 }
 
 .header__quote {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 30px;
   position: absolute;
   bottom: 50px;
@@ -134,9 +132,7 @@
 
 
 /* section two*/
-.main-container {
-  max-width: 1200px;
-  margin: auto;
+.intro-container {
   padding: 20px;
   background-color: rgb(233, 222, 222);
 }
