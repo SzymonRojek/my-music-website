@@ -9,14 +9,14 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 0 auto;
 }
 
-.header__wrapper {
+.header-hero-container {
   min-height: 100vh;
   background-image: url(../images/sr1.jpg);
   background-size: cover;
-  background-position: top center;
+  /* background-position: top center; */
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
@@ -24,7 +24,7 @@
 
 /* hero overlay */
 
-.header__wrapper::after {
+.header-hero-container::after {
   content: '';
   position: absolute;
   left: 0;
@@ -36,30 +36,38 @@
   z-index: -1;
 }
 
+.content-wrapper {
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 auto;
+  /* background-color: red; */
+  min-height: 70vh;
+  position: relative;
+}
 /* header content */
-.header__hero {
+.header {
   padding: 100px 10px 0 10px;
   text-align: center;
   color: #fff;
 }
 
-.header__hero-heading {
+.header__heading {
   margin-top: 60px;
 }
 
-.header__hero-heading-main {
+.header__heading-main {
   letter-spacing: 2px;
   word-spacing: 4px;
 }
 
-.header__hero-heading-sub {
+.header__heading-sub {
   display: block;
   padding-top: 20px;
   font-size: .6em;
   font-weight: normal;
 }
 
-.header__hero-quote {
+.header__quote {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +78,7 @@
   z-index: 10;
 }
 
-.header__hero-quote::after {
+.header__quote::after {
   content: '';
   position: absolute;
   left: -35px;
@@ -82,16 +90,16 @@
   z-index: -1;
 }
 
-.header__hero-quote-motivational {
+.header__quote-motivational {
   font-size: 1.5em;
   padding: 10px;
 }
 
-.header__hero-quote-motivational-sub {
+.header__quote-motivational-sub {
   display: block;
 }
 
-.header__hero-quote-motivational::after {
+.header__quote-motivational::after {
   content: '';
   position: absolute;
   bottom: -3px;
@@ -103,23 +111,23 @@
 }
 
 @media (min-width: 640px) {
-  .header__hero-heading-main {
+  .header__heading-main {
     font-size: 1.5em;
   }
-  .header__hero-quote {
+  .header__quote {
     font-size: 1.4em;
   }
 }
 
 @media (min-width: 1024px) {
-  .header__hero-heading-main {
+  .header__heading-main {
     font-size: 1.8em;
   }
 
-  .header__hero-heading-sub {
+  .header__heading-sub {
     font-size: .8em;
   }
-  .header__hero-quote {
+  .header__quote {
     font-size: 1.7em;
   }
 }
@@ -133,7 +141,7 @@
   background-color: rgb(233, 222, 222);
 }
 
-.page__two {
+.intro {
   min-height: 100vh;
   display: flex;
   justify-content: center;
