@@ -1,0 +1,277 @@
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+} 
+
+/* do not forget about bcg img - get more info about positioning and keep my person in the centre on the mobile */
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.header-hero-container {
+  min-height: 100vh;
+  background-image: url(../images/sr1.jpg);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hsla(180, 12%, 13%, 0.911);
+    opacity: .4;
+    z-index: -1;
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 auto;
+  min-height: 80vh;
+  position: relative;
+}
+
+/* header content */
+.header {
+  padding: 20px 10px 0 10px;
+  text-align: center;
+  color: #fff;
+
+  &__heading {
+    margin-top: 60px;
+
+    &-main {
+      letter-spacing: 2px;
+      word-spacing: 4px;
+    }
+
+    &-sub {
+      display: block;
+      padding-top: 20px;
+      font-size: .6em;
+      font-weight: normal;
+    }
+  }
+
+  &__quote {
+    padding: 30px;
+    line-height: 60px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    z-index: 10;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -35px;
+      top: 10px;
+      height: 85%;
+      width: 75%;
+      border: 4px solid rgba(179, 167, 167, 0.705);
+      border-right: transparent;
+      z-index: -1;
+    }
+
+    &-text {
+      font-size: 1.5em;
+      padding: 10px;
+
+      &-sub {
+        display: block;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.089);
+        z-index: -10;
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .header__heading-main {
+    font-size: 1.5em;
+  }
+  .header__quote {
+    font-size: 1.4em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__heading-main {
+    font-size: 1.8em;
+  }
+
+  .header__heading-sub {
+    font-size: .8em;
+  }
+  .header__quote {
+    font-size: 1.7em;
+  }
+}
+
+/* dowiedz sie czemu jest 0 auto a czasami samo auto */
+/* section two*/
+
+.intro-wrapper{
+  max-width: 1200px;
+  margin: auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+  padding: 96px 24px 96px 24px;
+  position: relative;
+
+  &__img {
+    max-width: 770px;
+    height: auto;
+    width: 100%;
+  }
+
+  &__text {
+    padding-top: 48px;
+    line-height: 25px;
+    text-align: center;
+    max-width: 541px;
+
+    &-heading {
+      margin: 20px 0 30px 0;
+      font-weight: 200;
+      line-height: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+  
+      & span {
+        color: rgb(156, 78, 143);
+      }
+    }
+
+    &-description {
+      opacity: .5;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .intro {
+    &__img {
+      margin-right:0;
+      margin-left: auto;
+      display:block;
+    }
+
+    &__text {
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      text-align: start;
+      background-color: #fff;
+      padding: 30px 20px 96px 96px;
+    }
+  }
+}
+
+
+/* button */
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  height: 34px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 14px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+	position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    opacity: 0;
+    transition: all .3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    transform: scale(0.1, 1);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all .3s;
+  }
+
+  &:hover {
+    letter-spacing: 4px;
+
+    &::before {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+
+    &::after {
+      opacity: 0;
+      transform: scale(0.1, 1);
+    }
+  }
+}
+
+/* btn primary */
+
+.btn-primary {
+  color: rgb(56, 51, 51);
+
+  ::before {
+    border-top-color: rgba(56, 51, 51, 0.5);
+    border-bottom-color: rgba(56, 51, 51, 0.5);
+  }
+
+  ::after {
+    background-color: rgba(104, 94, 94, 0.1);
+  }  
+}
+
+
+
+ /* background-color: rgb(233, 222, 222);   */ 
