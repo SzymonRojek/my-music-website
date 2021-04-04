@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Lora', serif;
+  font-family: 'Josefin Sans', sans-serif;
 } 
 
 /* do not forget about bcg img - get more info about positioning and keep my person in the centre on the mobile */
@@ -70,6 +70,8 @@
 
 .header__quote {
   padding: 30px;
+  line-height: 60px;
+  text-transform: uppercase;
   position: absolute;
   bottom: 50px;
   left: 60px;
@@ -130,45 +132,70 @@
   }
 }
 
-
+/* dowiedz sie czemu jest 0 auto a czasami samo auto */
 /* section two*/
-.intro-container {
-  padding: 20px;
-  background-color: rgb(233, 222, 222);
+
+.intro-wrapper{
+  max-width: 1200px;
+  margin: auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: rgb(56, 51, 51);
+  padding: 96px 24px 96px 24px;
+  position: relative;
 }
 
-.page__two-heading {
-  margin: 20px 0 30px 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.page__two-subheading {
-  color: rgb(156, 78, 143);
-}
-.page__two-img {
+.intro__img {
+  /* max-width: 731px; */
+  max-width: 770px;
   height: auto;
   width: 100%;
 }
 
-.page__two-description {
-  padding: 30px 20px 20px 20px;
+.intro__text {
+  padding-top: 48px;
+  line-height: 25px;
+  text-align: center;
+  max-width: 541px;
 }
 
-.subhead::first-letter {
-  font-size: 22px ;
-  font-weight: 700;
-  color: rgb(145, 44, 128);
+.intro__heading {
+  margin: 20px 0 30px 0;
+  font-weight: 200;
+  line-height: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
+
+.intro__heading-sub {
+  color: rgb(156, 78, 143);
+}
+
+.intro__text-description {
+  opacity: .5;
+}
+
+@media (min-width: 800px) {
+  .intro__img {
+    margin-right:0;
+    margin-left: auto;
+    display:block;
+  }
+
+  .intro__text {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    text-align: start;
+    background-color: #fff;
+    padding: 30px 20px 96px 96px;
+  }
+}
+
 
 /* button */
 
@@ -250,3 +277,7 @@
 .btn-one {
   color: rgb(56, 51, 51);
 }
+
+
+
+ /* background-color: rgb(233, 222, 222);   */ 
