@@ -218,6 +218,7 @@
   padding: 40px;
   line-height: 20px;
   text-align: center;
+  background-color: rgb(247, 240, 240);
 
   &-description {
     opacity: .5;
@@ -227,11 +228,11 @@
     padding-top: 20px;
     text-align: right;
     letter-spacing: 1px;
-    color:  rgb(156, 78, 143);;
+    color:  rgb(150, 71, 137);
   }
 }
 
-@media (min-width: 440px) {
+@media (min-width: 375px) {
   .opinion {
     position: relative;
 
@@ -248,13 +249,10 @@
     }
     &__text {
       position: absolute;
+      right: 0;
+      bottom: -70px;
       max-width: 300px;
-      // background-color: rgb(105, 139, 105);
-      background-color: #fff;
-      // background-color:  rgb(238, 193, 230);
-        right: 0;
-        bottom: -70px;
-        text-align: start;
+      text-align: start;
   }
 }
 
@@ -262,7 +260,6 @@
   .opinion {
     &__text {
       max-width: 400px;
-  
     }
   }
 }
@@ -274,8 +271,6 @@
     }
   }
 }
-
-
 
 
 /* button */
@@ -346,10 +341,8 @@
   }
 }
 
-
-/* btn primary */
-
-.btn-primary {
+ /* btn primary */
+ .btn-primary {
   color: rgb(56, 51, 51);
 
   &::before {
@@ -358,14 +351,6 @@
   }
 
   &::after {
-
     background-color: rgba(104, 94, 94, 0.1);
   }  
-}
-
-
-
- /* background-color: rgb(233, 222, 222);   */ 
-
-
-//  recommendations
+}}
