@@ -210,7 +210,7 @@
 
 
 .opinion_img {
-
+  // display: block ;
   height: auto;
   width: 100%;
 }
@@ -221,6 +221,13 @@
 
   &-description {
     opacity: .5;
+  }
+
+  &-author {
+    padding-top: 20px;
+    text-align: right;
+    letter-spacing: 1px;
+    color:  rgb(156, 78, 143);;
   }
 }
 
@@ -233,7 +240,6 @@
     }
 
     .img-container {
-      // background-color:red;
       margin-bottom: 100px;
     }
 
@@ -243,8 +249,9 @@
     &__text {
       position: absolute;
       max-width: 300px;
-      background-color: rgb(105, 139, 105);
-      // bottom: -40px;
+      // background-color: rgb(105, 139, 105);
+      background-color: #fff;
+      // background-color:  rgb(238, 193, 230);
         right: 0;
         bottom: -70px;
         text-align: start;
@@ -255,8 +262,22 @@
   }
 }
 
+@media (min-width: 738px) {
+  .opinion {
+    &__text {
+      max-width: 400px;
+  
+    }
+  }
+}
 
-
+@media (min-width: 1024px) {
+  .opinion {
+    &__text {
+      max-width: 500px;
+    }
+  }
+}
 
 
 

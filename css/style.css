@@ -214,6 +214,13 @@
   opacity: .5;
 }
 
+.opinion__text-author {
+  padding-top: 20px;
+  text-align: right;
+  letter-spacing: 1px;
+  color: #9c4e8f;
+}
+
 @media (min-width: 440px) {
   .opinion {
     position: relative;
@@ -230,11 +237,23 @@
   .opinion__text {
     position: absolute;
     max-width: 300px;
-    background-color: #698b69;
+    background-color: #fff;
     right: 0;
     bottom: -70px;
     text-align: start;
     z-index: 20;
+  }
+}
+
+@media (min-width: 738px) {
+  .opinion__text {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .opinion__text {
+    max-width: 500px;
   }
 }
 
