@@ -139,9 +139,9 @@
 
 .intro {
   padding: 96px 0 96px 0;
-  position: relative;
 
   &__img {
+    display: block;
     max-width: 770px;
     height: auto;
     width: 100%;
@@ -149,10 +149,11 @@
 
   &__text {
     padding-top: 48px;
+    margin: auto;
     line-height: 25px;
     text-align: center;
     max-width: 541px;
-    margin: auto;
+  
 
     &-heading {
       margin: 20px 0 30px 0;
@@ -174,22 +175,90 @@
 
 @media (min-width: 800px) {
   .intro {
-    &__img {
-      margin-right:0;
-      margin-left: auto;
-      display:block;
+      position: relative;
+
+      &__img {
+        margin-right:0;
+        margin-left: auto;
+        display:block;
+      }
+
+      &__text {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        text-align: start;
+        background-color: #fff;
+        padding: 30px 20px 96px 96px;
+      }
+  }
+}
+
+@media (min-width: 1160px) {
+  .intro__text {
+    padding-top: 96px;
+  }
+}
+
+
+/* section recommendations */ 
+
+.opinion-wrapper {
+  text-align: center;
+  // background-color: rgb(184, 184, 103);
+}
+
+
+.opinion_img {
+
+  height: auto;
+  width: 100%;
+}
+
+.opinion__text {
+  padding: 40px;
+  line-height: 20px;
+
+  &-description {
+    opacity: .5;
+  }
+}
+
+@media (min-width: 440px) {
+  .opinion {
+    position: relative;
+
+    .opinion-wrapper {
+      text-align: left;
     }
 
+    .img-container {
+      // background-color:red;
+      margin-bottom: 100px;
+    }
+
+    &__img {
+      text-align: left;
+    }
     &__text {
       position: absolute;
-      bottom: -40px;
-      left: 0;
-      text-align: start;
-      background-color: #fff;
-      padding: 30px 20px 96px 96px;
+      max-width: 300px;
+      background-color: rgb(105, 139, 105);
+      // bottom: -40px;
+        right: 0;
+        bottom: -70px;
+        text-align: start;
+  
+        // padding: 30px 20px 96px 96px;
+        z-index: 20;
     }
   }
 }
+
+
+
+
+
 
 
 /* button */
@@ -259,23 +328,6 @@
     }
   }
 }
-
-.opinion-wrapper {
-  // display: flex; 
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-}
-
-
-
-
-
-
-
-
-
-
 
 
 /* btn primary */

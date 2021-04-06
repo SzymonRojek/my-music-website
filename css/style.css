@@ -137,10 +137,10 @@
 
 .intro {
   padding: 96px 0 96px 0;
-  position: relative;
 }
 
 .intro__img {
+  display: block;
   max-width: 770px;
   height: auto;
   width: 100%;
@@ -148,10 +148,10 @@
 
 .intro__text {
   padding-top: 48px;
+  margin: auto;
   line-height: 25px;
   text-align: center;
   max-width: 541px;
-  margin: auto;
 }
 
 .intro__text-heading {
@@ -171,6 +171,9 @@
 }
 
 @media (min-width: 800px) {
+  .intro {
+    position: relative;
+  }
   .intro__img {
     margin-right: 0;
     margin-left: auto;
@@ -183,6 +186,55 @@
     text-align: start;
     background-color: #fff;
     padding: 30px 20px 96px 96px;
+  }
+}
+
+@media (min-width: 1160px) {
+  .intro__text {
+    padding-top: 96px;
+  }
+}
+
+/* section recommendations */
+.opinion-wrapper {
+  text-align: center;
+}
+
+.opinion_img {
+  height: auto;
+  width: 100%;
+}
+
+.opinion__text {
+  padding: 40px;
+  line-height: 20px;
+}
+
+.opinion__text-description {
+  opacity: .5;
+}
+
+@media (min-width: 440px) {
+  .opinion {
+    position: relative;
+  }
+  .opinion .opinion-wrapper {
+    text-align: left;
+  }
+  .opinion .img-container {
+    margin-bottom: 100px;
+  }
+  .opinion__img {
+    text-align: left;
+  }
+  .opinion__text {
+    position: absolute;
+    max-width: 300px;
+    background-color: #698b69;
+    right: 0;
+    bottom: -70px;
+    text-align: start;
+    z-index: 20;
   }
 }
 
