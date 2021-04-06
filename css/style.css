@@ -9,6 +9,7 @@
 /* do not forget about bcg img - get more info about positioning and keep my person in the centre on the mobile */
 .container {
   margin: 0 auto;
+  /*  ?  */
 }
 
 .header-hero-container {
@@ -127,7 +128,6 @@
   }
 }
 
-/* dowiedz sie czemu jest 0 auto a czasami samo auto */
 /* section two*/
 .main-container {
   max-width: 1200px;
@@ -196,14 +196,23 @@
 }
 
 /* section recommendations */
-.opinion-wrapper {
-  text-align: center;
+.opinion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .opinion__img {
   height: auto;
   width: 100%;
-  max-width: 327px;
+  max-width: 400px;
 }
 
 .opinion__text {
@@ -224,126 +233,131 @@
   color: #964789;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 440px) {
   .opinion {
     position: relative;
   }
-  .opinion .opinion-wrapper {
-    text-align: left;
-  }
-  .opinion .img-container {
-    margin-bottom: 100px;
-  }
   .opinion__img {
-    text-align: left;
+    margin-bottom: 200px;
   }
   .opinion__text {
     position: absolute;
     right: 0;
-    bottom: -70px;
+    bottom: 100px;
     max-width: 300px;
+    padding-top: 60px;
+    line-height: 25px;
     text-align: start;
   }
 }
 
-@media (min-width: 375px) and (min-width: 738px) {
+@media (min-width: 738px) {
   .opinion__text {
     max-width: 400px;
   }
 }
 
-@media (min-width: 375px) and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .opinion__text {
     max-width: 500px;
   }
 }
 
-@media (min-width: 375px) {
-  /* button */
-  .btn-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-bottom: 40px;
-  }
-  .btn {
-    display: inline-block;
-    height: 34px;
-    padding: 10px 20px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 14px;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    cursor: pointer;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    position: relative;
-  }
-  .btn::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 12;
-    opacity: 0;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    -webkit-transform: scale(0.1, 1);
-            transform: scale(0.1, 1);
-  }
-  .btn::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-  }
-  .btn:hover {
-    letter-spacing: 4px;
-  }
-  .btn:hover::before {
-    opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-  .btn:hover::after {
-    opacity: 0;
-    -webkit-transform: scale(0.1, 1);
-            transform: scale(0.1, 1);
-  }
-  /* btn primary */
-  .btn-primary {
-    color: #383333;
-  }
-  .btn-primary::before {
-    border-top-color: rgba(56, 51, 51, 0.5);
-    border-bottom-color: rgba(56, 51, 51, 0.5);
-  }
-  .btn-primary::after {
-    background-color: rgba(104, 94, 94, 0.1);
-  }
+/* button */
+.btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 40px;
 }
+
+.btn {
+  display: inline-block;
+  height: 34px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 14px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  opacity: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  -webkit-transform: scale(0.1, 1);
+          transform: scale(0.1, 1);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.btn:hover {
+  letter-spacing: 4px;
+}
+
+.btn:hover::before {
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+.btn:hover::after {
+  opacity: 0;
+  -webkit-transform: scale(0.1, 1);
+          transform: scale(0.1, 1);
+}
+
+/* btn primary */
+.btn-primary {
+  color: #383333;
+}
+
+.btn-primary::before {
+  border-top-color: rgba(56, 51, 51, 0.5);
+  border-bottom-color: rgba(56, 51, 51, 0.5);
+}
+
+.btn-primary::after {
+  background-color: rgba(104, 94, 94, 0.1);
+}
+
+/* what is the difference between auto and 0 auto, display block on img */
 /*# sourceMappingURL=style.css.map */

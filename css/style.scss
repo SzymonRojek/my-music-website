@@ -8,7 +8,7 @@
 
 /* do not forget about bcg img - get more info about positioning and keep my person in the centre on the mobile */
 .container {
-  margin: 0 auto;
+  margin: 0 auto; /*  ?  */
 }
 
 .header-hero-container {
@@ -128,7 +128,7 @@
   }
 }
 
-/* dowiedz sie czemu jest 0 auto a czasami samo auto */
+
 /* section two*/
 
 .main-container {
@@ -203,56 +203,55 @@
 
 /* section recommendations */ 
 
-.opinion-wrapper {
-  text-align: center;
-}
 
-.opinion__img {
-  // display: block ;
-  height: auto;
-  width: 100%;
-  max-width: 327px;
-}
+.opinion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-.opinion__text {
-  padding: 40px;
-  line-height: 20px;
-  text-align: center;
-  background-color: rgb(247, 240, 240);
-
-  &-description {
-    opacity: .5;
+  &__img {
+    height: auto;
+    width: 100%;
+    max-width: 400px;
   }
 
-  &-author {
-    padding-top: 20px;
-    text-align: right;
-    letter-spacing: 1px;
-    color:  rgb(150, 71, 137);
+  &__text {
+    padding: 40px;
+    line-height: 20px;
+    text-align: center;
+    background-color: rgb(247, 240, 240);
+  
+    &-description {
+      opacity: .5;
+    }
+  
+    &-author {
+      padding-top: 20px;
+      text-align: right;
+      letter-spacing: 1px;
+      color:  rgb(150, 71, 137);
+    }
   }
 }
 
-@media (min-width: 375px) {
+
+@media (min-width: 440px) {
   .opinion {
     position: relative;
 
-    .opinion-wrapper {
-      text-align: left;
-    }
-
-    .img-container {
-      margin-bottom: 100px;
-    }
-
     &__img {
-      text-align: left;
+      margin-bottom: 200px;
     }
+
     &__text {
       position: absolute;
       right: 0;
-      bottom: -70px;
+      bottom: 100px;
       max-width: 300px;
+      padding-top: 60px;
+      line-height: 25px;
       text-align: start;
+    }
   }
 }
 
@@ -271,6 +270,13 @@
     }
   }
 }
+
+
+
+
+
+
+
 
 
 /* button */
@@ -341,16 +347,25 @@
   }
 }
 
+
  /* btn primary */
- .btn-primary {
+
+.btn-primary {
   color: rgb(56, 51, 51);
 
   &::before {
     border-top-color: rgba(56, 51, 51, 0.5);
     border-bottom-color: rgba(56, 51, 51, 0.5);
   }
-
+  
   &::after {
     background-color: rgba(104, 94, 94, 0.1);
-  }  
-}}
+  }
+}
+
+
+
+
+
+
+/* what is the difference between auto and 0 auto, display block on img */

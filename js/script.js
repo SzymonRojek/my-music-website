@@ -29,6 +29,6 @@ function smoothScroll(tar, duration) {
 
 const section2 = document.querySelector('.section-two');
 
-// section2.addEventListener('click', function() {
-//   smoothScroll('.scroll-top', 1000);
-// });
+section2.addEventListener('click', function() {
+  smoothScroll('.scroll-top', 1000);
+});
