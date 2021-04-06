@@ -200,14 +200,16 @@
   text-align: center;
 }
 
-.opinion_img {
+.opinion__img {
   height: auto;
   width: 100%;
+  max-width: 327px;
 }
 
 .opinion__text {
   padding: 40px;
   line-height: 20px;
+  text-align: center;
 }
 
 .opinion__text-description {
@@ -241,7 +243,6 @@
     right: 0;
     bottom: -70px;
     text-align: start;
-    z-index: 20;
   }
 }
 

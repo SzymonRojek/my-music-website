@@ -205,19 +205,19 @@
 
 .opinion-wrapper {
   text-align: center;
-  // background-color: rgb(184, 184, 103);
 }
 
-
-.opinion_img {
+.opinion__img {
   // display: block ;
   height: auto;
   width: 100%;
+  max-width: 327px;
 }
 
 .opinion__text {
   padding: 40px;
   line-height: 20px;
+  text-align: center;
 
   &-description {
     opacity: .5;
@@ -255,10 +255,6 @@
         right: 0;
         bottom: -70px;
         text-align: start;
-  
-        // padding: 30px 20px 96px 96px;
-        z-index: 20;
-    }
   }
 }
 
