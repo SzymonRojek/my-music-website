@@ -7,11 +7,19 @@
 }
 
 .container {
-  margin: 0 auto;
-  /*  ?  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.header-hero-container {
+.header-container {
   min-height: 100vh;
   background-image: url(../images/sr1.jpg);
   background-size: cover;
@@ -21,7 +29,7 @@
   z-index: 1;
 }
 
-.header-hero-container::after {
+.header-container::after {
   content: '';
   position: absolute;
   left: 0;
@@ -33,19 +41,14 @@
   z-index: -1;
 }
 
-.content-wrapper {
-  width: 100%;
+.header {
+  min-height: 80vh;
   max-width: 1110px;
   margin: 0 auto;
-  min-height: 80vh;
-  position: relative;
-}
-
-/* header content */
-.header {
   padding: 20px 10px 0 10px;
   text-align: center;
   color: #fff;
+  position: relative;
 }
 
 .header__heading {
@@ -65,12 +68,12 @@
 }
 
 .header__quote {
-  padding: 30px;
-  line-height: 60px;
-  text-transform: uppercase;
   position: absolute;
   bottom: 50px;
   left: 60px;
+  padding: 30px;
+  line-height: 60px;
+  text-transform: uppercase;
   z-index: 10;
 }
 
@@ -100,8 +103,8 @@
   position: absolute;
   bottom: -3px;
   left: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.089);
   z-index: -10;
 }
@@ -127,93 +130,94 @@
   }
 }
 
-/* section two*/
+/* section intro */
 .main-container {
+  width: 100%;
   max-width: 1200px;
   margin: auto;
   padding: 0 24px 0 24px;
 }
 
 .intro__passion {
-  padding: 50px 0 50px 0;
   max-width: 541px;
+  margin: 0 auto;
   line-height: 25px;
   text-align: center;
-  margin: 0 auto;
 }
 
 .intro__passion-heading {
-  margin: 20px 0 30px 0;
+  margin: 70px 0 50px 0;
   font-weight: 200;
   line-height: 30px;
-  text-transform: uppercase;
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .intro__passion-heading span {
+  display: block;
   color: #9c4e8f;
 }
 
 .intro__passion-description {
+  padding-bottom: 50px;
   opacity: .5;
 }
 
-.intro__img {
-  max-width: 770px;
+.intro__atmosphere-img {
   width: 100%;
+  max-width: 770px;
 }
 
-.intro__text {
-  padding: 50px 0 50px 0;
+.intro__atmosphere__text {
   margin: auto;
+  max-width: 541px;
   line-height: 25px;
   text-align: center;
-  max-width: 541px;
 }
 
-.intro__text-heading {
-  margin: 20px 0 30px 0;
+.intro__atmosphere__text-heading {
+  padding: 70px 0 50px 0;
   font-weight: 200;
   line-height: 30px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-.intro__text-heading span {
+.intro__atmosphere__text-heading span {
+  display: block;
   color: #9c4e8f;
 }
 
-.intro__text-description {
+.intro__atmosphere__text-description {
+  padding-bottom: 50px;
   opacity: .5;
 }
 
-@media (min-width: 800px) {
-  .intro {
+@media (min-width: 738px) {
+  .intro__atmosphere {
     position: relative;
   }
-  .intro__img {
+  .intro__atmosphere-img {
     margin-right: 0;
     margin-left: auto;
     display: block;
   }
-  .intro__text {
+  .intro__atmosphere__text {
     position: absolute;
-    bottom: -40px;
+    bottom: -300px;
     left: 0;
     text-align: start;
     background-color: #fff;
-    padding: 30px 20px 96px 96px;
+    padding: 0 20px 96px 96px;
   }
-}
-
-@media (min-width: 1160px) {
-  .intro__text {
-    padding-top: 96px;
+  .feedback__heading {
+    margin-top: 180px;
   }
 }
 
 /* section recommendations */
-.opinion {
+.feedback {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,25 +230,37 @@
           align-items: center;
 }
 
-.opinion__img {
-  margin-top: 96px;
-  height: auto;
+.feedback__heading {
+  padding: 20px 0 50px 0;
+  font-weight: 200;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.feedback__heading span {
+  display: block;
+  color: #9c4e8f;
+}
+
+.feedback__img {
   width: 100%;
   max-width: 400px;
 }
 
-.opinion__text {
+.feedback__text {
   padding: 40px;
   line-height: 20px;
   text-align: center;
   background-color: #f7f0f0;
 }
 
-.opinion__text-description {
+.feedback__text-description {
   opacity: .5;
 }
 
-.opinion__text-author {
+.feedback__text-author {
   padding-top: 20px;
   text-align: right;
   letter-spacing: 1px;
@@ -252,31 +268,31 @@
 }
 
 @media (min-width: 440px) {
-  .opinion {
+  .feedback {
     position: relative;
   }
-  .opinion__img {
+  .feedback__img {
     margin-bottom: 200px;
   }
-  .opinion__text {
+  .feedback__text {
     position: absolute;
     right: 0;
     bottom: 100px;
     max-width: 300px;
     padding-top: 60px;
-    line-height: 25px;
     text-align: start;
+    line-height: 25px;
   }
 }
 
 @media (min-width: 738px) {
-  .opinion__text {
+  .feedback__text {
     max-width: 400px;
   }
 }
 
 @media (min-width: 1024px) {
-  .opinion__text {
+  .feedback__text {
     max-width: 500px;
   }
 }
@@ -377,6 +393,4 @@
 .btn-primary::after {
   background-color: rgba(104, 94, 94, 0.1);
 }
-
-/* what is the difference between auto and 0 auto, display block on img */
 /*# sourceMappingURL=style.css.map */
