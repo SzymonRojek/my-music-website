@@ -130,7 +130,7 @@
   }
 }
 
-/* section intro */
+/* SECTION INTRO */
 .main-container {
   width: 100%;
   max-width: 1200px;
@@ -165,6 +165,7 @@
 .intro__atmosphere-img {
   width: 100%;
   max-width: 770px;
+  z-index: -1;
 }
 
 .intro__atmosphere__text {
@@ -205,16 +206,16 @@
     position: absolute;
     bottom: -300px;
     left: 0;
+    padding: 50px 40px 50px 96px;
     text-align: start;
     background-color: #fff;
-    padding: 0 20px 96px 96px;
   }
   .feedback__heading {
-    margin-top: 180px;
+    margin-top: 280px;
   }
 }
 
-/* section recommendations */
+/* SECTION FEEDBACK */
 .feedback {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,6 +224,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -247,7 +251,7 @@
 }
 
 .feedback__text {
-  padding: 40px;
+  padding: 40px 40px 0 40px;
   line-height: 20px;
   text-align: center;
   background-color: #f7f0f0;
@@ -258,10 +262,15 @@
 }
 
 .feedback__text-author {
-  padding-top: 20px;
+  padding: 15px 0 30px 0;
   text-align: right;
+}
+
+.feedback__text-author-link {
+  text-decoration: none;
   letter-spacing: 1px;
   color: #964789;
+  cursor: pointer;
 }
 
 @media (min-width: 440px) {

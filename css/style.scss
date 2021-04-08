@@ -13,7 +13,7 @@
 }
 
 
-// header hero section
+// HEADER HERO
 
 .header-container {
   min-height: 100vh;
@@ -128,7 +128,7 @@
 }
 
 
-/* section intro */
+/* SECTION INTRO */
 
 .main-container {
   width: 100%;
@@ -174,6 +174,7 @@
     &-img {
       width: 100%;
       max-width: 770px;
+      z-index: -1;
     }
 
     &__text {
@@ -203,8 +204,6 @@
   }
 }
 
-
-
 @media (min-width: 738px) {
   .intro__atmosphere {
       position: relative;
@@ -219,23 +218,24 @@
         position: absolute;
         bottom: -300px;
         left: 0;
+        padding: 50px 40px 50px 96px;
         text-align: start;
         background-color: #fff;
-        padding: 0 20px 96px 96px;
       }
   }
 
   .feedback__heading {
-    margin-top: 180px;
+    margin-top: 280px;
   }
 }
 
 
-/* section recommendations */ 
+/* SECTION FEEDBACK */ 
 
 .feedback {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   &__heading {
@@ -257,7 +257,7 @@
   }
 
   &__text {
-    padding: 40px;
+    padding: 40px 40px 0 40px;
     line-height: 20px;
     text-align: center;
     background-color: rgb(247, 240, 240);
@@ -265,17 +265,22 @@
     &-description {
       opacity: .5;
     }
-  
+
     &-author {
-      padding-top: 20px;
+      padding: 15px 0 30px 0;
       text-align: right;
-      letter-spacing: 1px;
-      color:  rgb(150, 71, 137);
+    
+      &-link {
+        text-decoration: none;
+        letter-spacing: 1px;
+        color:  rgb(150, 71, 137);
+        cursor: pointer;
+      }
     }
   }
+
+
 }
-
-
 @media (min-width: 440px) {
   .feedback {
     position: relative;
