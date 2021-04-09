@@ -13,7 +13,7 @@
 }
 
 
-// HEADER HERO
+// HEADER ----> HERO
 
 .header-container {
   min-height: 100vh;
@@ -274,6 +274,7 @@
         text-decoration: none;
         letter-spacing: 1px;
         color:  rgb(150, 71, 137);
+        border-bottom: 1.8px solid rgba(179, 137, 137, 0.089);
         cursor: pointer;
       }
     }
@@ -321,7 +322,7 @@
 
 
 
-/* button */
+/* BUTTON */
 
 .btn-container {
   display: flex;

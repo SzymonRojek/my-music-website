@@ -270,6 +270,7 @@
   text-decoration: none;
   letter-spacing: 1px;
   color: #964789;
+  border-bottom: 1.8px solid rgba(179, 137, 137, 0.089);
   cursor: pointer;
 }
 
@@ -303,7 +304,7 @@
   }
 }
 
-/* button */
+/* BUTTON */
 .btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
