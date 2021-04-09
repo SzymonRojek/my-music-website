@@ -271,7 +271,13 @@
   letter-spacing: 1px;
   color: #964789;
   border-bottom: 1.8px solid rgba(179, 137, 137, 0.089);
+  -webkit-transition: .2s all ease-in;
+  transition: .2s all ease-in;
   cursor: pointer;
+}
+
+.feedback__text-author-link:hover {
+  border-bottom: 1.8px solid #c08fb7;
 }
 
 @media (min-width: 440px) {
@@ -289,6 +295,8 @@
     padding-top: 60px;
     text-align: start;
     line-height: 25px;
+    -webkit-box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.171);
+            box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.171);
   }
 }
 

@@ -275,7 +275,12 @@
         letter-spacing: 1px;
         color:  rgb(150, 71, 137);
         border-bottom: 1.8px solid rgba(179, 137, 137, 0.089);
+        transition: .2s all ease-in;
         cursor: pointer;
+
+        &:hover {
+          border-bottom: 1.8px solid rgb(192, 143, 183);
+        }
       }
     }
   }
@@ -298,7 +303,7 @@
       padding-top: 60px;
       text-align: start;
       line-height: 25px;
-      
+      box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.171);
     }
   }
 }
