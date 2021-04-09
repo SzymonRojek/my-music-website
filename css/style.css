@@ -322,17 +322,18 @@
 }
 
 .btn {
-  display: inline-block;
-  height: 34px;
-  padding: 10px 20px;
-  text-align: center;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  min-width: 100px;
+  border: 1px solid transparent;
+  padding: 8px 20px 12px 20px;
   font-size: 14px;
-  line-height: 14px;
-  color: white;
+  text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
   text-decoration: none;
-  cursor: pointer;
+  letter-spacing: 1px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   position: relative;
@@ -371,6 +372,7 @@
 
 .btn:hover {
   letter-spacing: 4px;
+  cursor: pointer;
 }
 
 .btn:hover::before {

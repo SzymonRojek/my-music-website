@@ -297,6 +297,7 @@
       padding-top: 60px;
       text-align: start;
       line-height: 25px;
+      
     }
   }
 }
@@ -305,6 +306,7 @@
   .feedback {
     &__text {
       max-width: 400px;
+   
     }
   }
 }
@@ -330,17 +332,16 @@
 }
 
 .btn {
-  display: inline-block;
-  height: 34px;
-  padding: 10px 20px;
-  text-align: center;
+  border: 0;
+  appearance: none;
+  min-width: 100px;
+  border: 1px solid transparent;
+  padding: 8px 20px 12px 20px;
   font-size: 14px;
-  line-height: 14px;
-  color: white;
+  text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
   text-decoration: none;
-  cursor: pointer;
+  letter-spacing: 1px;
   transition: all 0.3s;
 	position: relative;
 
@@ -374,6 +375,7 @@
 
   &:hover {
     letter-spacing: 4px;
+    cursor: pointer;
 
     &::before {
       opacity: 1;
