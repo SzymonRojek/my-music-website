@@ -35,3 +35,17 @@ const goUp = () => {
 }
 
 section2.addEventListener('click', goUp);
+
+// hamburger 
+
+const hamburger = document.querySelector(".hamburger");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("is-active");
+ 
+  if(hamburger.classList.contains("is-active")) {
+    hamburger.setAttribute("aria-expanded", true);
+  } else {
+    hamburger.setAttribute("aria-expanded", false);
+  }
+})
