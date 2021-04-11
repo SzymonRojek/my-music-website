@@ -1,9 +1,11 @@
 
+@import "dist/hamburgers";
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", "Arial", sans-serif;
 } 
 
 .container {
@@ -11,6 +13,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
 
 
 // HEADER ----> HERO
@@ -411,5 +414,3 @@
     background-color: rgba(104, 94, 94, 0.1);
   }
 }
-
-

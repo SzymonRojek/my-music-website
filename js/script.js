@@ -31,7 +31,7 @@ function smoothScroll(tar, duration) {
 
 
 const goUp = () => {
-  smoothScroll('.scroll-top', 1000);
+  smoothScroll('.scroll-top', 1500);
 }
 
 section2.addEventListener('click', goUp);
