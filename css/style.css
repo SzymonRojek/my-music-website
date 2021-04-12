@@ -234,7 +234,11 @@ html {
   }
 }
 
-/* SECTION INTRO */
+/* 
+
+  SECTION INTRO 
+
+*/
 .main-container {
   width: 100%;
   max-width: 1200px;
@@ -318,7 +322,7 @@ html {
 
 /* 
 
-SECTION FEEDBACK 
+  SECTION FEEDBACK 
 
 */
 .feedback {
@@ -361,7 +365,7 @@ SECTION FEEDBACK
 .feedback__text {
   padding: 20px;
   line-height: 25px;
-  background-color: #f7f0f0;
+  background-color: #fff8f8;
 }
 
 .feedback__text-description {
@@ -400,8 +404,8 @@ SECTION FEEDBACK
     padding-top: 60px;
     text-align: start;
     line-height: 25px;
-    -webkit-box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.171);
-            box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.171);
+    -webkit-box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.15);
+            box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.15);
   }
   .direction-right {
     right: 0;
@@ -445,12 +449,9 @@ SECTION FEEDBACK
 }
 
 .btn {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
   min-width: 100px;
   border: 1px solid transparent;
-  padding: 8px 20px 12px 20px;
+  padding: 14px 20px 10px 20px;
   font-size: 14px;
   text-align: center;
   text-transform: uppercase;

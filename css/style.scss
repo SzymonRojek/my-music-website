@@ -210,7 +210,11 @@ html {
 }
 
 
-/* SECTION INTRO */
+/* 
+
+  SECTION INTRO 
+
+*/
 
 .main-container {
   width: 100%;
@@ -310,7 +314,7 @@ html {
 
 /* 
 
-SECTION FEEDBACK 
+  SECTION FEEDBACK 
 
 */ 
 
@@ -344,7 +348,7 @@ SECTION FEEDBACK
   &__text {
     padding: 20px;
     line-height: 25px;
-    background-color: rgb(247, 240, 240);
+    background-color: rgb(255, 248, 248);
   
     &-description {
       opacity: .5;
@@ -386,7 +390,7 @@ SECTION FEEDBACK
       padding-top: 60px;
       text-align: start;
       line-height: 25px;
-      box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.171);
+      box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.15);
     }
   }
 
@@ -430,11 +434,11 @@ SECTION FEEDBACK
 }
 
 .btn {
-  // border: 0;
-  appearance: none;
+  // appearance: none;
   min-width: 100px;
   border: 1px solid transparent;
-  padding: 8px 20px 12px 20px;
+  // padding: 8px 20px 12px 20px;
+  padding: 14px 20px 10px 20px;
   font-size: 14px;
   text-align: center;
   text-transform: uppercase;
@@ -442,6 +446,7 @@ SECTION FEEDBACK
   letter-spacing: 1px;
   transition: all 0.3s;
 	position: relative;
+  
 
   &::before {
     content: '';
