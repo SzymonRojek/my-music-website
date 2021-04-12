@@ -34,7 +34,7 @@ const goUp = () => {
   smoothScroll('.scroll-top', 1500);
 }
 
-// section2.addEventListener('click', goUp);
+section2.addEventListener('click', goUp);
 
 
 
@@ -44,9 +44,9 @@ const goUp = () => {
 const hamburger = document.querySelector(".hamburger");
 
 hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("is-active");
+  hamburger.classList.toggle("js-active");
  
-  if(hamburger.classList.contains("is-active")) {
+  if(hamburger.classList.contains("js-active")) {
     hamburger.setAttribute("aria-expanded", true);
   } else {
     hamburger.setAttribute("aria-expanded", false);

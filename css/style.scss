@@ -14,7 +14,12 @@ html {
   justify-content: center;
 }
 
-// HAMBURGER
+
+/*
+
+  HAMBURGER
+
+*/ 
 
 .hamburger {
   width: 40px;
@@ -70,7 +75,7 @@ html {
 }
 
 
-.is-active {
+.js-active {
 	.hamburger-inner {
     transform: translate3d(0, -10px, 0) rotate(-45deg);
     transition-delay: 0.22s;
@@ -92,7 +97,12 @@ html {
 	}
 }
 
-// HEADER ----> HERO
+
+/*
+
+  HEADER ----> HERO
+
+*/ 
 
 .header-container {
   background-image: url(../images/sr1.jpg);
