@@ -34,7 +34,10 @@ const goUp = () => {
   smoothScroll('.scroll-top', 1500);
 }
 
-section2.addEventListener('click', goUp);
+// section2.addEventListener('click', goUp);
+
+
+
 
 // hamburger 
 
