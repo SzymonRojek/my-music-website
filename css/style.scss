@@ -1,12 +1,12 @@
 
-
-
-* {
-  // padding: 0;
-  // margin: 0;
+html {
   box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
   font-family: "Josefin Sans", "Arial", sans-serif;
-} 
+}
 
 .container {
   display: flex;
@@ -16,18 +16,19 @@
 
 // HAMBURGER
 
-
 .hamburger {
-	padding: 0 8px 0 8px;
+  width: 40px;
+  height: 40px;
 	border: 0;
   outline: none;
   cursor: pointer;
   background-color: rgba(90, 83, 83, 0.233);
 
   &-box {
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 30px;
     position: relative;
+    // background-color: red;
   }
 }
 
@@ -45,7 +46,7 @@
 }
 
 .hamburger-inner {
-  top: 28px;
+  top: 23px;
   left: 0;
   transition-duration: 0.13s;
   transition-delay: 0.13s;
@@ -94,7 +95,6 @@
 // HEADER ----> HERO
 
 .header-container {
-  min-height: 100vh;
   background-image: url(../images/sr1.jpg);
   background-size: cover;
   background-position: right;
@@ -121,10 +121,10 @@
 }
 
 .header {
-  min-height: 80vh;
+  min-height: 100vh;
   max-width: 1110px;
   margin: 0 auto;
-  padding: 20px 10px 0 10px;
+  padding: 20px 20px 0 10px;
   text-align: center;
   color: #fff;
   position: relative;
@@ -177,12 +177,11 @@
       &::after {
         content: '';
         position: absolute;
-        bottom: -3px;
+        bottom: 10px;
         left: 0;
         height: 100%;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.089);
-        z-index: -10;
       }
     }
   }
@@ -267,7 +266,7 @@
       text-align: center;
     
       &-heading {
-        padding: 70px 0 50px 0;
+        padding: 0 0 50px 0;
         font-weight: 200;
         line-height: 30px;
         letter-spacing: 2px;
@@ -299,27 +298,28 @@
 
       &__text {
         position: absolute;
-        bottom: -300px;
+        bottom: -200px;
         left: 0;
-        padding: 50px 40px 50px 96px;
+        padding: 50px 40px 0 96px;
         text-align: start;
         background-color: #fff;
       }
   }
-
-  .feedback__heading {
-    margin-top: 280px;
-  }
 }
 
 
-/* SECTION FEEDBACK */ 
+/* 
+
+SECTION FEEDBACK 
+
+*/ 
 
 .feedback {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
 
   &__heading {
     padding: 20px 0 50px 0;
@@ -335,14 +335,15 @@
   }
 
   &__img {
+    display: block;
+    height: auto; 
     width: 100%;
     max-width: 400px;
   }
 
   &__text {
-    padding: 40px 40px 0 40px;
-    line-height: 20px;
-    text-align: center;
+    padding: 20px;
+    line-height: 25px;
     background-color: rgb(247, 240, 240);
   
     &-description {
@@ -350,7 +351,6 @@
     }
 
     &-author {
-      padding: 15px 0 30px 0;
       text-align: right;
     
       &-link {
@@ -371,6 +371,7 @@
 
 }
 @media (min-width: 440px) {
+
   .feedback {
     position: relative;
 
@@ -380,7 +381,6 @@
 
     &__text {
       position: absolute;
-      right: 0;
       bottom: 100px;
       max-width: 300px;
       padding-top: 60px;
@@ -389,13 +389,23 @@
       box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.171);
     }
   }
+
+  .direction-right {
+   right: 0;
+  }
+
+  .direction-left {
+    left: 0;
+  }
 }
 
 @media (min-width: 738px) {
   .feedback {
+    &__heading {
+      margin-top: 250px;
+    }
     &__text {
       max-width: 400px;
-   
     }
   }
 }
@@ -407,7 +417,6 @@
     }
   }
 }
-
 
 
 /* BUTTON */
