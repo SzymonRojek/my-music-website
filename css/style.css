@@ -16,8 +16,6 @@ html {
 */
 .navigation {
   position: fixed;
-  top: 0;
-  right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,7 +70,7 @@ html {
 }
 
 .hamburger-box {
-  width: 28px;
+  width: 30px;
   height: 30px;
   position: relative;
 }
@@ -80,8 +78,8 @@ html {
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
-  width: 100%;
-  height: 4px;
+  width: 30px;
+  height: 3px;
   background-color: #fff;
   border-radius: 4px;
   position: absolute;
