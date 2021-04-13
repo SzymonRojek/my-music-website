@@ -12,11 +12,10 @@ html {
 /*
 
   NAVIGATION
-  
+
 */
 .navigation {
   position: fixed;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,9 +25,11 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px;
   height: 8vh;
+  width: 100%;
+  padding: 10px;
   background-color: #594f4f7b;
+  z-index: 999;
 }
 
 .navigation__logo {
@@ -177,7 +178,7 @@ html {
 }
 
 .header__heading {
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .header__heading-main {
@@ -450,7 +451,11 @@ html {
   }
 }
 
-/* BUTTON */
+/* 
+
+  BUTTON 
+
+*/
 .btn-container {
   display: -webkit-box;
   display: -ms-flexbox;

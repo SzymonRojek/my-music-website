@@ -18,17 +18,18 @@ html {
 /*
 
   NAVIGATION
-  
+
 */ 
 .navigation {
   position: fixed;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   height: 8vh;
+  width: 100%;
+  padding: 10px;
   background-color: #594f4f7b;
+  z-index: 999;
 
   &__logo {
     height: 50px;
@@ -53,6 +54,7 @@ html {
 
 */ 
 
+
 .hamburger {
   width: 40px;
   height: 40px;
@@ -60,7 +62,7 @@ html {
   outline: none;
   cursor: pointer;
   background-color: rgba(90, 83, 83, 0.233);
-
+ 
   &-box {
     width: 28px;
     height: 30px;
@@ -130,18 +132,12 @@ html {
 
 
 
-
-
-
-
-
-
-
 /*
 
   HEADER ----> HERO
 
 */ 
+
 
 .header-container {
   background-image: url(../images/sr1.jpg);
@@ -175,7 +171,7 @@ html {
   position: relative;
 
   &__heading {
-    margin-top: 60px;
+    margin-top: 100px;
 
     &-main {
       letter-spacing: 2px;
@@ -260,6 +256,7 @@ html {
   SECTION INTRO 
 
 */
+
 
 .main-container {
   width: 100%;
@@ -357,11 +354,13 @@ html {
 }
 
 
+
 /* 
 
   SECTION FEEDBACK 
 
 */ 
+
 
 .feedback {
   display: flex;
@@ -468,7 +467,11 @@ html {
 }
 
 
-/* BUTTON */
+/* 
+
+  BUTTON 
+
+*/
 
 .btn-container {
   display: flex;
