@@ -277,35 +277,7 @@ html {
 
 .intro {
 
-  // first part 
-
-  &__passion {
-    max-width: 541px;
-    margin: 0 auto;
-    line-height: 25px;
-    text-align: center;
-  
-
-    &-heading {
-      margin: 70px 0 50px 0;
-      font-weight: 200;
-      line-height: 30px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-  
-      & span {
-        color: rgb(156, 78, 143);
-      }
-    }
-
-    &-description {
-      padding-bottom: 50px;
-      opacity: .5;
-    }
-  }
-
-  //  second part
-
+  &__passion, 
   &__atmosphere {
 
     &-img {
@@ -321,7 +293,7 @@ html {
       text-align: center;
     
       &-heading {
-        padding: 0 0 50px 0;
+        padding: 50px 0 20px 0;
         font-weight: 200;
         line-height: 30px;
         letter-spacing: 2px;
@@ -341,12 +313,15 @@ html {
   }
 }
 
-@media (min-width: 738px) {
+@media (min-width: 540px) {
+
+  .intro__passion,
   .intro__atmosphere {
       position: relative;
 
       &-img {
-        margin-right:0;
+        margin-top: 100px;
+        // margin-right:0;
         margin-left: auto;
         display:block;
       }
@@ -355,10 +330,16 @@ html {
         position: absolute;
         bottom: -200px;
         left: 0;
-        padding: 50px 40px 0 96px;
+        padding: 0 40px 0 96px;
         text-align: start;
         background-color: #fff;
       }
+  }
+
+  .intro__atmosphere {
+    &-img {
+      margin: 180px 0 200px 0;
+    }
   }
 }
 
@@ -565,3 +546,38 @@ html {
     background-color: rgba(104, 94, 94, 0.1);
   }
 }
+
+
+
+
+
+
+// &__passion {
+//   &-img {
+//     width: 100%;
+//     max-width: 770px;
+//     z-index: -1;
+//   }
+//   max-width: 541px;
+//   margin: 0 auto;
+//   line-height: 25px;
+//   text-align: center;
+
+
+//   &-heading {
+//     margin: 70px 0 50px 0;
+//     font-weight: 200;
+//     line-height: 30px;
+//     letter-spacing: 2px;
+//     text-transform: uppercase;
+
+//     & span {
+//       color: rgb(156, 78, 143);
+//     }
+//   }
+
+//   &-description {
+//     padding-bottom: 50px;
+//     opacity: .5;
+//   }
+// }

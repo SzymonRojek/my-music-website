@@ -276,45 +276,21 @@ html {
   padding: 0 24px 0 24px;
 }
 
-.intro__passion {
-  max-width: 541px;
-  margin: 0 auto;
-  line-height: 25px;
-  text-align: center;
-}
-
-.intro__passion-heading {
-  margin: 70px 0 50px 0;
-  font-weight: 200;
-  line-height: 30px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.intro__passion-heading span {
-  color: #9c4e8f;
-}
-
-.intro__passion-description {
-  padding-bottom: 50px;
-  opacity: .5;
-}
-
-.intro__atmosphere-img {
+.intro__passion-img, .intro__atmosphere-img {
   width: 100%;
   max-width: 770px;
   z-index: -1;
 }
 
-.intro__atmosphere__text {
+.intro__passion__text, .intro__atmosphere__text {
   margin: auto;
   max-width: 541px;
   line-height: 25px;
   text-align: center;
 }
 
-.intro__atmosphere__text-heading {
-  padding: 0 0 50px 0;
+.intro__passion__text-heading, .intro__atmosphere__text-heading {
+  padding: 50px 0 20px 0;
   font-weight: 200;
   line-height: 30px;
   letter-spacing: 2px;
@@ -322,31 +298,37 @@ html {
   letter-spacing: 2px;
 }
 
-.intro__atmosphere__text-heading span {
+.intro__passion__text-heading span, .intro__atmosphere__text-heading span {
   color: #9c4e8f;
 }
 
-.intro__atmosphere__text-description {
+.intro__passion__text-description, .intro__atmosphere__text-description {
   padding-bottom: 50px;
   opacity: .5;
 }
 
-@media (min-width: 738px) {
+@media (min-width: 540px) {
+  .intro__passion,
   .intro__atmosphere {
     position: relative;
   }
+  .intro__passion-img,
   .intro__atmosphere-img {
-    margin-right: 0;
+    margin-top: 100px;
     margin-left: auto;
     display: block;
   }
+  .intro__passion__text,
   .intro__atmosphere__text {
     position: absolute;
     bottom: -200px;
     left: 0;
-    padding: 50px 40px 0 96px;
+    padding: 0 40px 0 96px;
     text-align: start;
     background-color: #fff;
+  }
+  .intro__atmosphere-img {
+    margin: 180px 0 200px 0;
   }
 }
 
