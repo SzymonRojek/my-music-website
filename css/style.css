@@ -155,7 +155,8 @@ html {
   HEADER ----> HERO
 
 */
-.header-container {
+.hero-container {
+  min-height: 100vh;
   background-image: url(../images/sr1.jpg);
   background-size: cover;
   background-position: right;
@@ -164,7 +165,7 @@ html {
   z-index: 1;
 }
 
-.header-container::after {
+.hero-container::after {
   content: '';
   position: absolute;
   left: 0;
@@ -177,17 +178,23 @@ html {
 }
 
 .header {
-  min-height: 100vh;
-  max-width: 1110px;
-  margin: 0 auto;
-  padding: 20px 20px 0 10px;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #fff;
-  position: relative;
 }
 
 .header__heading {
-  margin-top: 100px;
+  position: absolute;
+  bottom: 100px;
+  opacity: .8;
+  text-align: center;
 }
 
 .header__heading-main {
