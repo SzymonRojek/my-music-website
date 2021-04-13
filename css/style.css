@@ -321,9 +321,9 @@ html {
   }
   .intro__passion-img,
   .intro__atmosphere-img {
-    margin-top: 100px;
-    margin-left: auto;
     display: block;
+    margin-top: 120px;
+    margin-left: auto;
   }
   .intro__passion__text,
   .intro__atmosphere__text {
@@ -336,6 +336,7 @@ html {
   }
   .intro__atmosphere-img {
     margin: 180px 0 200px 0;
+    margin-left: auto;
   }
 }
 
