@@ -15,7 +15,8 @@ html {
 
 */
 .navigation {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

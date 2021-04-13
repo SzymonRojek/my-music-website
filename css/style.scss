@@ -22,7 +22,7 @@ html {
 */ 
 
 .navigation {
-  position: fixed;
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
