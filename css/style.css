@@ -52,15 +52,6 @@ html {
 
 */
 .hamburger {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   width: 50px;
   height: 50px;
   border: 0;
@@ -70,7 +61,18 @@ html {
 }
 
 .hamburger-box {
-  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 10px;
+  left: 0;
+  width: 100%;
   height: 30px;
   position: relative;
 }
@@ -90,8 +92,6 @@ html {
 }
 
 .hamburger-inner {
-  top: 23px;
-  left: 0;
   -webkit-transition-duration: 0.13s;
           transition-duration: 0.13s;
   -webkit-transition-delay: 0.13s;
