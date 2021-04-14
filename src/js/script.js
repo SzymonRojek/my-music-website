@@ -1,4 +1,4 @@
-
+console.log('siema');
 
 const section2 = document.querySelector('.section-two');
 
@@ -38,22 +38,35 @@ section2.addEventListener('click', goUp);
 
 
 
-
+ 
 // hamburger 
 
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".navigation__menu");
+const navLinks = document.querySelectorAll(".navigation__links-item");
+
+console.log(navLinks);
 
 hamburger.addEventListener("click", () => {
 
   hamburger.classList.toggle("js-active");
-  navMenu.classList.toggle('navigation__menu--open')
+  navMenu.classList.toggle('navigation__menu--open');
  
+
+  navLinks.forEach( (link, index) => {
+    
+    if(link.style.animation) {
+      link.style.animation = "";
+    } else {
+      link.style.animation = `linksFade .5s ease forwards ${index / 5 + .5}s`;
+    }
+  })
+
+
+  // change the state true or false
   if(hamburger.classList.contains("js-active")) {
     hamburger.setAttribute("aria-expanded", true);
   } else {
     hamburger.setAttribute("aria-expanded", false);
   }
-
-
 })
