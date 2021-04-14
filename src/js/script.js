@@ -42,13 +42,18 @@ section2.addEventListener('click', goUp);
 // hamburger 
 
 const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".navigation__menu");
 
 hamburger.addEventListener("click", () => {
+
   hamburger.classList.toggle("js-active");
+  navMenu.classList.toggle('navigation__menu--open')
  
   if(hamburger.classList.contains("js-active")) {
     hamburger.setAttribute("aria-expanded", true);
   } else {
     hamburger.setAttribute("aria-expanded", false);
   }
+
+
 })
