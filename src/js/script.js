@@ -55,11 +55,9 @@ hamburger.addEventListener("click", () => {
 
   navLinks.forEach( (link, index) => {
     
-    if(link.style.animation) {
-      link.style.animation = "";
-    } else {
-      link.style.animation = `linksFade .5s ease forwards ${index / 5 + .5}s`;
-    }
+    link.style.animation = link.style.animation 
+    ? 
+    "" : link.style.animation = `linksFade .5s ease forwards ${index / 5 + .5}s`;
   })
 
 

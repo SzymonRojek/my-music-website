@@ -51,7 +51,7 @@ html {
   height: 10vh;
   width: 100%;
   padding: 10px;
-  background-color: #594f4f7b;
+  background-color: #302b2bee;
   z-index: 999;
 }
 
@@ -69,10 +69,10 @@ html {
   margin: 0;
   top: 10vh;
   right: 0;
-  background-color: #594f4fe6;
+  background-color: #302b2bee;
   position: absolute;
   width: 50%;
-  height: 40vh;
+  height: 50vh;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition: -webkit-transform .5s ease-in;
@@ -93,17 +93,23 @@ html {
 
 .navigation__links {
   list-style: none;
-  padding: 10px;
+  padding: 20px 10px;
 }
 
 .navigation__links-item {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.805);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 14px;
   font-weight: 700;
   opacity: 0;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.navigation__links-item:hover {
+  color: #bf9660;
 }
 
 .navigation__menu--open {
@@ -204,7 +210,7 @@ html {
 .hamburger-inner::after {
   width: 30px;
   height: 3px;
-  background-color: #fff;
+  background-color: #bf9660;
   border-radius: 4px;
   position: absolute;
   -webkit-transition-duration: 0.15s;
