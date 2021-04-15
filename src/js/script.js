@@ -1,4 +1,4 @@
-console.log('siema');
+
 
 const section2 = document.querySelector('.section-two');
 
@@ -42,21 +42,19 @@ section2.addEventListener('click', goUp);
 // hamburger 
 
 const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".navigation__menu");
-const navLinks = document.querySelectorAll(".navigation__links-item");
+const navList = document.querySelector(".nav__list");
+const navLinks = document.querySelectorAll(".nav__link");
 
-console.log(navLinks);
 
 hamburger.addEventListener("click", () => {
 
   hamburger.classList.toggle("js-active");
-  navMenu.classList.toggle('navigation__menu--open');
+  navList.classList.toggle('nav__list--open');
  
 
   navLinks.forEach( (link, index) => {
     
-    link.style.animation = link.style.animation 
-    ? 
+    link.style.animation = link.style.animation ? 
     "" : link.style.animation = `linksFade .5s ease forwards ${index / 5 + .5}s`;
   })
 
