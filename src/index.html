@@ -20,7 +20,7 @@
 <body>
   <div class="container">
 
-    <div class="hero-container">
+    <div class="hero-container" id="home">
 
       <nav class="nav">
         <div class="nav__logo">
@@ -32,19 +32,19 @@
 
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link" href="#">home</a>
+            <a class="nav__link" href="#home">home</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">intro</a>
+            <a class="nav__link" href="#intro" id="introLink">intro</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">feedback</a>
+            <a class="nav__link" href="#feedback">feedback</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">music</a>
+            <a class="nav__link" href="#music">music</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">contact</a>
+            <a class="nav__link" href="#contact">contact</a>
           </li>
         </ul>
 
@@ -56,7 +56,7 @@
 
       </nav>
 
-      <header class="header scroll-top">
+      <header class="header">
         <h1 class="header__heading">
           <span class="header__heading-main">Szymon Rojek</span>
           <span class="header__heading-sub">Guitarist, composer & arranger</span>
@@ -64,7 +64,7 @@
       </header>
     </div>
     <main class="main-container">
-      <section class="intro">
+      <section class="intro" id="intro">
         <article class="intro__passion">
           <div class="intro__passion__text">
             <h2 class="intro__passion__text-heading"><span>great</span> passion</h2>
@@ -100,7 +100,7 @@
         </article>
       </section>
 
-      <section class="feedback-container">
+      <section class="feedback-container" id="feedback">
         <h2 class="feedback__heading"><span>great</span> feedback</h2>
 
         <figure class="feedback">
@@ -161,7 +161,7 @@
       </section>
     </main>
     <footer class="btn-container">
-      <a href="#" class="btn btn-primary section-two">go up</a>
+      <a href="#home" class="btn btn-primary">go up</a>
     </footer>
   </div>
 </body>

@@ -1,6 +1,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *, ::before, ::after {
@@ -219,6 +220,11 @@ html {
 .nav__list--open {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
+}
+
+.nav__list--close {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 @-webkit-keyframes linksFade {

@@ -1,6 +1,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 // check reset selector before pseudoelem
@@ -187,6 +188,10 @@ html {
 
 .nav__list--open {
   transform: translateX(0%);
+}
+
+.nav__list--close {
+  transform: translateX(100%);
 }
 
 @keyframes linksFade {
