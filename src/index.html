@@ -26,7 +26,7 @@
         <div class="navigation__logoContainer">
           <a href="#">
             <img class="navigation__logoImg" src="../src/images/logo.png"
-              alt="my personal logo surname with the guitar pattern">
+              alt="personal logo surname with the guitar pattern">
           </a>
         </div>
 
@@ -41,10 +41,10 @@
             <a class="navigation__link" href="#feedback">feedback</a>
           </li>
           <li class="navigation__item">
-            <a class="navigation__link" href="#">music</a>
+            <a class="navigation__link" href="#music">music</a>
           </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">contact</a>
+          <li class="navigation__item navigation__item--margin">
+            <a class="navigation__link" href="#contact">contact</a>
           </li>
         </ul>
 
@@ -58,17 +58,17 @@
 
       <header class="header">
         <h1 class="header__heading">
-          <span class="header__heading-main">Szymon Rojek</span>
-          <span class="header__heading-sub">Guitarist, composer & arranger</span>
+          <span class="header__mainHeading">Szymon Rojek</span>
+          <span class="header__subHeading">Guitarist, composer & arranger</span>
         </h1>
       </header>
     </div>
     <main class="main-container">
-      <section class="intro" id="intro">
-        <article class="intro__passion">
-          <div class="intro__passion__text">
-            <h2 class="intro__passion__text-heading"><span>great</span> passion</h2>
-            <p class="intro__passion__text-description">
+      <section class="intro-wrapper" id="intro">
+        <article class="article">
+          <div class="article__text">
+            <h2 class="article__heading"><span class="article__special">great</span> passion</h2>
+            <p class="article__paragraph">
               Welcome to my music website. I play classical guitar, which is my greatest passion. I
               fell in
               love with this instrument many years ago. That was also the first time when I heard Baden Powell's and
@@ -78,14 +78,14 @@
               Energetic rhythms of samba and bossa nova captivated me and let me into the musical world of strings.
             </p>
           </div>
-          <img class="intro__passion-img" src="../src/images/min-SR-passion.jpg"
+          <img class="article__img" src="../src/images/min-SR-passion.jpg"
             alt="perspective of the guitar and hands while playing by Szymon Rojek">
         </article>
 
-        <article class="intro__atmosphere">
-          <div class="intro__atmosphere__text">
-            <h2 class="intro__atmosphere__text-heading"><span>great</span> atmosphere</h2>
-            <p class="intro__atmosphere__text-description">Guitar music can create a <em>great
+        <article class="article">
+          <div class="article__text">
+            <h2 class="article__heading"><span class="article__special">great</span> atmosphere</h2>
+            <p class="article__paragraph">Guitar music can create a <em>great
                 atmosphere</em>
               anywhere
               people interact with one another. It has an enormous meaning in the process of creating any kind of
@@ -95,19 +95,19 @@
               as my compositions, which altogether create a romantic and energetic content.
             </p>
           </div>
-          <img class="intro__atmosphere-img" src="../src/images/min-SR-atm.jpg"
+          <img class="article__img article__img--margin" src="../src/images/min-SR-atm.jpg"
             alt="Szymon Rojek on the stage playing concert for the people">
         </article>
       </section>
 
-      <section class="feedback-container" id="feedback">
-        <h2 class="feedback__heading"><span>great</span> feedback</h2>
+      <section class="feedback-wrapper" id="feedback">
+        <h2 class="feedback__heading"><span class="feedback__heading-special">great</span> feedback</h2>
 
         <figure class="feedback">
           <img class="feedback__img" src="../src/images/andrea_valeri.jpg" alt="Andrea Valeri">
-          <div class="feedback__text direction-right">
+          <div class="feedback__text feedback__text--right">
             <blockquote>
-              <p class="feedback__text-description">
+              <p class="feedback__paragraph">
                 Szymon, you are doing absolutely great my Brother. I know there is
                 a
                 wonderful future ahead of You,
@@ -115,8 +115,8 @@
                 rockin' with your music!
               </p>
             </blockquote>
-            <figcaption class="feedback__text-author">
-              <a class="feedback__text-author-link" href="http://www.andreavaleri.com/" rel="noreferrer noopener"
+            <figcaption class="feedback__author">
+              <a class="feedback__author-link" href="http://www.andreavaleri.com/" rel="noreferrer noopener"
                 target="_blank" title="personal website"><em>Andrea
                   Valeri</em></a>
             </figcaption>
@@ -125,16 +125,16 @@
 
         <figure class="feedback">
           <img class="feedback__img" src="../src/images/piotr_krepec.jpg" alt="Piotr Krępeć">
-          <div class="feedback__text direction-left">
+          <div class="feedback__text feedback__text--left">
             <blockquote>
-              <p class="feedback__text-description">
+              <p class="feedback__paragraph">
                 Szymon Rojek is an outstanding guitarist filled with enormous sensitivity and music taste. His music
                 compositions touch a listener, and bring in a good mood.
               </p>
             </blockquote>
-            <figcaption class="feedback__text-author">
-              <a class="feedback__text-author-link" href="https://piotrkrepec.com/" rel="noreferrer noopener"
-                target="_blank" title="personal website"><em>Piotr
+            <figcaption class="feedback__author">
+              <a class="feedback__author-link" href="https://piotrkrepec.com/" rel="noreferrer noopener" target="_blank"
+                title="personal website"><em>Piotr
                   Krępeć</em></a>
             </figcaption>
           </div>
@@ -142,26 +142,27 @@
 
         <figure class="feedback">
           <img class="feedback__img" src="../src/images/filip_fiebiger.jpg" alt="Filip Fiebiger">
-          <div class="feedback__text direction-right">
+          <div class="feedback__text feedback__text--right">
             <blockquote>
-              <p class="feedback__text-description">
+              <p class="feedback__paragraph">
                 I notice a lot of passion and naturalness in Rojek's performance. He
                 has mastered classical guitar and he perfectly finds himself in popular music: jazz, swing and Latin
                 America
                 music.
               </p>
             </blockquote>
-            <figcaption class="feedback__text-author">
-              <a class="feedback__text-author-link" href="http://filipfiebiger.pl/" rel="noreferrer noopener"
-                target="_blank" title="personal website"><em>Filip
+            <figcaption class="feedback__author">
+              <a class="feedback__author-link" href="http://filipfiebiger.pl/" rel="noreferrer noopener" target="_blank"
+                title="personal website"><em>Filip
                   Fiebiger</em></a>
             </figcaption>
           </div>
         </figure>
+        </article>
       </section>
     </main>
-    <footer class="btn-container">
-      <a href="#home" class="btn btn-primary">go up</a>
+    <footer class="footer-wrapper">
+      <a href="#home" class="button button--primary">go up</a>
     </footer>
   </div>
 </body>
