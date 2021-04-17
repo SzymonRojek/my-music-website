@@ -3,23 +3,26 @@
 
 // navigation slide and links fade animation
 
-const navHamburger = document.querySelector(".nav__hamburger");
-const navList = document.querySelector(".nav__list");
-const navLinks = document.querySelectorAll(".nav__link");
+const navHamburger = document.querySelector(".navigation__button");
+const navList = document.querySelector(".navigation__list");
+const navLinks = document.querySelectorAll(".navigation__link");
+
 
 function fadeLinks() {
   navLinks.forEach( (link, index) => {
-
-      link.style.animation = link.style.animation ? 
-      "" : link.style.animation = `linksFade .5s ease forwards ${index / 5 + .5}s`;
-
+    const animationLink = `linksFade .5s ease forwards ${index / 5 + .5}s`;
+      if(window.innerWidth <= 767 && !link.style.animation) {
+        link.style.animation = animationLink;
+      } else {
+        link.style.animation = '';
+      }
   })
 }
 
 // hamburger animation and open nav on click with links fading 
 navHamburger.addEventListener("click", () => {
   navHamburger.classList.toggle("js-active");
-  navList.classList.toggle('nav__list--open');
+  navList.classList.toggle('navigation__list--open');
   fadeLinks();
 
   // change the state true or false
@@ -33,11 +36,13 @@ navHamburger.addEventListener("click", () => {
 
 // links => hide the nav bar when a link is clicked 
 
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navList.classList.remove('nav__list--open');
-    navHamburger.classList.remove('js-active');
-    fadeLinks();
+function resetStates() {
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('nav__list--open');
+      navHamburger.classList.remove('js-active');
+      fadeLinks();
+    })
   })
-})
-
+}
+resetStates();
