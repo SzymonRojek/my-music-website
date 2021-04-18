@@ -1,6 +1,5 @@
 
 
-
 // navigation slide and links fade animation
 
 const navigationSwitcher = document.querySelector(".navigation__button");
@@ -25,7 +24,6 @@ navigationSwitcher.addEventListener("click", () => {
   navigationSwitcher.classList.toggle("js-active");
   navigationList.classList.toggle('navigation__list--open');
   fadeLinks();
-
   // change the state true or false
   if(navigationSwitcher.classList.contains("js-active")) {
     navigationSwitcher.setAttribute("aria-expanded", true);
@@ -40,9 +38,22 @@ navigationListButtonOpen.addEventListener("click", () => {
   if(navigationSwitcher.classList.contains('js-active')) {
     navigationSwitcher.classList.remove('js-active');
   }
-
   fadeLinks();
 })
+
+// links => hide the nav bar when a link is clicked 
+function resetStates() {
+  navigationLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navigationList.classList.remove('navigation__list--open');
+      navigationSwitcher.classList.remove("js-active");
+      fadeLinks();
+    })
+  })
+}
+resetStates();
+
+
 
 navigationListButtonClosed.addEventListener("click", () => {
   navigationList.classList.remove('navigation__list--open');

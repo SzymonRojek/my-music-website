@@ -201,12 +201,11 @@ html {
 .hero-container .navigation__list-buttonClosed {
   position: absolute;
   bottom: 0;
-  right: 20%;
-  margin-bottom: 20px;
+  left: 0;
   height: 40px;
   width: 40px;
   border: 0;
-  background-color: #302b2b80;
+  background-color: rgba(90, 83, 83, 0.233);
   cursor: pointer;
   outline: none;
 }
