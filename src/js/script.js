@@ -7,6 +7,7 @@ const navigationSwitcher = document.querySelector(".navigation__button");
 const navigationList = document.querySelector(".navigation__list");
 const navigationLinks = document.querySelectorAll(".navigation__link");
 const navigationListButtonOpen = document.querySelector(".navigation__list-buttonOpen");
+const navigationListButtonClosed = document.querySelector(".navigation__list-buttonClosed");
 
 
 function fadeLinks() {
@@ -33,21 +34,21 @@ navigationSwitcher.addEventListener("click", () => {
   }
 })
 
-
-// links => hide the nav bar when a link is clicked 
-function resetStates() {
-  navigationLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navList.classList.toggle('navigation__list--open');
-      navHamburger.classList.toggle("js-active");
-      fadeLinks();
-    })
-  })
-}
-resetStates();
-
-
 navigationListButtonOpen.addEventListener("click", () => {
   navigationList.classList.toggle('navigation__list--open');
+
+  if(navigationSwitcher.classList.contains('js-active')) {
+    navigationSwitcher.classList.remove('js-active');
+  }
+
+  fadeLinks();
+})
+
+navigationListButtonClosed.addEventListener("click", () => {
+  navigationList.classList.remove('navigation__list--open');
+
+  if(navigationSwitcher.classList.contains('js-active')) {
+    navigationSwitcher.classList.remove('js-active');
+  }
   fadeLinks();
 })

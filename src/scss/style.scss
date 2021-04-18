@@ -120,7 +120,7 @@ html {
       top: 10vh;
       right: 0;
       width: 60%;
-      height: 50vh;
+      height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center; 
@@ -140,13 +140,14 @@ html {
         left: -30px;
         height: 25px;
         width: 30px;
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
         border: 0;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
         background-color: #302b2bee;
+        cursor: pointer;
         outline: none;
 
         &::after {
@@ -159,8 +160,48 @@ html {
           position: absolute;
         }
       }
-      
-     
+
+      &-buttonClosed {
+        position: absolute;
+        bottom: 0;
+        right: 20%;
+        margin-bottom: 20px;
+        height: 40px;
+        width: 40px;
+        border: 0;
+        background-color:  #302b2b80;
+        cursor: pointer;
+        outline: none;
+       
+        .innerLines {
+          height: 3px;
+          width: 100%;
+          background-color: transparent;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        
+          &::before,
+          &::after {
+            content: '';
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color:  rgb(191, 150, 96);
+          }
+        
+          &::before {
+            transform: rotate(-45deg);
+          }
+        
+          &::after{
+            transform: rotate(45deg);
+          }
+        }
+      }
     }
   
     &__item {
@@ -226,6 +267,14 @@ html {
       }
     
       &__button {
+        display: none;
+      }
+
+      &__list-buttonOpen {
+        display: none;
+      }
+
+      &__list-buttonClosed {
         display: none;
       }
     }
@@ -625,5 +674,9 @@ html {
 
 
 // sprawdz ten hamburger usun div
+
+
+
+
 
 

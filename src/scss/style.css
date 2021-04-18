@@ -138,7 +138,7 @@ html {
   top: 10vh;
   right: 0;
   width: 60%;
-  height: 50vh;
+  height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,8 +171,6 @@ html {
   left: -30px;
   height: 25px;
   width: 30px;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,7 +181,10 @@ html {
       -ms-flex-align: center;
           align-items: center;
   border: 0;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
   background-color: #302b2bee;
+  cursor: pointer;
   outline: none;
 }
 
@@ -195,6 +196,55 @@ html {
   background-color: #bf9660;
   z-index: 1;
   position: absolute;
+}
+
+.hero-container .navigation__list-buttonClosed {
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  margin-bottom: 20px;
+  height: 40px;
+  width: 40px;
+  border: 0;
+  background-color: #302b2b80;
+  cursor: pointer;
+  outline: none;
+}
+
+.hero-container .navigation__list-buttonClosed .innerLines {
+  height: 3px;
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-container .navigation__list-buttonClosed .innerLines::before, .hero-container .navigation__list-buttonClosed .innerLines::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #bf9660;
+}
+
+.hero-container .navigation__list-buttonClosed .innerLines::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.hero-container .navigation__list-buttonClosed .innerLines::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .hero-container .navigation__item {
@@ -276,6 +326,12 @@ html {
     opacity: 1;
   }
   .hero-container .navigation__button {
+    display: none;
+  }
+  .hero-container .navigation__list-buttonOpen {
+    display: none;
+  }
+  .hero-container .navigation__list-buttonClosed {
     display: none;
   }
 }
