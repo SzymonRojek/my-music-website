@@ -208,13 +208,6 @@ html {
   background-color: rgba(90, 83, 83, 0.233);
   cursor: pointer;
   outline: none;
-}
-
-.hero-container .navigation__list-buttonClosed .innerLines {
-  height: 3px;
-  width: 30px;
-  background-color: transparent;
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -224,6 +217,12 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.hero-container .navigation__list-buttonClosed .innerLines {
+  height: 3px;
+  width: 30px;
+  position: relative;
 }
 
 .hero-container .navigation__list-buttonClosed .innerLines::before, .hero-container .navigation__list-buttonClosed .innerLines::after {
