@@ -6,6 +6,7 @@
 const navigationSwitcher = document.querySelector(".navigation__button");
 const navigationList = document.querySelector(".navigation__list");
 const navigationLinks = document.querySelectorAll(".navigation__link");
+const navigationListButtonOpen = document.querySelector(".navigation__list-buttonOpen");
 
 
 function fadeLinks() {
@@ -44,3 +45,9 @@ function resetStates() {
   })
 }
 resetStates();
+
+
+navigationListButtonOpen.addEventListener("click", () => {
+  navigationList.classList.toggle('navigation__list--open');
+  fadeLinks();
+})
