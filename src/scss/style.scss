@@ -152,10 +152,6 @@ html {
       &:nth-of-type(5) a {
         animation-delay: 1.3s;
       }
-
-      &--margin {
-        margin-top: 30px;
-      }
     }
   
     &__link {
@@ -481,6 +477,33 @@ html {
 }   
   
 
+// music section
+
+.heading__secondary {
+  padding: 50px 0 20px 0;
+  font-weight: 200;
+  line-height: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.heading__special {
+  color: rgb(156, 78, 143);
+}
+
+.track {
+ width: 100%;
+ padding: 20px;
+}
+
+@media(min-width: 768px) {
+  .twoTracks {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
   
 /* 
 

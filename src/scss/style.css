@@ -194,10 +194,6 @@ html {
           animation-delay: 1.3s;
 }
 
-.hero-container .navigation__item--margin {
-  margin-top: 30px;
-}
-
 .hero-container .navigation__link {
   color: rgba(255, 255, 255, 0.805);
   text-decoration: none;
@@ -536,6 +532,38 @@ html {
 @media (min-width: 1024px) {
   .feedback-wrapper .feedback__text {
     max-width: 500px;
+  }
+}
+
+.heading__secondary {
+  padding: 50px 0 20px 0;
+  font-weight: 200;
+  line-height: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.heading__special {
+  color: #9c4e8f;
+}
+
+.track {
+  width: 100%;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .twoTracks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
