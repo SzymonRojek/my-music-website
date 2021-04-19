@@ -39,7 +39,6 @@ html {
   }
 
   .navigation {
-    // position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,44 +58,39 @@ html {
       width: 100%;
     }
   
-    &__button {
+    &__hamburgerButton {
       width: 45px;
       height: 45px;
       border: 0;
-      outline: none;
       cursor: pointer;
       background-color: rgba(90, 83, 83, 0.233);
-    }
-     
-    &__hamburgerContainer {
+      position: relative;
       display: flex;
       justify-content: center;
-      align-items: center;
-      top: 10px;
-      left: 0;
-      width: 100%;
-      height: 30px;
-      position: relative;
+
+      &:focus {
+        outline: 2px dotted #302b2bee;
+      }
     }
-    
-    &__middleLine, 
-    &__middleLine::before, 
-    &__middleLine::after {
+
+    &__firstLine, 
+    &__firstLine::before, 
+    &__firstLine::after {
       width: 28px;
       height: 3px;
+      position: absolute;
+      bottom: 12px;
       background-color:  rgb(191, 150, 96);
       border-radius: 4px;
-      position: absolute;
-      // transition-property: transform;
-      transition-duration: 0.15s;
-      transition-timing-function: ease; 
+      transition: transform 0.15 ease; 
     }
     
-    &__middleLine {
+    &__firstLine {
       transition-duration: 0.13s;
       transition-delay: 0.13s;
       transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    
+      
+      // second line
       &::before {
         content: "";
         display: block;
@@ -104,7 +98,8 @@ html {
         left: 0;
         transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
       }
-    
+      
+      // third line
       &::after {
         content: "";
         display: block;
@@ -115,93 +110,47 @@ html {
     }
 
     &__list {
-      position: absolute;
-      margin: 0;
+      position: fixed;
       top: 10vh;
       right: 0;
       width: 60%;
       height: 60vh;
+      margin: 0;
       display: flex;
       flex-direction: column;
       justify-content: center; 
       transform: translateX(100%);
       transition: transform .5s ease-in;
       background-color:  #302b2bee;
-      position: fixed;
       z-index: 10;
 
       &--open {
         transform: translateX(0%);
       }
 
-      &-buttonOpen {
+      &-arrowButton {
         position: fixed;
         position: absolute;
-        left: -30px;
-        height: 25px;
-        width: 30px;
+        left: -23px;
+        height: 50px;
+        width: 23px;
         display: flex;
         justify-content: center;
         align-items: center;
         border: 0;
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
         background-color: #302b2bee;
         cursor: pointer;
-        outline: none;
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px;
+        color: #fff;
+        font-size: 20px;
 
-        &::after {
-          content: '';
-          width: 30%;
-          height: 30%;
-          border-radius: 50%;
-          background-color:  rgb(191, 150, 96);
-          z-index: 1;
-          position: absolute;
+        &:focus {
+          outline: 2px dotted #302b2bee;
         }
-      }
-
-      &-buttonClosed {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 40px;
-        width: 40px;
-        border: 0;
-        background-color: rgba(90, 83, 83, 0.233);
-        cursor: pointer;
-        outline: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
-        .innerLines {
-          height: 3px;
-          width: 30px;
-          position: relative;
-
-          &::before,
-          &::after {
-            content: '';
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color:  rgb(191, 150, 96);
-          }
-        
-          &::before {
-            transform: rotate(-45deg);
-          }
-        
-          &::after{
-            transform: rotate(45deg);
-          }
-        }
-      }
+      }     
     }
-  
+
     &__item {
       list-style: none;
       padding: 20px 10px;
@@ -239,7 +188,6 @@ html {
     }
   }
 
-
   @media(min-width: 768px) {
     .navigation {
       &__list { 
@@ -264,20 +212,15 @@ html {
         opacity: 1;
       }
     
-      &__button {
+      &__hamburgerButton {
         display: none;
       }
 
-      &__list-buttonOpen {
-        display: none;
-      }
-
-      &__list-buttonClosed {
+      &__list-arrowButton {
         display: none;
       }
     }
   }
-
 
   @media(min-width: 1024px) {
     .navigation {
@@ -291,9 +234,8 @@ html {
     }
   }
 }
-
 .js-active {
-	.navigation__middleLine {
+	.navigation__firstLine {
     transform: translate3d(0, -10px, 0) rotate(-45deg);
     transition-delay: 0.22s;
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -328,7 +270,6 @@ html {
     transform: translateX(0px);
   }
 }
-
 
 .header {
   display: flex;
@@ -385,7 +326,7 @@ html {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px 0 24px;
+  padding: 0 30px 0 24px;
 }
 
 
@@ -675,8 +616,10 @@ html {
 
 // sprawdz ten hamburger usun div
 
+// outline 
 
-
+// line-height wartosc 1.5 nie px
+// will change
 
 
 

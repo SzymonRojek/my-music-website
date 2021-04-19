@@ -2,11 +2,10 @@
 
 // navigation slide and links fade animation
 
-const navigationSwitcher = document.querySelector(".navigation__button");
+const switcherNavigationHamburger = document.querySelector(".navigation__hamburgerButton");
+const switcherNavigationButton = document.querySelector(".navigation__list-arrowButton");
 const navigationList = document.querySelector(".navigation__list");
 const navigationLinks = document.querySelectorAll(".navigation__link");
-const navigationListButtonOpen = document.querySelector(".navigation__list-buttonOpen");
-const navigationListButtonClosed = document.querySelector(".navigation__list-buttonClosed");
 
 
 function fadeLinks() {
@@ -20,25 +19,30 @@ function fadeLinks() {
 }
 
 // hamburger animation and open nav on click with links fading 
-navigationSwitcher.addEventListener("click", () => {
-  navigationSwitcher.classList.toggle("js-active");
+switcherNavigationHamburger.addEventListener("click", () => {
+  switcherNavigationHamburger.classList.toggle("js-active");
   navigationList.classList.toggle('navigation__list--open');
   fadeLinks();
   // change the state true or false
-  if(navigationSwitcher.classList.contains("js-active")) {
-    navigationSwitcher.setAttribute("aria-expanded", true);
+  if(switcherNavigationHamburger.classList.contains("js-active")) {
+    switcherNavigationHamburger.setAttribute("aria-expanded", true);
   } else {
-    navigationSwitcher.setAttribute("aria-expanded", false);
+    switcherNavigationHamburger.setAttribute("aria-expanded", false);
   }
 })
 
-navigationListButtonOpen.addEventListener("click", () => {
+switcherNavigationButton.addEventListener("click", () => {
   navigationList.classList.toggle('navigation__list--open');
 
-  if(navigationSwitcher.classList.contains('js-active')) {
-    navigationSwitcher.classList.remove('js-active');
+  if(switcherNavigationHamburger.classList.contains('js-active')) {
+    switcherNavigationHamburger.classList.remove('js-active');
   }
+
   fadeLinks();
+
+  const arrowRight = '>';
+  const arrowLeft = '<';
+  switcherNavigationButton.innerText = switcherNavigationButton.innerText === arrowRight ? arrowLeft : arrowRight;
 })
 
 // links => hide the nav bar when a link is clicked 
@@ -46,20 +50,9 @@ function resetStates() {
   navigationLinks.forEach(link => {
     link.addEventListener('click', () => {
       navigationList.classList.remove('navigation__list--open');
-      navigationSwitcher.classList.remove("js-active");
+      switcherNavigationHamburger.classList.remove("js-active");
       fadeLinks();
     })
   })
 }
 resetStates();
-
-
-
-navigationListButtonClosed.addEventListener("click", () => {
-  navigationList.classList.remove('navigation__list--open');
-
-  if(navigationSwitcher.classList.contains('js-active')) {
-    navigationSwitcher.classList.remove('js-active');
-  }
-  fadeLinks();
-})
