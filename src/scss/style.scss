@@ -532,94 +532,95 @@ html {
 
 */
 
-.footer-wrapper {
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-bottom: 40px;
-}
 
-.button {
-  // appearance: none;
-  min-width: 100px;
-  border: 1px solid transparent;
-  padding: 14px 20px 10px 20px;
-  font-size: 14px;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: all 0.3s;
-	position: relative;
+  &__button {
+    // appearance: none;
+    min-width: 100px;
+    border: 1px solid transparent;
+    padding: 14px 20px 10px 20px;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    position: relative;
   
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 12;
-    opacity: 0;
-    transition: all .3s;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    transform: scale(0.1, 1);
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    transition: all .3s;
-  }
-
-  &:hover {
-    letter-spacing: 4px;
-    cursor: pointer;
-
     &::before {
-      opacity: 1;
-      transform: scale(1, 1);
-    }
-
-    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 12;
       opacity: 0;
+      transition: all .3s;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+      border-top-style: solid;
+      border-bottom-style: solid;
       transform: scale(0.1, 1);
     }
-  }
-}
-
-
-.button--primary {
-  margin-top: 24px;
-  color: rgb(56, 51, 51);
-
-  &::before {
-    border-top-color: rgba(56, 51, 51, 0.5);
-    border-bottom-color: rgba(56, 51, 51, 0.5);
-  }
   
-  &::after {
-    background-color: rgba(104, 94, 94, 0.1);
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: all .3s;
+    }
+  
+    &:hover {
+      letter-spacing: 4px;
+      cursor: pointer;
+  
+      &::before {
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+  
+      &::after {
+        opacity: 0;
+        transform: scale(0.1, 1);
+      }
+    }
+
+
+    &--darkBorder {
+      margin-top: 24px;
+      color: rgb(56, 51, 51);
+
+      &::before {
+        border-top-color: rgba(56, 51, 51, 0.5);
+        border-bottom-color: rgba(56, 51, 51, 0.5);
+      }
+      
+      &::after {
+        background-color: rgba(104, 94, 94, 0.1);
+      }
+    }
+  }
+
+  &__paragraph {
+    opacity: .5;
+    margin-top: 50px;
   }
 }
 
 
-// sprawdz ten hamburger usun div
-
-// outline 
 
 // line-height wartosc 1.5 nie px
 // will change
-
+// tabindex
 
 

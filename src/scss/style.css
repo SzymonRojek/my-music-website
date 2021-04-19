@@ -609,7 +609,7 @@ html {
   BUTTON 
 
 */
-.footer-wrapper {
+.footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -626,7 +626,7 @@ html {
   margin-bottom: 40px;
 }
 
-.button {
+.footer__button {
   min-width: 100px;
   border: 1px solid transparent;
   padding: 14px 20px 10px 20px;
@@ -640,7 +640,7 @@ html {
   position: relative;
 }
 
-.button::before {
+.footer__button::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -659,7 +659,7 @@ html {
           transform: scale(0.1, 1);
 }
 
-.button::after {
+.footer__button::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -671,34 +671,39 @@ html {
   transition: all .3s;
 }
 
-.button:hover {
+.footer__button:hover {
   letter-spacing: 4px;
   cursor: pointer;
 }
 
-.button:hover::before {
+.footer__button:hover::before {
   opacity: 1;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
 }
 
-.button:hover::after {
+.footer__button:hover::after {
   opacity: 0;
   -webkit-transform: scale(0.1, 1);
           transform: scale(0.1, 1);
 }
 
-.button--primary {
+.footer__button--darkBorder {
   margin-top: 24px;
   color: #383333;
 }
 
-.button--primary::before {
+.footer__button--darkBorder::before {
   border-top-color: rgba(56, 51, 51, 0.5);
   border-bottom-color: rgba(56, 51, 51, 0.5);
 }
 
-.button--primary::after {
+.footer__button--darkBorder::after {
   background-color: rgba(104, 94, 94, 0.1);
+}
+
+.footer__paragraph {
+  opacity: .5;
+  margin-top: 50px;
 }
 /*# sourceMappingURL=style.css.map */
