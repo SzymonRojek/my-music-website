@@ -389,7 +389,8 @@ html {
 }
 
 
-.intro-wrapper {
+.intro-wrapper,
+.music-container {
   .article {
     &__img {
       width: 100%;
@@ -448,7 +449,33 @@ html {
       }
     }
   }
+
+  .track {
+    width: 100%;
+    padding: 20px 0 20px 0;
+
+    &--marginTop {
+      margin-top: 30px;
+    }
+   }
+   
+   @media(min-width: 768px) {
+     .pair-tracks {
+       display:flex;
+       justify-content: center;
+       align-items: center;
+
+       .track {
+        padding: 20px;
+
+        &--marginTop {
+          margin: 0;
+        }
+       }
+     }
+  }
 }
+
 
 .feedback-wrapper {
   .feedback__heading {
@@ -537,7 +564,7 @@ html {
   @media (min-width: 738px) {
     .feedback {
       &__heading {
-        margin-top: 250px;
+        margin-top: 50px;
       }
       &__text {
         max-width: 400px;
@@ -555,34 +582,9 @@ html {
 }   
   
 
-// music section
 
-.heading__secondary {
-  padding: 50px 0 20px 0;
-  font-weight: 200;
-  line-height: 30px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-align: center;
-}
 
-.heading__special {
-  color: rgb(156, 78, 143);
-}
 
-.track {
- width: 100%;
- padding: 20px;
-}
-
-@media(min-width: 768px) {
-  .twoTracks {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-  
 /* 
 
   BUTTON 

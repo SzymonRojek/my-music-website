@@ -465,20 +465,23 @@ html {
   padding: 0 24px 0 24px;
 }
 
-.intro-wrapper .article__img {
+.intro-wrapper .article__img,
+.music-container .article__img {
   width: 100%;
   max-width: 770px;
   z-index: -1;
 }
 
-.intro-wrapper .article__text {
+.intro-wrapper .article__text,
+.music-container .article__text {
   margin: auto;
   max-width: 541px;
   line-height: 25px;
   text-align: center;
 }
 
-.intro-wrapper .article__heading {
+.intro-wrapper .article__heading,
+.music-container .article__heading {
   padding: 50px 0 20px 0;
   font-weight: 200;
   line-height: 30px;
@@ -486,25 +489,30 @@ html {
   text-transform: uppercase;
 }
 
-.intro-wrapper .article__special {
+.intro-wrapper .article__special,
+.music-container .article__special {
   color: #9c4e8f;
 }
 
-.intro-wrapper .article__paragraph {
+.intro-wrapper .article__paragraph,
+.music-container .article__paragraph {
   padding-bottom: 50px;
   opacity: .5;
 }
 
 @media (min-width: 540px) {
-  .intro-wrapper .article {
+  .intro-wrapper .article,
+  .music-container .article {
     position: relative;
   }
-  .intro-wrapper .article__img {
+  .intro-wrapper .article__img,
+  .music-container .article__img {
     display: block;
     margin-top: 120px;
     margin-left: auto;
   }
-  .intro-wrapper .article__text {
+  .intro-wrapper .article__text,
+  .music-container .article__text {
     position: absolute;
     bottom: -200px;
     left: 0;
@@ -512,9 +520,44 @@ html {
     text-align: start;
     background-color: #fff;
   }
-  .intro-wrapper .article__img--margin {
+  .intro-wrapper .article__img--margin,
+  .music-container .article__img--margin {
     margin: 180px 0 200px 0;
     margin-left: auto;
+  }
+}
+
+.intro-wrapper .track,
+.music-container .track {
+  width: 100%;
+  padding: 20px 0 20px 0;
+}
+
+.intro-wrapper .track--marginTop,
+.music-container .track--marginTop {
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .intro-wrapper .pair-tracks,
+  .music-container .pair-tracks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .intro-wrapper .pair-tracks .track,
+  .music-container .pair-tracks .track {
+    padding: 20px;
+  }
+  .intro-wrapper .pair-tracks .track--marginTop,
+  .music-container .pair-tracks .track--marginTop {
+    margin: 0;
   }
 }
 
@@ -610,7 +653,7 @@ html {
 
 @media (min-width: 738px) {
   .feedback-wrapper .feedback__heading {
-    margin-top: 250px;
+    margin-top: 50px;
   }
   .feedback-wrapper .feedback__text {
     max-width: 400px;
@@ -620,38 +663,6 @@ html {
 @media (min-width: 1024px) {
   .feedback-wrapper .feedback__text {
     max-width: 500px;
-  }
-}
-
-.heading__secondary {
-  padding: 50px 0 20px 0;
-  font-weight: 200;
-  line-height: 30px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.heading__special {
-  color: #9c4e8f;
-}
-
-.track {
-  width: 100%;
-  padding: 20px;
-}
-
-@media (min-width: 768px) {
-  .twoTracks {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
 }
 
