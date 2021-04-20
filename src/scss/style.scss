@@ -108,14 +108,15 @@ html {
       top: 10vh;
       right: 0;
       width: 60%;
-      height: 60vh;
+      height: 80vh;
       margin: 0;
       display: flex;
       flex-direction: column;
       justify-content: center; 
       transform: translateX(100%);
       transition: transform .5s ease-in;
-      background-color:  #302b2bee;
+      // background-color:  #302b2bee;
+      background-color:  #302b2bfb;
       z-index: 10;
 
       &--open {
@@ -125,7 +126,8 @@ html {
       &-arrowButton {
         position: fixed;
         position: absolute;
-        left: -23px;
+        top: 40%;
+        right: 100%;
         height: 50px;
         width: 23px;
         display: flex;
@@ -138,7 +140,9 @@ html {
         user-select: none;
         font-size: 20px;
         color:  rgb(191, 150, 96);
-        background-color: #302b2bee;
+        // background-color: #302b2bee;
+        background-color:  #302b2bfb;
+        text-align: left;
 
         &:focus {
           outline: 2px dotted #302b2bee;
