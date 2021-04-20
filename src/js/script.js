@@ -1,7 +1,5 @@
 
 
-// navigation slide and links fade animation
-
 const switcherNavigationHamburger = document.querySelector(".navigation__hamburgerButton");
 const switcherNavigationButton = document.querySelector(".navigation__list-arrowButton");
 const navigationList = document.querySelector(".navigation__list");
@@ -23,19 +21,26 @@ switcherNavigationHamburger.addEventListener("click", () => {
   switcherNavigationHamburger.classList.toggle("js-active");
   navigationList.classList.toggle('navigation__list--open');
   fadeLinks();
-  // change the state true or false
-  if(switcherNavigationHamburger.classList.contains("js-active")) {
+
+  if(navigationList.classList.contains("navigation__list--open")) {
     switcherNavigationHamburger.setAttribute("aria-expanded", true);
   } else {
     switcherNavigationHamburger.setAttribute("aria-expanded", false);
   }
 })
 
+
 switcherNavigationButton.addEventListener("click", () => {
   navigationList.classList.toggle('navigation__list--open');
 
   if(switcherNavigationHamburger.classList.contains('js-active')) {
     switcherNavigationHamburger.classList.remove('js-active');
+  }
+
+  if(navigationList.classList.contains("navigation__list--open")) {
+    switcherNavigationButton.setAttribute("aria-expanded", true);
+  } else {
+    switcherNavigationButton.setAttribute("aria-expanded", false);
   }
 
   fadeLinks();

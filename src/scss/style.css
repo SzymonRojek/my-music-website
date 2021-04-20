@@ -10,11 +10,6 @@ html {
   font-family: "Josefin Sans", "Arial", sans-serif;
 }
 
-/* 
-
-  HERO CONTENT
-
-*/
 .hero-container {
   min-height: 100vh;
   background-image: url(../images/min-sr1.jpg);
@@ -604,11 +599,6 @@ html {
   }
 }
 
-/* 
-
-  BUTTON 
-
-*/
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -627,9 +617,9 @@ html {
 }
 
 .footer__button {
-  min-width: 100px;
+  min-width: 50px;
   border: 1px solid transparent;
-  padding: 14px 20px 10px 20px;
+  padding: 14px 10px 10px 10px;
   font-size: 14px;
   text-align: center;
   text-transform: uppercase;
@@ -638,6 +628,9 @@ html {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   position: relative;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
 }
 
 .footer__button::before {
