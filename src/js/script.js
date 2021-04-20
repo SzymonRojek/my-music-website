@@ -17,18 +17,23 @@ function fadeLinks() {
 }
 
 // hamburger animation and open nav on click with links fading 
-switcherNavigationHamburger.addEventListener("click", () => {
+switcherNavigationHamburger.addEventListener("click", (e) => {
   switcherNavigationHamburger.classList.toggle("js-active");
   navigationList.classList.toggle('navigation__list--open');
   fadeLinks();
 
   if(navigationList.classList.contains("navigation__list--open")) {
     switcherNavigationHamburger.setAttribute("aria-expanded", true);
+
   } else {
     switcherNavigationHamburger.setAttribute("aria-expanded", false);
   }
-})
 
+  if(switcherNavigationHamburger.getAttribute('aria-expanded') === true) {
+    switcherNavigationHamburger.classList.remove('js-active')
+  }
+
+})
 
 switcherNavigationButton.addEventListener("click", () => {
   navigationList.classList.toggle('navigation__list--open');
@@ -43,6 +48,7 @@ switcherNavigationButton.addEventListener("click", () => {
     switcherNavigationButton.setAttribute("aria-expanded", false);
   }
 
+ 
   fadeLinks();
 
   const arrowRight = '>';

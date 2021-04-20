@@ -172,6 +172,10 @@ html {
   cursor: pointer;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-size: 20px;
   color: #bf9660;
   background-color: #302b2bee;
@@ -434,8 +438,14 @@ html {
 .intro-wrapper .article__paragraph,
 .music-container .article__paragraph,
 .feedback-wrapper .article__paragraph {
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   opacity: .5;
+}
+
+.intro-wrapper .article__paragraph--marginBottom,
+.music-container .article__paragraph--marginBottom,
+.feedback-wrapper .article__paragraph--marginBottom {
+  margin-bottom: 50px;
 }
 
 @media (min-width: 540px) {
@@ -506,19 +516,6 @@ html {
   .feedback-wrapper .pair-tracks .track--marginTop {
     margin: 0;
   }
-}
-
-.feedback-wrapper .feedback__heading {
-  padding: 20px 0 50px 0;
-  font-weight: 200;
-  line-height: 30px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.feedback-wrapper .feedback__heading-special {
-  color: #9c4e8f;
 }
 
 .feedback-wrapper .feedback {
@@ -615,15 +612,14 @@ html {
 
 .footer {
   max-width: 1200px;
-  margin-top: 70px;
-  margin: auto;
+  margin: 70px auto 0 auto;
   padding: 30px 30px 30px 24px;
   text-align: center;
   position: relative;
   background-color: #302b2bee;
 }
 
-.footer__arrowUp {
+.footer__gg-arrow-up {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -640,13 +636,31 @@ html {
   text-decoration: none;
   border-radius: 100%;
   background-color: rgba(90, 83, 83, 0.233);
-  bottom: 10px;
-  right: 20px;
   position: absolute;
+  bottom: 20px;
+  right: 20px;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  cursor: pointer;
+}
+
+.footer__gg-arrow-up:hover {
+  color: #302b2bee;
+  background-color: #bf9660;
 }
 
 .footer__paragraph {
   opacity: .7;
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  .footer__arrowUp {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    right: 50px;
+    bottom: 30px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
