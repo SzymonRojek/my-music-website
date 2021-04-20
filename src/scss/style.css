@@ -616,83 +616,28 @@ html {
   margin-bottom: 40px;
 }
 
-.footer__button {
-  min-width: 50px;
+.footer__arrowUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 23px;
+  height: 50px;
   border: 1px solid transparent;
-  padding: 14px 10px 10px 10px;
-  font-size: 14px;
-  text-align: center;
-  text-transform: uppercase;
+  font-size: 16px;
+  color: #bf9660;
   text-decoration: none;
-  letter-spacing: 1px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  position: relative;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  background-color: #302b2b34;
   position: fixed;
   bottom: 20px;
   right: 0;
-}
-
-.footer__button::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 12;
-  opacity: 0;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  -webkit-transform: scale(0.1, 1);
-          transform: scale(0.1, 1);
-}
-
-.footer__button::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-.footer__button:hover {
-  letter-spacing: 4px;
-  cursor: pointer;
-}
-
-.footer__button:hover::before {
-  opacity: 1;
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-}
-
-.footer__button:hover::after {
-  opacity: 0;
-  -webkit-transform: scale(0.1, 1);
-          transform: scale(0.1, 1);
-}
-
-.footer__button--darkBorder {
-  margin-top: 24px;
-  color: #383333;
-}
-
-.footer__button--darkBorder::before {
-  border-top-color: rgba(56, 51, 51, 0.5);
-  border-bottom-color: rgba(56, 51, 51, 0.5);
-}
-
-.footer__button--darkBorder::after {
-  background-color: rgba(104, 94, 94, 0.1);
 }
 
 .footer__paragraph {
