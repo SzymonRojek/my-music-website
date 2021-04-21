@@ -57,7 +57,6 @@
         navigationList.classList.remove('navigation__list--open');
         navigationHamburgerButton.classList.remove("js-active");
         fadeLinks();
-        console.log('siema');
       })
     })
   }
