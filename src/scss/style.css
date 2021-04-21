@@ -193,7 +193,7 @@ html {
   outline: 2px dotted #302b2bee;
 }
 
-.hero-container .navigation__list-arrowButton--back {
+.hero-container .navigation__list-arrowButton--active {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   color: #bf9660;
@@ -246,6 +246,10 @@ html {
 }
 
 @media (min-width: 768px) {
+  .hero-container .navigation {
+    position: fixed;
+    border-bottom: 2px solid #bf9660;
+  }
   .hero-container .navigation__list {
     top: 0;
     height: 10vh;
@@ -630,6 +634,7 @@ html {
   padding: 30px 30px 30px 24px;
   text-align: center;
   background-color: #302b2bee;
+  position: relative;
 }
 
 .footer__gg-arrow-up {
@@ -670,10 +675,11 @@ html {
 }
 
 @media (min-width: 768px) {
-  .footer__arrowUp {
+  .footer__gg-arrow-up {
     width: 50px;
     height: 50px;
     font-size: 18px;
+    position: absolute;
     right: 50px;
     bottom: 30px;
   }

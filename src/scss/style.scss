@@ -195,6 +195,9 @@ html {
 
   @media(min-width: 768px) {
     .navigation {
+      position: fixed;
+      border-bottom: 2px solid  rgb(191, 150, 96);
+
       &__list { 
         top: 0;
         height: 10vh;
@@ -523,6 +526,7 @@ html {
   padding: 30px 30px 30px 24px;
   text-align: center;
   background-color: #302b2bee;
+  position: relative;
 
   &__gg-arrow-up {
     display: flex;
@@ -556,10 +560,11 @@ html {
   }
 
   @media(min-width: 768px) {
-    &__arrowUp {
+    &__gg-arrow-up {
       width: 50px;
       height: 50px;
       font-size: 18px;
+      position: absolute;
       right: 50px;
       bottom: 30px;
     }
@@ -567,8 +572,5 @@ html {
 }
 
 
-
 // line-height wartosc 1.5 nie px
 // will change
-// tabindex
-// feedback <- more margin top
