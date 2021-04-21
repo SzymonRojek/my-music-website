@@ -3,9 +3,10 @@
 (() => {
 
   "use strict"
-
-  const switcherNavigationHamburger = document.querySelector(".navigation__hamburgerButton");
-  const switcherNavigationButton = document.querySelector(".navigation__list-arrowButton");
+  
+  console.log('siema');
+  const navigationHamburgerButton = document.querySelector(".navigation__hamburgerButton");
+  const navigationArrowButton = document.querySelector(".navigation__list-arrowButton");
   const navigationList = document.querySelector(".navigation__list");
   const navigationLinks = document.querySelectorAll(".navigation__link");
   const arrowRight = '>';
@@ -14,7 +15,7 @@
 
   function fadeLinks() {
     navigationLinks.forEach( (link, index) => {
-      if(window.innerWidth <= 767 && !link.classList.contains('linksFade')) {
+      if (window.innerWidth <= 767 && !link.classList.contains('linksFade')) {
         link.classList.add('linksFade');
       } else {
         link.classList.remove('linksFade');
@@ -23,33 +24,33 @@
   }
 
   // hamburger animation and open nav on click with links fading 
-  switcherNavigationHamburger.addEventListener("click", () => {
-    switcherNavigationHamburger.classList.toggle("js-active");
+  navigationHamburgerButton.addEventListener("click", () => {
+    navigationHamburgerButton.classList.toggle("js-active");
     navigationList.classList.toggle('navigation__list--open');
     fadeLinks();
 
-    if(navigationList.classList.contains("navigation__list--open")) {
-      switcherNavigationHamburger.setAttribute("aria-expanded", true);
+    if (navigationList.classList.contains("navigation__list--open")) {
+      navigationHamburgerButton.setAttribute("aria-expanded", true);
     } else {
-      switcherNavigationHamburger.setAttribute("aria-expanded", false);
+      navigationHamburgerButton.setAttribute("aria-expanded", false);
     }
   })
 
-  switcherNavigationButton.addEventListener("click", () => {
+  navigationArrowButton.addEventListener("click", () => {
     navigationList.classList.toggle('navigation__list--open');
 
-    if(switcherNavigationHamburger.classList.contains('js-active')) {
-      switcherNavigationHamburger.classList.remove('js-active');
+    if (navigationHamburgerButton.classList.contains('js-active')) {
+      navigationHamburgerButton.classList.remove('js-active');
     }
 
-    if(navigationList.classList.contains("navigation__list--open")) {
-      switcherNavigationButton.setAttribute("aria-expanded", true);
+    if (navigationList.classList.contains("navigation__list--open")) {
+      navigationArrowButton.setAttribute("aria-expanded", true);
     } else {
-      switcherNavigationButton.setAttribute("aria-expanded", false);
+      navigationArrowButton.setAttribute("aria-expanded", false);
     }
 
     fadeLinks();
-    switcherNavigationButton.innerText = switcherNavigationButton.innerText === arrowRight ? arrowLeft : arrowRight;
+    navigationArrowButton.innerText = navigationArrowButton.innerText === arrowRight ? arrowLeft : arrowRight;
   })
 
   // links => hide the nav bar when a link is clicked 
@@ -57,11 +58,21 @@
     navigationLinks.forEach(link => {
       link.addEventListener('click', () => {
         navigationList.classList.remove('navigation__list--open');
-        switcherNavigationHamburger.classList.remove("js-active");
+        navigationHamburgerButton.classList.remove("js-active");
         fadeLinks();
+        console.log('siema');
       })
     })
   }
   resetStates();
+ 
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 200) {
+      navigationArrowButton.classList.add('navigation__list-arrowButton--back');
+    } else {
+        navigationArrowButton.classList.remove('navigation__list-arrowButton--back');
+    } 
+  })
 
+  
 })();

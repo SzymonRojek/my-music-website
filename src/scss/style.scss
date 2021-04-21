@@ -120,7 +120,7 @@ html {
       z-index: 10;
 
       &--open {
-        transform: translateX(0%);
+        transform: translateX(0);
       }
 
       &-arrowButton {
@@ -143,9 +143,15 @@ html {
         // background-color: #302b2bee;
         background-color:  #302b2bfb;
         text-align: left;
+        transform: translateX(100%);
+        transition: transform .5s ease-in;
 
         &:focus {
           outline: 2px dotted #302b2bee;
+        }
+
+        &--back {
+          transform: translateX(0);
         }
       }     
     }
@@ -516,7 +522,6 @@ html {
   margin: 70px auto 0 auto;
   padding: 30px 30px 30px 24px;
   text-align: center;
-  position: relative;
   background-color: #302b2bee;
 
   &__gg-arrow-up {
@@ -525,17 +530,18 @@ html {
     align-items: center;
     width: 40px;
     height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     font-size: 16px;
     color:  rgb(191, 150, 96);
+    box-shadow: 0 0 5px rgba(48, 47, 47, 0.25);
     text-decoration: none;
     border-radius: 100%;
     background-color: rgba(90, 83, 83, 0.233);
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    transition: all .3s ease-in;
     cursor: pointer;
-
+    transition: all .3s ease-in;
+ 
     &:hover {
       color: #302b2bee;
       background-color:rgb(191, 150, 96);
@@ -566,4 +572,3 @@ html {
 // will change
 // tabindex
 // feedback <- more margin top
-

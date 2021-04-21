@@ -149,8 +149,8 @@ html {
 }
 
 .hero-container .navigation__list--open {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .hero-container .navigation__list-arrowButton {
@@ -181,10 +181,21 @@ html {
   color: #bf9660;
   background-color: #302b2bfb;
   text-align: left;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform .5s ease-in;
+  transition: -webkit-transform .5s ease-in;
+  transition: transform .5s ease-in;
+  transition: transform .5s ease-in, -webkit-transform .5s ease-in;
 }
 
 .hero-container .navigation__list-arrowButton:focus {
   outline: 2px dotted #302b2bee;
+}
+
+.hero-container .navigation__list-arrowButton--back {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .hero-container .navigation__item {
@@ -617,7 +628,6 @@ html {
   margin: 70px auto 0 auto;
   padding: 30px 30px 30px 24px;
   text-align: center;
-  position: relative;
   background-color: #302b2bee;
 }
 
@@ -633,17 +643,19 @@ html {
           align-items: center;
   width: 40px;
   height: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   font-size: 16px;
   color: #bf9660;
+  -webkit-box-shadow: 0 0 5px rgba(48, 47, 47, 0.25);
+          box-shadow: 0 0 5px rgba(48, 47, 47, 0.25);
   text-decoration: none;
   border-radius: 100%;
   background-color: rgba(90, 83, 83, 0.233);
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  cursor: pointer;
   -webkit-transition: all .3s ease-in;
   transition: all .3s ease-in;
-  cursor: pointer;
 }
 
 .footer__gg-arrow-up:hover {
