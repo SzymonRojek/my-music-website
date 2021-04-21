@@ -178,8 +178,8 @@ html {
       -ms-user-select: none;
           user-select: none;
   font-size: 20px;
-  color: #bf9660;
-  background-color: #302b2bfb;
+  color: transparent;
+  background-color: #302b2b;
   text-align: left;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -196,6 +196,7 @@ html {
 .hero-container .navigation__list-arrowButton--back {
   -webkit-transform: translateX(0);
           transform: translateX(0);
+  color: #bf9660;
 }
 
 .hero-container .navigation__item {
