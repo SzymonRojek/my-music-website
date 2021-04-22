@@ -9,10 +9,7 @@ html {
   font-family: "Josefin Sans", "Arial", sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-
-
-body {
+.body {
   transition: background 0.2s linear;
 }
 
@@ -545,7 +542,7 @@ body {
   margin: 70px auto 0 auto;
   padding: 30px 30px 30px 24px;
   text-align: center;
-  // background-color: #302b2bee;
+  background-color: #302b2bee;
   position: relative;
 
   &__gg-arrow-up {
@@ -654,10 +651,12 @@ body {
     opacity: .7;
   }
 
-  .navigation__list,
-  .navigation__link,
-  .navigation__list-arrowButton {
-    background-color: rgb(235, 234, 234);
-    color: #2c2323;
-  }
+  // @media(max-width: 768px) {
+  //   .navigation__list,
+  //   .navigation__link,
+  //   .navigation__list-arrowButton {
+  //     background-color: rgb(235, 234, 234);
+  //     color: #2c2323;
+  //   }
+  // }
 }

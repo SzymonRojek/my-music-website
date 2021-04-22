@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -11,7 +10,7 @@ html {
   font-family: "Josefin Sans", "Arial", sans-serif;
 }
 
-body {
+.body {
   -webkit-transition: background 0.2s linear;
   transition: background 0.2s linear;
 }
@@ -651,6 +650,7 @@ body {
   margin: 70px auto 0 auto;
   padding: 30px 30px 30px 24px;
   text-align: center;
+  background-color: #302b2bee;
   position: relative;
 }
 
@@ -769,12 +769,5 @@ body {
 .dark .article__text > * {
   color: #fff;
   opacity: .7;
-}
-
-.dark .navigation__list,
-.dark .navigation__link,
-.dark .navigation__list-arrowButton {
-  background-color: #ebeaea;
-  color: #2c2323;
 }
 /*# sourceMappingURL=style.css.map */

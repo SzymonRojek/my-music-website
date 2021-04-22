@@ -73,14 +73,12 @@
 
 
 
-  const chk = document.getElementById('chk');
-  const mainContainer = document.querySelector('.main-container');
+  const modeSwitcher = document.getElementById('mode-switcher');
 
-  chk.addEventListener('change', () => {
+  modeSwitcher.addEventListener('change', () => {
     document.body.classList.toggle('dark');
-    // mainContainer.classList.toggle('dark')
   });
 
-
+ // I want to add session storage, scheme colors preferences
 
 })();
