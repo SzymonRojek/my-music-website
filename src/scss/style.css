@@ -10,6 +10,20 @@ html {
   font-family: "Josefin Sans", "Arial", sans-serif;
 }
 
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
 .hero-container {
   min-height: 100vh;
   background-image: url(../images/min-sr1.jpg);
@@ -704,6 +718,11 @@ html {
   opacity: 0;
 }
 
+.checkbox--active:checked + .label .circle {
+  -webkit-transform: translateX(22px);
+          transform: translateX(22px);
+}
+
 .label {
   background-color: white;
   border-radius: 50px;
@@ -721,12 +740,12 @@ html {
   position: relative;
   height: 26px;
   width: 50px;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
   border: 1px solid black;
 }
 
-.label .ball {
+.label .circle {
   background-color: rgba(191, 150, 96, 0.39);
   border-radius: 50%;
   position: absolute;
@@ -741,11 +760,6 @@ html {
   transition: transform 0.2s linear;
   transition: transform 0.2s linear, -webkit-transform 0.2s linear;
   border: 1px solid black;
-}
-
-.checkbox:checked + .label .ball {
-  -webkit-transform: translateX(22px);
-          transform: translateX(22px);
 }
 
 .dark {

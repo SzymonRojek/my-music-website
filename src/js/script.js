@@ -72,13 +72,23 @@
 
 
 
+ // mode switcher functionality:
+  const modeSwitcher = document.querySelector('#mode-switcher');
+  const body = document.querySelector( 'body' ).classList;
+ 
+  // check user preferences scheme color and set to dark or light
+  const prefersDarkMode = window.matchMedia( '(prefers-color-scheme: dark)' ).matches;
+  prefersDarkMode ? body.add('dark') : body.remove('dark');
+  if (body.contains('dark')) {
+    modeSwitcher.checked = true;
+    modeSwitcher.classList.add('checkbox--active');
+  }
 
-  const modeSwitcher = document.getElementById('mode-switcher');
-
-  modeSwitcher.addEventListener('change', () => {
-    document.body.classList.toggle('dark');
-  });
-
- // I want to add session storage, scheme colors preferences
+ modeSwitcher.addEventListener('click', () => {
+  const boolean = document.querySelector('#mode-switcher:checked') !== null;
+  boolean ? body.add('dark') : body.remove('dark');
+ })
 
 })();
+
+// next plan is add the session storage
