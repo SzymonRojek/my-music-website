@@ -9,12 +9,6 @@ html {
   font-family: "Josefin Sans", "Arial", sans-serif;
 }
 
-.body {
-  transition: background 0.2s linear;
-}
-
-
-
 .hero-container {
   min-height: 100vh;
   background-image: url(../images/min-sr1.jpg);
@@ -343,6 +337,11 @@ html {
 }
 
 @media(min-width: 768px) {
+  .body,
+  .article__text  {
+    transition: background .2s linear;
+  }
+
   .main-container {
     position: relative;
     bottom: 80px;
@@ -350,8 +349,6 @@ html {
     background-color: #fff;
   }
 }
-
-
 
 .intro-wrapper,
 .music-container,
@@ -368,7 +365,7 @@ html {
       max-width: 541px;
       line-height: 25px;
       text-align: center;
-      transition: background 0.2s linear;
+      // transition: background 0.2s linear;
     }
 
     &__heading {
@@ -377,7 +374,6 @@ html {
       line-height: 30px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      // text-align: center;
     }
 
     &__special {
@@ -651,12 +647,12 @@ html {
     opacity: .7;
   }
 
-  // @media(max-width: 768px) {
-  //   .navigation__list,
-  //   .navigation__link,
-  //   .navigation__list-arrowButton {
-  //     background-color: rgb(235, 234, 234);
-  //     color: #2c2323;
-  //   }
-  // }
+  @media(max-width: 768px) {
+    .navigation__list,
+    .navigation__link,
+    .navigation__list-arrowButton {
+      background-color: rgb(235, 234, 234);
+      color: #2c2323;
+    }
+  }
 }
