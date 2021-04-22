@@ -71,4 +71,16 @@
   })
 
 
+
+
+  const chk = document.getElementById('chk');
+  const mainContainer = document.querySelector('.main-container');
+
+  chk.addEventListener('change', () => {
+    document.body.classList.toggle('dark');
+    // mainContainer.classList.toggle('dark')
+  });
+
+
+
 })();

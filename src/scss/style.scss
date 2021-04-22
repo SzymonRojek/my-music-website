@@ -10,6 +10,14 @@ html {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+body {
+  transition: background 0.2s linear;
+}
+
+
+
 .hero-container {
   min-height: 100vh;
   background-image: url(../images/min-sr1.jpg);
@@ -195,7 +203,6 @@ html {
 
   @media(min-width: 768px) {
     .navigation {
-      position: fixed;
       border-bottom: 2px solid  rgb(191, 150, 96);
 
       &__list { 
@@ -335,7 +342,19 @@ html {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px 0 24px;
+  transition: background 0.2s linear;
 }
+
+@media(min-width: 768px) {
+  .main-container {
+    position: relative;
+    bottom: 80px;
+    z-index: 1;
+    background-color: #fff;
+  }
+}
+
+
 
 .intro-wrapper,
 .music-container,
@@ -352,6 +371,7 @@ html {
       max-width: 541px;
       line-height: 25px;
       text-align: center;
+      transition: background 0.2s linear;
     }
 
     &__heading {
@@ -525,7 +545,7 @@ html {
   margin: 70px auto 0 auto;
   padding: 30px 30px 30px 24px;
   text-align: center;
-  background-color: #302b2bee;
+  // background-color: #302b2bee;
   position: relative;
 
   &__gg-arrow-up {
@@ -578,43 +598,7 @@ html {
 
 .checkbox {
 	opacity: 0;
-	position: absolute;
-  
 }
-
-// .label {
-// 	background-color: white;
-// 	border-radius: 50px;
-// 	cursor: pointer;
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: space-between;
-// 	padding: 5px;
-// 	position: relative;
-// 	height: 26px;
-// 	width: 50px;
-// 	transform: scale(1.5);
-//   border: 1px solid black;
-//   margin-top: 20px;
-// }
-
-// .label .ball {
-// 	background-color: rgba(191, 150, 96, 0.39);
-// 	border-radius: 50%;
-// 	position: absolute;
-//   top: 1;
-// 	left: 2px;
-// 	height: 22px;
-// 	width: 22px;
-// 	transform: translateX(0px);
-// 	transition: transform 0.2s linear;
-//   border: 1px solid black;
-// }
-
-// .checkbox:checked + .label .ball {
-// 	transform: translateX(22px);
-// }
-
 
 .label {
 	background-color: white;
@@ -629,7 +613,7 @@ html {
 	width: 50px;
 	transform: scale(1.5);
   border: 1px solid black;
-  margin-top: 20px;
+  // margin-top: 20px;
 }
 
 .label .ball {
@@ -647,4 +631,31 @@ html {
 
 .checkbox:checked + .label .ball {
 	transform: translateX(22px);
+}
+
+// change bacground-color and color when dark mode is one
+.dark {
+  background-color: #2c2323;
+
+  .main-container {
+    background-color: #2c2323;
+  }
+
+  .article > * {
+    background-color: #2c2323; 
+  }
+
+  .article__heading > * {
+      color: rgb(191, 150, 96);
+  }
+
+  .article__text > * {
+    color: #fff;
+    opacity: .7;
+  }
+
+  .navigation__list-arrowButton {
+    background-color: #fff;
+    color: #2c2323;
+  }
 }

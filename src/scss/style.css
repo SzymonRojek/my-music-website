@@ -11,6 +11,11 @@ html {
   font-family: "Josefin Sans", "Arial", sans-serif;
 }
 
+body {
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+}
+
 .hero-container {
   min-height: 100vh;
   background-image: url(../images/min-sr1.jpg);
@@ -248,7 +253,6 @@ html {
 
 @media (min-width: 768px) {
   .hero-container .navigation {
-    position: fixed;
     border-bottom: 2px solid #bf9660;
   }
   .hero-container .navigation__list {
@@ -419,6 +423,17 @@ html {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px 0 24px;
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    position: relative;
+    bottom: 80px;
+    z-index: 1;
+    background-color: #fff;
+  }
 }
 
 .intro-wrapper .article__img,
@@ -436,6 +451,8 @@ html {
   max-width: 541px;
   line-height: 25px;
   text-align: center;
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
 }
 
 .intro-wrapper .article__heading,
@@ -634,7 +651,6 @@ html {
   margin: 70px auto 0 auto;
   padding: 30px 30px 30px 24px;
   text-align: center;
-  background-color: #302b2bee;
   position: relative;
 }
 
@@ -688,7 +704,6 @@ html {
 
 .checkbox {
   opacity: 0;
-  position: absolute;
 }
 
 .label {
@@ -711,7 +726,6 @@ html {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
   border: 1px solid black;
-  margin-top: 20px;
 }
 
 .label .ball {
@@ -734,5 +748,31 @@ html {
 .checkbox:checked + .label .ball {
   -webkit-transform: translateX(22px);
           transform: translateX(22px);
+}
+
+.dark {
+  background-color: #2c2323;
+}
+
+.dark .main-container {
+  background-color: #2c2323;
+}
+
+.dark .article > * {
+  background-color: #2c2323;
+}
+
+.dark .article__heading > * {
+  color: #bf9660;
+}
+
+.dark .article__text > * {
+  color: #fff;
+  opacity: .7;
+}
+
+.dark .navigation__list-arrowButton {
+  background-color: #fff;
+  color: #2c2323;
 }
 /*# sourceMappingURL=style.css.map */
