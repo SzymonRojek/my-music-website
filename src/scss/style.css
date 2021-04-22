@@ -771,8 +771,10 @@ body {
   opacity: .7;
 }
 
+.dark .navigation__list,
+.dark .navigation__link,
 .dark .navigation__list-arrowButton {
-  background-color: #fff;
+  background-color: #ebeaea;
   color: #2c2323;
 }
 /*# sourceMappingURL=style.css.map */
