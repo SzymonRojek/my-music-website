@@ -1,1 +1,0 @@
-{"version":3,"sources":["scss/light.scss"],"names":[],"mappings":"AAEA,MACE,6BAAA,CACA,6BAAA,CACA","file":"light.9e8f94bf.css","sourceRoot":"../src","sourcesContent":["\n\n:root {\n  --background-color-media: #fff;\n  --heading-color-media: rgb(156, 78, 143);\n  --text-color-media: rgba(0, 0, 0, 0.5);\n}\n"]}
