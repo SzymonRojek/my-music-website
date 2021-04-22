@@ -2,7 +2,7 @@
 
 (() => {
 
-  "use strict"
+  "use strict";
   
   const navigationHamburgerButton = document.querySelector(".navigation__hamburgerButton");
   const navigationArrowButton = document.querySelector(".navigation__list-arrowButton");
@@ -79,7 +79,7 @@
   // check user preferences scheme color and set to dark or light
   const prefersDarkMode = window.matchMedia( '(prefers-color-scheme: dark)' ).matches;
   prefersDarkMode ? body.add('dark') : body.remove('dark');
-  if (body.contains('dark')) {
+  if ( body.contains('dark') ) {
     modeSwitcher.checked = true;
     modeSwitcher.classList.add('checkbox--active');
   }
@@ -87,6 +87,7 @@
  modeSwitcher.addEventListener('click', () => {
   const boolean = document.querySelector('#mode-switcher:checked') !== null;
   boolean ? body.add('dark') : body.remove('dark');
+  modeSwitcher.classList.add('checkbox--active');
  })
 
 })();
