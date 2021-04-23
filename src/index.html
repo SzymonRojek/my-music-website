@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" />
-  <!-- <link rel="stylesheet" href="./scss/dark.scss" media="(prefers-color-scheme: dark)"> -->
   <link rel="stylesheet" href="./scss/style.css">
   <script defer src="./js/script.js"></script>
 </head>
@@ -35,8 +34,10 @@
         </div>
 
         <ul class="navigation__list">
-          <button class="navigation__list-arrowButton" type="button" aria-label="Menu" aria-expanded="false">
+          <button class="navigation__list-arrowButton" type="button" aria-expanded="false">
+            <span class="sr-only">Menu</span>
             < </button>
+
               <li class="navigation__item">
                 <a class="navigation__link" href="#home">home</a>
               </li>
@@ -54,7 +55,8 @@
               </li>
         </ul>
 
-        <button class="navigation__hamburgerButton" type="button" aria-label="Menu" aria-expanded="false">
+        <button class="navigation__hamburgerButton" type="button" aria-expanded="false">
+          <span class="sr-only">Menu</span>
           <div class="navigation__firstLine"></div>
         </button>
       </nav>
