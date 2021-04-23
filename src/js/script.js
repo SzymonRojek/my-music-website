@@ -39,6 +39,7 @@
     }
 
     if ( navigationList.classList.contains('navigation__list--open') ) {
+      navigationHamburgerButton.classList.add('js-active');
       navigationArrowButton.setAttribute('aria-expanded', true)
     } else {
       navigationArrowButton.setAttribute('aria-expanded', false);

@@ -1,21 +1,20 @@
 
-$color-overlay: hsla(180, 12%, 13%, 0.911);
+
 $color-light-mode: rgb(248, 248, 248);
+$color-text-light-mode: rgb(100, 88, 88);
 $color-dark-mode: #2c2323;
+$color-text-dark-mode: rgba(204, 192, 192, 0.952);
+
+$color-overlay: hsla(180, 12%, 13%, 0.911);
 $color-panel: #302b2bf5;
 $color-details: rgb(191, 150, 96);
-
-
-
 $grey-100: rgba(255, 255, 255, 0.805);
 $grey-600: rgba(48, 47, 47, 0.25);
 $grey-500: rgba(90, 83, 83, 0.233);
-
-
 $accent-color-primary: rgb(191, 150, 96);
 $accent-color-secondary: rgb(156, 78, 143);
 
-$main-font: "Josefin Sans", "Arial", sans-serif;
+$base-font: "Josefin Sans", "Arial", sans-serif;
 
 
 
@@ -29,7 +28,7 @@ html {
 }
 
 .body {
-  font-family: $main-font;
+  font-family: $base-font;
   background-color: $color-light-mode;
 }
 
@@ -76,14 +75,14 @@ html {
     }
   
     &__hamburgerButton {
+      display: flex;
+      justify-content: center;
+      position: relative;
       width: 45px;
       height: 45px;
       border: 0;
       cursor: pointer;
       background-color: $grey-500;
-      position: relative;
-      display: flex;
-      justify-content: center;
 
       &:focus {
         outline: 2px dotted $color-panel;
@@ -164,6 +163,7 @@ html {
         color: transparent;
         background-color: $color-dark-mode;
         text-align: left;
+        will-change: transform, opacity;
         transform: translateX(100%);
         transition: transform .5s ease-in;
 
@@ -227,6 +227,7 @@ html {
         flex-direction: row;
         align-items: center;
         background-color: transparent;
+        will-change: transform, opacity;
         transform: translateX(0%);
         position: relative;
       }
@@ -308,8 +309,7 @@ html {
   &__heading {
     position: absolute;
     bottom: 100px;
-    color: $color-light-mode;
-    opacity: .8;
+    color: rgba(255, 255, 255, 0.733);
     text-align: center;
   }
 
@@ -396,11 +396,11 @@ html {
 	height: 26px;
 	width: 50px;
 	transform: scale(1.4);
-  border: 1px solid black;
+  border: 1px solid $color-dark-mode;
 }
 
 .label .circle {
-	background-color: rgba(191, 150, 96, 0.39);
+	background-color: rgba(247, 204, 12, 0.404);
 	border-radius: 50%;
 	position: absolute;
   top: 1;
@@ -409,10 +409,10 @@ html {
 	width: 22px;
 	transform: translateX(0px);
 	transition: transform 0.2s linear;
-  border: 1px solid black;
+  border: 1px solid $color-dark-mode;
 }
 
-// headings and text
+// headings secondary and text below
 .intro-wrapper,
 .music-container,
 .feedback-wrapper {
@@ -426,15 +426,17 @@ html {
     &__text {
       margin: auto;
       max-width: 541px;
-      line-height: 25px;
+      line-height: 1.5;
       text-align: center;
       // transition: background 0.2s linear;
+      color: $color-text-light-mode;
     }
 
     &__heading {
       padding: 50px 0 20px 0;
       font-weight: 200;
-      line-height: 30px;
+      font-weight: 300;
+      line-height: 1.5;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
@@ -445,7 +447,6 @@ html {
 
     &__paragraph {
       padding-bottom: 10px;
-      opacity: .5;
 
       &--marginBottom {
         margin-bottom: 50px;
@@ -522,7 +523,7 @@ html {
   
     &__text {
       padding: 20px;
-      line-height: 25px;
+      line-height: 1.5;
       background-color: rgb(255, 248, 248);
     }
 
@@ -536,7 +537,7 @@ html {
       &-link {
         text-decoration: none;
         letter-spacing: 1px;
-        color:  rgb(150, 71, 137);
+        color: $accent-color-secondary;
         border-bottom: 1.8px solid rgba(179, 137, 137, 0.089);
         transition: .2s all ease-in;
         cursor: pointer;
@@ -562,7 +563,7 @@ html {
         max-width: 300px;
         padding-top: 60px;
         text-align: start;
-        line-height: 25px;
+        line-height: 2;
         box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.15);
   
         &--right {
@@ -646,12 +647,6 @@ html {
 }
 
 
-// line-height  1.5 nie px
-// will change
-
-
-
-
 
 // change bacground-color and color when dark mode is one
 .dark {
@@ -670,16 +665,23 @@ html {
   }
 
   .article__text > * {
-    color: $color-light-mode;
-    opacity: .8;
+    color: $color-text-dark-mode;
   }
 
   @media(max-width: 768px) {
     .navigation__list,
-    .navigation__link,
-    .navigation__list-arrowButton {
+    .navigation__link {
       background-color: $color-light-mode;
       color: $color-dark-mode;
+    }
+
+
+    .navigation__list-arrowButton {
+      background-color: $color-light-mode;
+
+      &--active {
+        color: $color-dark-mode;
+      }
     }
   }
 }
