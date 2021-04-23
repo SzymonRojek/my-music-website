@@ -9,18 +9,6 @@ html {
           box-sizing: inherit;
 }
 
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
 .body {
   font-family: "Josefin Sans", "Arial", sans-serif;
   background-color: #f8f8f8;
@@ -508,17 +496,13 @@ html {
   border: 1px solid #2c2323;
 }
 
-.intro-wrapper .article__img,
-.music-container .article__img,
-.feedback-wrapper .article__img {
+.article__img {
   width: 100%;
   max-width: 770px;
   z-index: -1;
 }
 
-.intro-wrapper .article__text,
-.music-container .article__text,
-.feedback-wrapper .article__text {
+.article__text {
   margin: auto;
   max-width: 541px;
   line-height: 1.5;
@@ -526,9 +510,7 @@ html {
   color: #645858;
 }
 
-.intro-wrapper .article__heading,
-.music-container .article__heading,
-.feedback-wrapper .article__heading {
+.article__heading {
   padding: 50px 0 20px 0;
   font-weight: 200;
   font-weight: 300;
@@ -537,40 +519,28 @@ html {
   text-transform: uppercase;
 }
 
-.intro-wrapper .article__special,
-.music-container .article__special,
-.feedback-wrapper .article__special {
+.article__special {
   color: #9c4e8f;
 }
 
-.intro-wrapper .article__paragraph,
-.music-container .article__paragraph,
-.feedback-wrapper .article__paragraph {
+.article__paragraph {
   padding-bottom: 10px;
 }
 
-.intro-wrapper .article__paragraph--marginBottom,
-.music-container .article__paragraph--marginBottom,
-.feedback-wrapper .article__paragraph--marginBottom {
+.article__paragraph--marginBottom {
   margin-bottom: 50px;
 }
 
 @media (min-width: 540px) {
-  .intro-wrapper .article,
-  .music-container .article,
-  .feedback-wrapper .article {
+  .article {
     position: relative;
   }
-  .intro-wrapper .article__img,
-  .music-container .article__img,
-  .feedback-wrapper .article__img {
+  .article__img {
     display: block;
     margin-top: 120px;
     margin-left: auto;
   }
-  .intro-wrapper .article__text--positioning,
-  .music-container .article__text--positioning,
-  .feedback-wrapper .article__text--positioning {
+  .article__text--positioning {
     position: absolute;
     bottom: -200px;
     left: 0;
@@ -578,31 +548,23 @@ html {
     text-align: start;
     background-color: #f8f8f8;
   }
-  .intro-wrapper .article__img--margin,
-  .music-container .article__img--margin,
-  .feedback-wrapper .article__img--margin {
+  .article__img--margin {
     margin: 180px 0 200px 0;
     margin-left: auto;
   }
 }
 
-.intro-wrapper .track,
-.music-container .track,
-.feedback-wrapper .track {
+.track {
   width: 100%;
   padding: 20px 0 20px 0;
 }
 
-.intro-wrapper .track--marginTop,
-.music-container .track--marginTop,
-.feedback-wrapper .track--marginTop {
+.track--marginTop {
   margin-top: 30px;
 }
 
 @media (min-width: 768px) {
-  .intro-wrapper .pair-tracks,
-  .music-container .pair-tracks,
-  .feedback-wrapper .pair-tracks {
+  .pair-tracks {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -613,14 +575,10 @@ html {
         -ms-flex-align: center;
             align-items: center;
   }
-  .intro-wrapper .pair-tracks .track,
-  .music-container .pair-tracks .track,
-  .feedback-wrapper .pair-tracks .track {
+  .pair-tracks .track {
     padding: 20px;
   }
-  .intro-wrapper .pair-tracks .track--marginTop,
-  .music-container .pair-tracks .track--marginTop,
-  .feedback-wrapper .pair-tracks .track--marginTop {
+  .pair-tracks .track--marginTop {
     margin: 0;
   }
 }
