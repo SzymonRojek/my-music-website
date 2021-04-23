@@ -92,5 +92,5 @@
 
 })();
 
-// next plan => local or session storage
+// todo: => adding local or session storage
 

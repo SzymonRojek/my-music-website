@@ -16,8 +16,6 @@ $accent-color-secondary: rgb(156, 78, 143);
 
 $base-font: "Josefin Sans", "Arial", sans-serif;
 
-
-
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -30,6 +28,7 @@ html {
 .body {
   font-family: $base-font;
   background-color: $color-light-mode;
+  transition:  background-color 0.2s linear;
 }
 
 .hero-container {
@@ -161,7 +160,7 @@ html {
         user-select: none;
         font-size: 20px;
         color: transparent;
-        background-color: $color-dark-mode;
+        background-color: $color-panel;
         text-align: left;
         will-change: transform, opacity;
         transform: translateX(100%);
@@ -208,10 +207,6 @@ html {
       font-weight: 700;
       opacity: 0;
       transition: all .2s ease;
-  
-      &:hover {
-        color: $accent-color-primary;
-      }
     }
   }
 
@@ -240,6 +235,14 @@ html {
     
       &__link {
         opacity: 1;
+        &:hover {
+          transform: translateY(-3px);
+        }
+
+        &:active {
+          color: $accent-color-primary;
+          transform: translateY(-3px);
+        }
       }
     
       &__hamburgerButton {
@@ -338,10 +341,10 @@ html {
     
     &__subHeading {
       font-size: .8em;
+      padding-bottom: 50px;
     }
   }
 }
-
 
 /* 
 
@@ -356,7 +359,7 @@ html {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px 0 24px;
-  transition: background 0.2s linear;
+  transition:  background-color 0.2s linear;
   background-color: $color-light-mode;
 }
 
@@ -428,7 +431,6 @@ html {
       max-width: 541px;
       line-height: 1.5;
       text-align: center;
-      // transition: background 0.2s linear;
       color: $color-text-light-mode;
     }
 
