@@ -1,16 +1,13 @@
-
-
 (() => {
 
-  "use strict";
+  'use strict';
   
-  const navigationHamburgerButton = document.querySelector(".navigation__hamburgerButton");
-  const navigationArrowButton = document.querySelector(".navigation__list-arrowButton");
-  const navigationList = document.querySelector(".navigation__list");
-  const navigationLinks = document.querySelectorAll(".navigation__link");
+  const navigationHamburgerButton = document.querySelector('.navigation__hamburgerButton');
+  const navigationArrowButton = document.querySelector('.navigation__list-arrowButton');
+  const navigationList = document.querySelector('.navigation__list');
+  const navigationLinks = document.querySelectorAll('.navigation__link');
   const arrowRight = '>';
   const arrowLeft = '<';
-
 
   function fadeLinks() {
     navigationLinks.forEach( link => {
@@ -22,47 +19,48 @@
     })
   }
 
-  navigationHamburgerButton.addEventListener("click", () => {
-    navigationHamburgerButton.classList.toggle("js-active");
+  navigationHamburgerButton.addEventListener( 'click', () => {
+    navigationHamburgerButton.classList.toggle('js-active');
     navigationList.classList.toggle('navigation__list--open');
     fadeLinks();
 
-    if ( navigationList.classList.contains("navigation__list--open") ) {
-      navigationHamburgerButton.setAttribute("aria-expanded", true);
+    if ( navigationList.classList.contains('navigation__list--open') ) {
+      navigationHamburgerButton.setAttribute('aria-expanded', true);
     } else {
-      navigationHamburgerButton.setAttribute("aria-expanded", false);
+      navigationHamburgerButton.setAttribute('aria-expanded', false);
     }
   })
 
-  navigationArrowButton.addEventListener("click", () => {
+  navigationArrowButton.addEventListener( 'click', () => {
     navigationList.classList.toggle('navigation__list--open');
 
     if ( navigationHamburgerButton.classList.contains('js-active') ) {
       navigationHamburgerButton.classList.remove('js-active');
     }
 
-    if ( navigationList.classList.contains("navigation__list--open") ) {
-      navigationArrowButton.setAttribute("aria-expanded", true);
+    if ( navigationList.classList.contains('navigation__list--open') ) {
+      navigationArrowButton.setAttribute('aria-expanded', true)
     } else {
-      navigationArrowButton.setAttribute("aria-expanded", false);
+      navigationArrowButton.setAttribute('aria-expanded', false);
     }
 
     fadeLinks();
+
     navigationArrowButton.innerText = navigationArrowButton.innerText === arrowRight ? arrowLeft : arrowRight;
   })
 
   function resetStates() {
-    navigationLinks.forEach(link => {
-      link.addEventListener('click', () => {
+    navigationLinks.forEach( link => {
+      link.addEventListener( 'click', () => {
         navigationList.classList.remove('navigation__list--open');
-        navigationHamburgerButton.classList.remove("js-active");
+        navigationHamburgerButton.classList.remove('js-active');
         fadeLinks();
       })
     })
   }
   resetStates();
  
-  window.addEventListener("scroll", () => {
+  window.addEventListener( 'scroll', () => {
     if ( window.pageYOffset > 200 ) {
       navigationArrowButton.classList.add('navigation__list-arrowButton--active');
     } else {
@@ -70,26 +68,28 @@
     } 
   })
 
-
-
  // mode switcher functionality:
+  const body = document.querySelector('body').classList;
   const modeSwitcher = document.querySelector('#mode-switcher');
-  const body = document.querySelector( 'body' ).classList;
  
   // check user preferences scheme color and set to dark or light
-  const prefersDarkMode = window.matchMedia( '(prefers-color-scheme: dark)' ).matches;
-  prefersDarkMode ? body.add('dark') : body.remove('dark');
+  const userPrefersDarkMode = window.matchMedia( '(prefers-color-scheme: dark)' ).matches;
+    console.log(`Dark mode is ${userPrefersDarkMode? '🌒 on' : '☀️ off'}.`);
+
+  userPrefersDarkMode ? body.add('dark') : body.remove('dark');
+
   if ( body.contains('dark') ) {
     modeSwitcher.checked = true;
     modeSwitcher.classList.add('checkbox--active');
   }
 
- modeSwitcher.addEventListener('click', () => {
+ modeSwitcher.addEventListener( 'click', () => {
   const boolean = document.querySelector('#mode-switcher:checked') !== null;
-  boolean ? body.add('dark') : body.remove('dark');
-  modeSwitcher.classList.add('checkbox--active');
+    boolean ? body.add('dark') : body.remove('dark');
+    modeSwitcher.classList.add('checkbox--active');
  })
 
 })();
 
-// next plan is add the session storage
+// next plan => local or session storage
+
