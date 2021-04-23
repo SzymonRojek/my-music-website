@@ -10,8 +10,11 @@
 ## For this project I've used:
 - Semantic tags and attributes;
 - Invisible content for Screen Reader users;
+- detect if the user has requested the mode: light or dark; (prefers-color-scheme);
+- manually switching the mode between light/dark (smooth transition);
 - Flexbox;
-- RWD, mobile first.
+- RWD, mobile first;
+
 
 ## ToDo:
 - local storage or session storage;
