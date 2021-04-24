@@ -390,16 +390,7 @@ html {
   }
 }
 
-// switcher mode:
-.checkbox {
-	opacity: 0;
-
-  &--active {
-    &:checked + .label .circle {
-      transform: translateX(22px);
-    }
-  }
-}
+// toggle 
 
 .label {
 	background-color: $color-light-mode;
@@ -416,7 +407,7 @@ html {
   border: 1px solid $color-dark-mode;
 }
 
-.label .circle {
+.circle {
 	background-color: rgba(247, 204, 12, 0.404);
 	border-radius: 50%;
 	position: absolute;
@@ -428,6 +419,18 @@ html {
 	transition: transform 0.2s linear;
   border: 1px solid $color-dark-mode;
 }
+
+.mode-switcher {
+  opacity: 0;
+
+  &--active {
+
+    &:checked + .label .circle {
+      transform: translateX(22px);
+    }
+  }
+}
+
 
 // headings secondary and text below: intro, music, feedback
 .article {

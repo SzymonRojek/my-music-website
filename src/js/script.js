@@ -70,21 +70,20 @@
 
   // mode 
   const body = document.querySelector('body').classList;
-  const modeSwitcher = document.querySelector('#mode-switcher');
+  const modeSwitcher = document.querySelector('.js-mode-switcher');
 
   const userPrefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    console.log(`Dark mode is ${userPrefersDarkMode ? '🌒 on' : '☀️ off'}.`);
+        userPrefersDarkMode ? body.add('dark') : body.remove('dark');
+        console.log(`Dark mode is ${userPrefersDarkMode ? '🌒 on' : '☀️ off'}.`);
 
-  userPrefersDarkMode ? body.add('dark') : body.remove('dark');
+      if ( body.contains('dark') ) {
+        modeSwitcher.checked = true; 
+        modeSwitcher.classList.add('mode-switcher--active');
+        modeSwitcher.setAttribute('aria-checked', true);
+      }
 
-  if ( body.contains('dark') ) {
-    modeSwitcher.checked = true;
-    modeSwitcher.classList.add('checkbox--active');
-    modeSwitcher.setAttribute('aria-checked', true);
-  }
-
-  modeSwitcher.addEventListener( 'click', () => {
-    if ( document.querySelector('#mode-switcher:checked') !== null ) {
+ modeSwitcher.addEventListener( 'click', () => {
+    if ( document.querySelector('.js-mode-switcher:checked') !== null ) {
       body.add('dark');
       modeSwitcher.classList.add('checkbox--active');
       modeSwitcher.setAttribute('aria-checked', true);

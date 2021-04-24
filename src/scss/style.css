@@ -460,15 +460,6 @@ html {
   }
 }
 
-.checkbox {
-  opacity: 0;
-}
-
-.checkbox--active:checked + .label .circle {
-  -webkit-transform: translateX(22px);
-          transform: translateX(22px);
-}
-
 .label {
   background-color: #f8f8f8;
   border-radius: 50px;
@@ -491,7 +482,7 @@ html {
   border: 1px solid #2c2323;
 }
 
-.label .circle {
+.circle {
   background-color: rgba(247, 204, 12, 0.404);
   border-radius: 50%;
   position: absolute;
@@ -506,6 +497,15 @@ html {
   transition: transform 0.2s linear;
   transition: transform 0.2s linear, -webkit-transform 0.2s linear;
   border: 1px solid #2c2323;
+}
+
+.mode-switcher {
+  opacity: 0;
+}
+
+.mode-switcher--active:checked + .label .circle {
+  -webkit-transform: translateX(22px);
+          transform: translateX(22px);
 }
 
 .article__img {
