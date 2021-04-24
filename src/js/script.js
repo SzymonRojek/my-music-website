@@ -63,7 +63,6 @@
     }
   })
 
-  // mode switcher functionality:
   const body = document.querySelector('body').classList;
   const modeSwitcher = document.querySelector('#mode-switcher');
 
@@ -73,22 +72,21 @@
 
   userPrefersDarkMode ? body.add('dark') : body.remove('dark');
 
-  if (body.contains('dark')) {
+  if ( body.contains('dark') ) {
     modeSwitcher.checked = true;
     modeSwitcher.classList.add('checkbox--active');
-  } else {
-    modeSwitcher.checked = false;
-    modeSwitcher.classList.remove('checkbox--active');
+    modeSwitcher.setAttribute('aria-checked', true);
   }
 
   modeSwitcher.addEventListener('click', () => {
- 
-    if (document.querySelector('#mode-switcher:checked') !== null) {
+    if ( document.querySelector('#mode-switcher:checked') !== null ) {
       body.add('dark');
       modeSwitcher.classList.add('checkbox--active');
+      modeSwitcher.setAttribute('aria-checked', true);
      } else {
       body.remove('dark');
-      modeSwitcher.classList.remove('checkbox--active')
+      modeSwitcher.classList.remove('checkbox--active');
+      modeSwitcher.setAttribute('aria-checked', false);
      }
   })
 
