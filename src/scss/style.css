@@ -460,10 +460,6 @@ html {
   }
 }
 
-.checkbox {
-  opacity: 0;
-}
-
 .checkbox--active:checked + .label .circle {
   -webkit-transform: translateX(22px);
           transform: translateX(22px);

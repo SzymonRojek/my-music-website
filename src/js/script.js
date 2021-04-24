@@ -24,20 +24,14 @@
     navigationList.classList.toggle('navigation__list--open');
     fadeLinks();
 
-    if (navigationList.classList.contains('navigation__list--open')) {
-      navigationHamburgerButton.setAttribute('aria-expanded', true);
-    } else {
-      navigationHamburgerButton.setAttribute('aria-expanded', false);
-    }
+    navigationList.classList.contains('navigation__list--open') ? navigationHamburgerButton.setAttribute('aria-expanded', true) : navigationHamburgerButton.setAttribute('aria-expanded', false);
+    
   })
 
   navigationArrowButton.addEventListener('click', () => {
     navigationList.classList.toggle('navigation__list--open');
-
-    if (navigationHamburgerButton.classList.contains('js-active')) {
-      navigationHamburgerButton.classList.remove('js-active');
-    }
-
+    navigationHamburgerButton.classList.remove('js-active');
+    
     if (navigationList.classList.contains('navigation__list--open')) {
       navigationHamburgerButton.classList.add('js-active');
       navigationArrowButton.setAttribute('aria-expanded', true)
@@ -51,7 +45,7 @@
   })
 
   function resetStates() {
-    navigationLinks.forEach(link => {
+    navigationLinks.forEach( link => {
       link.addEventListener('click', () => {
         navigationList.classList.remove('navigation__list--open');
         navigationHamburgerButton.classList.remove('js-active');
@@ -82,12 +76,20 @@
   if (body.contains('dark')) {
     modeSwitcher.checked = true;
     modeSwitcher.classList.add('checkbox--active');
+  } else {
+    modeSwitcher.checked = false;
+    modeSwitcher.classList.remove('checkbox--active');
   }
 
   modeSwitcher.addEventListener('click', () => {
-    const boolean = document.querySelector('#mode-switcher:checked') !== null;
-    boolean ? body.add('dark') : body.remove('dark');
-    modeSwitcher.classList.add('checkbox--active');
+ 
+    if (document.querySelector('#mode-switcher:checked') !== null) {
+      body.add('dark');
+      modeSwitcher.classList.add('checkbox--active');
+     } else {
+      body.remove('dark');
+      modeSwitcher.classList.remove('checkbox--active')
+     }
   })
 
 })();
