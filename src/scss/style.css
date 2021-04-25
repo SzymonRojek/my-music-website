@@ -445,6 +445,7 @@ html {
   -webkit-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
   background-color: #f8f8f8;
+  border-top: 2px solid #bf9660;
 }
 
 @media (min-width: 768px) {
@@ -762,6 +763,19 @@ html {
 
 .dark .article__text > * {
   color: rgba(204, 192, 192, 0.952);
+}
+
+.dark .feedback__text {
+  background-color: #5c4747;
+  color: #fff;
+}
+
+.dark .feedback__author-link {
+  color: #bf9660;
+}
+
+.dark .feedback__author-link:hover {
+  border-bottom-color: #bf9660;
 }
 
 @media (max-width: 768px) {

@@ -2,6 +2,8 @@
 
 $color-light-mode: rgb(248, 248, 248);
 $color-text-light-mode: rgb(100, 88, 88);
+
+$color-dark-mode-brighter: #5c4747;
 $color-dark-mode: #2c2323;
 $color-text-dark-mode: rgba(204, 192, 192, 0.952);
 
@@ -375,6 +377,7 @@ html {
   padding: 0 30px 0 24px;
   transition:  background-color 0.2s linear;
   background-color: $color-light-mode;
+  border-top: 2px solid $accent-color-primary;
 }
 
 @media(min-width: 768px) {
@@ -683,6 +686,21 @@ html {
     color: $color-text-dark-mode;
   }
 
+  .feedback__text {
+    background-color: $color-dark-mode-brighter;
+    color: #fff
+  }
+
+  .feedback__author-link {
+    color: $accent-color-primary;
+
+    &:hover {
+      border-bottom-color: $accent-color-primary;
+    }
+    
+    
+  }
+
   @media(max-width: 768px) {
     .navigation__list,
     .navigation__link {
@@ -699,4 +717,12 @@ html {
       }
     }
   }
+
+  
+
+
+  // img:not([src*=".svg"]) {
+  //   filter: grayscale(50%);
+   
+  // }
 }
