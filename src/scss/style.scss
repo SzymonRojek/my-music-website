@@ -1,5 +1,5 @@
 
-
+// background-color: rgb(247, 236, 236);
 $color-light-mode: rgb(248, 248, 248);
 $color-text-light-mode: rgb(100, 88, 88);
 
@@ -325,6 +325,8 @@ html {
   justify-content: center;
   align-items: center;
 
+ 
+
   &__heading {
     position: absolute;
     bottom: 100px;
@@ -435,7 +437,7 @@ html {
 }
 
 
-// headings secondary and text below: intro, music, feedback
+// intro, music, feedback: secondary headings & text below them: 
 .article {
   &__img {
     width: 100%;
@@ -542,7 +544,7 @@ html {
     &__text {
       padding: 20px;
       line-height: 1.5;
-      background-color: rgb(255, 248, 248);
+      background-color: rgb(247, 236, 236);
     }
 
     &__paragraph {
@@ -697,8 +699,6 @@ html {
     &:hover {
       border-bottom-color: $accent-color-primary;
     }
-    
-    
   }
 
   @media(max-width: 768px) {
@@ -707,7 +707,6 @@ html {
       background-color: $color-light-mode;
       color: $color-dark-mode;
     }
-
 
     .navigation__list-arrowButton {
       background-color: $color-light-mode;
