@@ -5,20 +5,20 @@
 # Technologies used:
 * [x] Parcel bundler;
 * [x] Sass;
+* [x] Flexbox;
 * [x] HTML, CSS, JS
 
-## For this project I've used:
+## I have used:
 - Semantic tags and attributes;
 - Invisible content for Screen Reader users;
-- detect if the user has requested the mode: light or dark; (prefers-color-scheme);
-- manually switching the mode between light/dark (smooth transition);
-- Flexbox;
+- Detect if the user has requested theme color: light or dark; (prefers-color-scheme);
+- Manually switching the mode between light/dark (smooth transition);
 - RWD, mobile first;
 
 
 ## ToDo:
 - local storage or session storage;
-- smooth scroll between sections (accessibility);
+- smooth scroll between sections (accessibility) & links nav;
 - developing project to multi-pages;
 
 ## Usage:
