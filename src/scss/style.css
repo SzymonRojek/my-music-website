@@ -260,6 +260,10 @@ html {
   transition: all .2s ease;
 }
 
+.hero-container .navigation__link:hover {
+  color: #bf9660;
+}
+
 @media (min-width: 768px) {
   .hero-container .navigation {
     border-bottom: 2px solid #bf9660;
