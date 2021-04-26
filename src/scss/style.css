@@ -475,15 +475,15 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 5px;
   position: relative;
   height: 28px;
   width: 28px;
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   border: 1px solid #2c2323;
 }
 
@@ -502,6 +502,10 @@ html {
   transition: transform 0.2s linear;
   transition: transform 0.2s linear, -webkit-transform 0.2s linear;
   border: 1px solid #2c2323;
+}
+
+.mode-switcher {
+  opacity: 0;
 }
 
 .article__img {

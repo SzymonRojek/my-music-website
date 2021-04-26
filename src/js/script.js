@@ -82,19 +82,18 @@
           iconify.setAttribute('data-icon', 'heroicons-outline:sun');
           modeSwitcher.setAttribute('aria-checked', true);
         } else {
-          iconify.setAttribute('data-icon', 'bi:moon')
+          iconify.setAttribute('data-icon', 'bx:bxs-moon')
         }
      
 
   modeSwitcher.addEventListener( 'click', () => {
   if ( modeSwitcher.checked ) {
     body.add('dark');
-
     iconify.setAttribute('data-icon', 'heroicons-outline:sun');
     modeSwitcher.setAttribute('aria-checked', true);
     } else {
     body.remove('dark');
-    iconify.setAttribute('data-icon', 'bi:moon');
+    iconify.setAttribute('data-icon', 'bx:bxs-moon');
     modeSwitcher.setAttribute('aria-checked', false);
     }
   })
