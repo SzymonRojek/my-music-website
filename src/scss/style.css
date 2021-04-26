@@ -751,13 +751,13 @@ html {
           filter: grayscale(50%);
 }
 
+.dark .article__text > * {
+  color: rgba(204, 192, 192, 0.952);
+}
+
 .dark .feedback__img {
   -webkit-filter: grayscale(40%);
           filter: grayscale(40%);
-}
-
-.dark .article__text > * {
-  color: rgba(204, 192, 192, 0.952);
 }
 
 .dark .feedback__text {
@@ -795,11 +795,12 @@ html {
 @media (max-width: 768px) {
   .dark .navigation__list,
   .dark .navigation__link {
-    background-color: #f8f8f8;
+    background-color: #bf9660;
     color: #2c2323;
+    opacity: .95;
   }
   .dark .navigation__list-arrowButton {
-    background-color: #f8f8f8;
+    background-color: #bf9660;
   }
   .dark .navigation__list-arrowButton--active {
     color: #2c2323;

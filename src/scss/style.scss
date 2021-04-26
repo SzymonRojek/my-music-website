@@ -672,12 +672,12 @@ html {
     filter: grayscale(50%);
   }
 
-  .feedback__img {
-    filter: grayscale(40%);
-  }
-
   .article__text > * {
     color: $color-text-dark-mode;
+  }
+
+  .feedback__img {
+    filter: grayscale(40%);
   }
 
   .feedback__text {
@@ -699,6 +699,7 @@ html {
 
   .switcher__label {
     background-color: $accent-color-primary;
+    
     &-circle {
       background-color: $color-light-mode;
     }
@@ -715,12 +716,13 @@ html {
   @media(max-width: 768px) {
     .navigation__list,
     .navigation__link {
-      background-color: $color-light-mode;
+      background-color: $accent-color-primary;
       color: $color-dark-mode;
+      opacity: .95;
     }
 
     .navigation__list-arrowButton {
-      background-color: $color-light-mode;
+      background-color: $accent-color-primary;
 
       &--active {
         color: $color-dark-mode;
