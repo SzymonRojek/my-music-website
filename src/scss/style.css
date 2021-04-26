@@ -746,11 +746,6 @@ html {
   color: #bf9660;
 }
 
-.dark .article__img {
-  -webkit-filter: grayscale(50%);
-          filter: grayscale(50%);
-}
-
 .dark .article__text > * {
   color: rgba(204, 192, 192, 0.952);
 }
@@ -788,16 +783,16 @@ html {
 @media (min-width: 540px) {
   .dark .article > * {
     background-color: #2c2323;
-    z-index: 100;
   }
 }
 
 @media (max-width: 768px) {
-  .dark .navigation__list,
-  .dark .navigation__link {
+  .dark .navigation__list {
     background-color: #bf9660;
+    opacity: .94;
+  }
+  .dark .navigation__link {
     color: #2c2323;
-    opacity: .95;
   }
   .dark .navigation__list-arrowButton {
     background-color: #bf9660;

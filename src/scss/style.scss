@@ -1,6 +1,7 @@
 
-// background-color: rgb(247, 236, 236);
+
 $color-light-mode: rgb(248, 248, 248);
+$bgc-light-mode-300: rgb(247, 236, 236);
 $color-text-light-mode: rgb(100, 88, 88);
 
 $color-dark-mode-brighter: #5c4747;
@@ -9,7 +10,6 @@ $color-text-dark-mode: rgba(204, 192, 192, 0.952);
 
 $color-overlay: hsla(180, 12%, 13%, 0.911);
 $color-panel: #302b2bf5;
-$color-details: rgb(191, 150, 96);
 $grey-100: rgba(255, 255, 255, 0.805);
 $grey-600: rgba(48, 47, 47, 0.25);
 $grey-500: rgba(90, 83, 83, 0.233);
@@ -110,7 +110,7 @@ html {
       height: 3px;
       position: absolute;
       bottom: 12px;
-      background-color: $color-details;
+      background-color: $accent-color-primary;
       border-radius: 4px;
       transition: transform 0.15 ease; 
     }
@@ -532,7 +532,7 @@ html {
     &__text {
       padding: 20px;
       line-height: 1.5;
-      background-color: rgb(247, 236, 236);
+      background-color: $bgc-light-mode-300;
     }
 
     &__paragraph {
@@ -668,10 +668,6 @@ html {
       color: $accent-color-primary;
   }
 
-  .article__img  {
-    filter: grayscale(50%);
-  }
-
   .article__text > * {
     color: $color-text-dark-mode;
   }
@@ -699,26 +695,25 @@ html {
 
   .switcher__label {
     background-color: $accent-color-primary;
-    
     &-circle {
       background-color: $color-light-mode;
     }
   }
 
-
   @media(min-width: 540px) {
     .article > * {
       background-color: $color-dark-mode; 
-      z-index: 100;
     }
   }
 
   @media(max-width: 768px) {
-    .navigation__list,
-    .navigation__link {
+    .navigation__list {
       background-color: $accent-color-primary;
+      opacity: .94;
+    }
+
+    .navigation__link {
       color: $color-dark-mode;
-      opacity: .95;
     }
 
     .navigation__list-arrowButton {
