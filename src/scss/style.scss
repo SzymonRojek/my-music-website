@@ -573,6 +573,7 @@ html {
         text-align: start;
         line-height: 2;
         box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.15);
+        opacity: .93;
   
         &--right {
           right: 0;
@@ -669,6 +670,10 @@ html {
 
   .article__img  {
     filter: grayscale(50%);
+  }
+
+  .feedback__img {
+    filter: grayscale(40%);
   }
 
   .article__text > * {
