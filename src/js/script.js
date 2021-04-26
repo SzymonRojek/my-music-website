@@ -10,7 +10,7 @@
   const arrowRight = '>';
   const arrowLeft = '<';
 
-  function fadeLinks() {
+  const fadeLinks = () => {
     navigationLinks.forEach( link => {
       if ( window.matchMedia('(max-width: 767px)').matches && !link.classList.contains('linksFade') ) {
         link.classList.add('linksFade');
@@ -50,7 +50,7 @@
     navigationArrowButton.innerText = navigationArrowButton.innerText === arrowRight ? arrowLeft : arrowRight;
   })
 
-  function resetStatesWhenLinkPressed() {
+  const resetStatesWhenLinkPressed = () => {
     navigationLinks.forEach( link => {
       link.addEventListener('click', () => {
         navigationList.classList.remove('navigation__list--open');
