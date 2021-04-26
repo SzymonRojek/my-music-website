@@ -27,6 +27,10 @@ html {
   box-sizing: inherit;
 }
 
+.body {
+  font-family: $base-font;
+  background-color: $color-light-mode;
+}
 
 .sr-only {
   border: 0;
@@ -38,13 +42,6 @@ html {
   position: absolute;
   white-space: nowrap;
   width: 1px;
-}
-
-
-.body {
-  font-family: $base-font;
-  background-color: $color-light-mode;
-  transition:  background-color 0.2s linear;
 }
 
 .hero-container {
@@ -329,8 +326,6 @@ html {
   justify-content: center;
   align-items: center;
 
- 
-
   &__heading {
     position: absolute;
     bottom: 100px;
@@ -381,23 +376,19 @@ html {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px 0 24px;
-  transition:  background-color 0.2s linear;
   background-color: $color-light-mode;
   border-top: 2px solid $accent-color-primary;
+  transition: background-color .3s linear;
 }
 
 @media(min-width: 768px) {
-  .body,
-  .article__text  {
-    transition: background .2s linear;
-  }
-
   .main-container {
     position: relative;
     bottom: 80px;
     z-index: 1;
   }
 }
+
 
 // toggle 
 
@@ -431,15 +422,7 @@ html {
 
 .mode-switcher {
   opacity: 0;
-
-  // &--active {
-
-  //   &:checked + .label .circle {
-  //     transform: translateX(22px);
-  //   }
-  // }
 }
-
 
 // intro, music, feedback: secondary headings & text below them: 
 .article {
@@ -671,16 +654,11 @@ html {
 }
 
 
-
 // change bacground-color and color when dark mode is one
 .dark {
   background-color: $color-dark-mode;
   .main-container {
     background-color: $color-dark-mode;
-  }
-
-  .article > * {
-    background-color: $color-dark-mode; 
   }
 
   .article__heading > * {
@@ -693,7 +671,7 @@ html {
 
   .feedback__text {
     background-color: $color-dark-mode-brighter;
-    color: #fff
+    color: #fff;
   }
 
   .feedback__author-link {
@@ -701,6 +679,22 @@ html {
 
     &:hover {
       border-bottom-color: $accent-color-primary;
+    }
+  }
+
+  @media(min-width: 540px) {
+
+    // .body {
+    //   transition: background-color .3s linear;
+    // }
+
+    .main-container {
+      // transition: background-color .3s linear;
+      // background-color: green;
+    }
+    .article > * {
+      background-color: $color-dark-mode; 
+      transition: background-color .3s linear;
     }
   }
 
@@ -720,9 +714,5 @@ html {
     }
   }
 
-    // img:not([src*=".svg"]) {
-    //   filter: grayscale(50%);
-     
-    // }
-
+ 
 }
