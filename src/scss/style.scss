@@ -381,48 +381,55 @@ html {
   transition: background-color .3s linear;
 }
 
-@media(min-width: 768px) {
-  .main-container {
-    position: relative;
-    bottom: 80px;
-    z-index: 1;
-  }
-}
+// @media(min-width: 768px) {
+//   .main-container {
+//     position: relative;
+//     bottom: 80px;
+//     z-index: 1;
+//   }
+// }
 
 
 // toggle 
 
-.label {
-	background-color: $color-light-mode;
-	border-radius: 50px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 5px;
-	position: relative;
-  height: 28px;
-  width: 28px;
-	transform: scale(1.2);
-  border: 1px solid $color-dark-mode;
+.switcher {
+  &__checkbox {
+    opacity: 0;
+  }
+
+  &__label {
+    background-color: $color-light-mode;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    height: 28px;
+    width: 28px;
+    transform: scale(1.2);
+    border: 1px solid $color-dark-mode;
+
+    &-circle {
+      border-radius: 50%;
+      position: absolute;
+      top: 1;
+      left: 2px;
+      height: 22px;
+      width: 22px;
+      border: 1px solid $color-dark-mode;
+      background-color:$color-dark-mode;
+    }
+  }
+
+  &__text {
+    color: $color-text-light-mode;
+  }
 }
 
-.circle {
-	background-color: rgba(247, 204, 12, 0.404);
-	border-radius: 50%;
-	position: absolute;
-  top: 1;
-	left: 2px;
-	height: 22px;
-	width: 22px;
-	transform: translateX(0px);
-	transition: transform 0.2s linear;
-  border: 1px solid $color-dark-mode;
-}
 
-.mode-switcher {
-  opacity: 0;
-}
+
 
 // intro, music, feedback: secondary headings & text below them: 
 .article {
@@ -657,6 +664,7 @@ html {
 // change bacground-color and color when dark mode is one
 .dark {
   background-color: $color-dark-mode;
+
   .main-container {
     background-color: $color-dark-mode;
   }
@@ -679,6 +687,17 @@ html {
 
     &:hover {
       border-bottom-color: $accent-color-primary;
+    }
+  }
+
+  .switcher__text {
+    color: $color-text-dark-mode;
+  }
+
+  .switcher__label {
+    background-color: $accent-color-primary;
+    &-circle {
+      background-color: $color-light-mode;
     }
   }
 

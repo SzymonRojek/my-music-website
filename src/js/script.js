@@ -70,8 +70,10 @@
 
   // mode 
   const body = document.querySelector('body').classList; 
-  const modeSwitcher = document.querySelector('.js-mode-switcher');
-  const iconify = document.querySelector('.iconify');
+  const modeSwitcher = document.querySelector('.js-switcher__mode');
+  const switcherText = document.querySelector('.switcher__text');
+
+  console.log(switcherText);
 
   const userPrefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
         userPrefersDarkMode ? body.add('dark') : body.remove('dark');
@@ -79,24 +81,23 @@
 
         if ( body.contains('dark') ) {
           modeSwitcher.checked = true;
-          iconify.setAttribute('data-icon', 'heroicons-outline:sun');
           modeSwitcher.setAttribute('aria-checked', true);
+          switcherText.innerText = 'light';
         } else {
-          iconify.setAttribute('data-icon', 'bx:bxs-moon')
+          switcherText.innerText = 'dark';
         }
      
-
-  modeSwitcher.addEventListener( 'click', () => {
-  if ( modeSwitcher.checked ) {
-    body.add('dark');
-    iconify.setAttribute('data-icon', 'heroicons-outline:sun');
-    modeSwitcher.setAttribute('aria-checked', true);
-    } else {
-    body.remove('dark');
-    iconify.setAttribute('data-icon', 'bx:bxs-moon');
-    modeSwitcher.setAttribute('aria-checked', false);
-    }
-  })
+        modeSwitcher.addEventListener( 'click', () => {
+        if ( modeSwitcher.checked ) {
+          body.add('dark');
+          modeSwitcher.setAttribute('aria-checked', true);
+          switcherText.innerText = 'light';
+          } else {
+          body.remove('dark');
+          modeSwitcher.setAttribute('aria-checked', false);
+          switcherText.innerText = 'dark';
+          }
+        })
 
 })();
 

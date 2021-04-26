@@ -450,15 +450,11 @@ html {
   transition: background-color .3s linear;
 }
 
-@media (min-width: 768px) {
-  .main-container {
-    position: relative;
-    bottom: 80px;
-    z-index: 1;
-  }
+.switcher__checkbox {
+  opacity: 0;
 }
 
-.label {
+.switcher__label {
   background-color: #f8f8f8;
   border-radius: 50px;
   cursor: pointer;
@@ -480,25 +476,19 @@ html {
   border: 1px solid #2c2323;
 }
 
-.circle {
-  background-color: rgba(247, 204, 12, 0.404);
+.switcher__label-circle {
   border-radius: 50%;
   position: absolute;
   top: 1;
   left: 2px;
   height: 22px;
   width: 22px;
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-  -webkit-transition: -webkit-transform 0.2s linear;
-  transition: -webkit-transform 0.2s linear;
-  transition: transform 0.2s linear;
-  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
   border: 1px solid #2c2323;
+  background-color: #2c2323;
 }
 
-.mode-switcher {
-  opacity: 0;
+.switcher__text {
+  color: #645858;
 }
 
 .article__img {
@@ -764,6 +754,18 @@ html {
 
 .dark .feedback__author-link:hover {
   border-bottom-color: #bf9660;
+}
+
+.dark .switcher__text {
+  color: rgba(204, 192, 192, 0.952);
+}
+
+.dark .switcher__label {
+  background-color: #bf9660;
+}
+
+.dark .switcher__label-circle {
+  background-color: #f8f8f8;
 }
 
 @media (min-width: 540px) {
