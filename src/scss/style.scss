@@ -667,6 +667,10 @@ html {
       color: $accent-color-primary;
   }
 
+  .article__img  {
+    filter: grayscale(50%);
+  }
+
   .article__text > * {
     color: $color-text-dark-mode;
   }
@@ -695,19 +699,11 @@ html {
     }
   }
 
+
   @media(min-width: 540px) {
-
-    // .body {
-    //   transition: background-color .3s linear;
-    // }
-
-    .main-container {
-      // transition: background-color .3s linear;
-      // background-color: green;
-    }
     .article > * {
       background-color: $color-dark-mode; 
-      // transition: background-color .3s linear;
+      z-index: 100;
     }
   }
 
@@ -726,6 +722,4 @@ html {
       }
     }
   }
-
- 
 }
