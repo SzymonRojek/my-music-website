@@ -30,6 +30,7 @@ html {
 .body {
   font-family: $base-font;
   background-color: $color-light-mode;
+  transition: background-color .3s linear;
 }
 
 .sr-only {
@@ -53,6 +54,7 @@ html {
   position: relative;
   z-index: 1;
   overflow-x: hidden;
+  border-bottom: 2px solid $accent-color-primary;
 
   &::after {
     content: '';
@@ -377,20 +379,10 @@ html {
   margin: 0 auto;
   padding: 0 30px 0 24px;
   background-color: $color-light-mode;
-  border-top: 2px solid $accent-color-primary;
   transition: background-color .3s linear;
 }
 
-// @media(min-width: 768px) {
-//   .main-container {
-//     position: relative;
-//     bottom: 80px;
-//     z-index: 1;
-//   }
-// }
-
-
-// toggle 
+// toggle mode
 
 .switcher {
   &__checkbox {
@@ -427,8 +419,6 @@ html {
     color: $color-text-light-mode;
   }
 }
-
-
 
 
 // intro, music, feedback: secondary headings & text below them: 
@@ -470,11 +460,15 @@ html {
    
   @media (min-width: 540px) {
     position: relative;
-
+   
     &__img {
       display: block;
       margin-top: 120px;
       margin-left: auto;
+    }
+
+    &__text {
+      transition: background-color .3s linear;
     }
 
     &__text--positioning {
@@ -713,7 +707,7 @@ html {
     }
     .article > * {
       background-color: $color-dark-mode; 
-      transition: background-color .3s linear;
+      // transition: background-color .3s linear;
     }
   }
 
