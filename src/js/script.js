@@ -69,29 +69,34 @@
 
 
   // mode 
-  const body = document.querySelector('body').classList;
+  const body = document.querySelector('body').classList; 
   const modeSwitcher = document.querySelector('.js-mode-switcher');
+  const iconify = document.querySelector('.iconify');
 
   const userPrefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
         userPrefersDarkMode ? body.add('dark') : body.remove('dark');
         console.log(`Dark mode is ${userPrefersDarkMode ? '🌒 on' : '☀️ off'}.`);
 
-      if ( body.contains('dark') ) {
-        modeSwitcher.checked = true; 
-        modeSwitcher.classList.add('mode-switcher--active');
-        modeSwitcher.setAttribute('aria-checked', true);
-      }
+        if ( body.contains('dark') ) {
+          modeSwitcher.checked = true;
+          iconify.setAttribute('data-icon', 'heroicons-outline:sun');
+          modeSwitcher.setAttribute('aria-checked', true);
+        } else {
+          iconify.setAttribute('data-icon', 'bi:moon')
+        }
+     
 
- modeSwitcher.addEventListener( 'click', () => {
-    if ( document.querySelector('.js-mode-switcher:checked') !== null ) {
-      body.add('dark');
-      modeSwitcher.classList.add('checkbox--active');
-      modeSwitcher.setAttribute('aria-checked', true);
-     } else {
-      body.remove('dark');
-      modeSwitcher.classList.remove('checkbox--active');
-      modeSwitcher.setAttribute('aria-checked', false);
-     }
+  modeSwitcher.addEventListener( 'click', () => {
+  if ( modeSwitcher.checked ) {
+    body.add('dark');
+
+    iconify.setAttribute('data-icon', 'heroicons-outline:sun');
+    modeSwitcher.setAttribute('aria-checked', true);
+    } else {
+    body.remove('dark');
+    iconify.setAttribute('data-icon', 'bi:moon');
+    modeSwitcher.setAttribute('aria-checked', false);
+    }
   })
 
 })();

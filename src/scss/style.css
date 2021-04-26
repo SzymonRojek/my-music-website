@@ -480,8 +480,8 @@ html {
           justify-content: space-between;
   padding: 5px;
   position: relative;
-  height: 26px;
-  width: 50px;
+  height: 28px;
+  width: 28px;
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
   border: 1px solid #2c2323;
@@ -502,15 +502,6 @@ html {
   transition: transform 0.2s linear;
   transition: transform 0.2s linear, -webkit-transform 0.2s linear;
   border: 1px solid #2c2323;
-}
-
-.mode-switcher {
-  opacity: 0;
-}
-
-.mode-switcher--active:checked + .label .circle {
-  -webkit-transform: translateX(22px);
-          transform: translateX(22px);
 }
 
 .article__img {
