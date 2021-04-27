@@ -21,7 +21,7 @@
 
 ## ToDo:
 - local storage or session storage;
-- smooth scroll between sections (accessibility) & links nav;
+- smooth scroll between sections & links navigation;
 - developing project to multi-pages;
 
 ## Usage:

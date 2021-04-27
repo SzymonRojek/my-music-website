@@ -7,7 +7,6 @@
   <!-- <meta name="color-scheme" content="dark light"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Szymon Rojek | Music Business Card</title>
-
   <link href='https://css.gg/arrow-up.css' rel='stylesheet'>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
@@ -17,7 +16,7 @@
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="./scss/style.css">
-  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <!-- <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script> -->
   <script defer src="./js/script.js"></script>
 </head>
 
@@ -72,8 +71,9 @@
     </div>
     <main class="main-container">
       <div class="switcher">
-        <input type="checkbox" class="switcher__checkbox js-switcher__mode" id="switcher-mode" />
-        <label class="switcher__label" for="switcher-mode">
+        <label class="switcher__label">
+          <input type="checkbox" name="toggle-dark-mode" aria-checked="false"
+            class="switcher__checkbox js-switcher__mode" />
           <div class="switcher__label-circle"></div>
         </label>
         <div>

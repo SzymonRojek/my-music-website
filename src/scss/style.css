@@ -452,6 +452,10 @@ html {
   transition: background-color .3s linear;
 }
 
+.switcher {
+  margin-top: 20px;
+}
+
 .switcher__checkbox {
   opacity: 0;
 }
