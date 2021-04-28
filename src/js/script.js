@@ -105,4 +105,4 @@
 
 // todo: => adding local or session storage, better arrow icons
 
-// check toggle input label id 
+// check toggle accessibility dark mode for the screen users 
