@@ -725,11 +725,98 @@ html {
       }
     }
   }
+
+
+
+  // contact section
+
+  .contact {
+    color: $color-text-dark-mode;
+  }
+
+
+  .email__link {
+    color: $accent-color-primary;
+  }
+
+  .form__button {
+    color: $color-dark-mode;
+    background-color: $accent-color-primary;
+  }
+
+  .form .form__field {
+    background-color: $color-dark-mode-brighter;
+    color: #fff;
+  }
+
+  .form .form__field::placeholder {
+    color: #fff;
+  }
 }
 
 
 /* // sprawdzx to w nawigavji na swej stronie muzycznej transform y */
 
+// just basic styling contact section at the moment
+.contact {
+  color: $color-text-light-mode;
+   &__heading {
+     // margin: 0;
+     // margin-left: 40px;
+     font-size: 36px;
+     position: relative;
+ 
+     &::before {
+       content: '';
+       background-image: url(../images/dots-bg.svg);
+       display: block;
+       height: 37px;
+       left: -14px;
+       top: -14px;
+       position: absolute;
+       width: 37px;
+     }
+   }
+   &__description {
+     background-image: url(../images/map.svg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: left;
+     min-height: 200px;
+   }
 
+   .form__list {
+     list-style: none;
+     padding-left: 35px;
+   }
+   .form__field {
+     width: 100%;
+    //  min-width: ;
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+    background-color: rgb(247, 236, 236);
+    margin-top: 20px;
+    border-radius: 5px;
+    opacity: .73;
+   }
+ }
 
+.form__button {
+  color: $accent-color-primary;
+  background-color: $color-dark-mode-brighter;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 35px;
+}
 
+.email__link {
+  color: $accent-color-secondary;
+  text-decoration: none;
+}
+
+.form__paragraph {
+  margin-top: 50px;
+  font-size: 12px;
+}

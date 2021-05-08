@@ -672,5 +672,89 @@ html {
   }
 }
 
+.dark .contact {
+  color: rgba(204, 192, 192, 0.952);
+}
+
+.dark .email__link {
+  color: #bf9660;
+}
+
+.dark .form__button {
+  color: #2c2323;
+  background-color: #bf9660;
+}
+
+.dark .form .form__field {
+  background-color: #5c4747;
+  color: #fff;
+}
+
+.dark .form .form__field::placeholder {
+  color: #fff;
+}
+
 /* // sprawdzx to w nawigavji na swej stronie muzycznej transform y */
+.contact {
+  color: #645858;
+}
+
+.contact__heading {
+  font-size: 36px;
+  position: relative;
+}
+
+.contact__heading::before {
+  content: '';
+  background-image: url(../images/dots-bg.svg);
+  display: block;
+  height: 37px;
+  left: -14px;
+  top: -14px;
+  position: absolute;
+  width: 37px;
+}
+
+.contact__description {
+  background-image: url(../images/map.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  min-height: 200px;
+}
+
+.contact .form__list {
+  list-style: none;
+  padding-left: 35px;
+}
+
+.contact .form__field {
+  width: 100%;
+  padding: 5px;
+  font-size: 18px;
+  border: 1px solid rgba(128, 128, 128, 0.199);
+  background-color: #f7ecec;
+  margin-top: 20px;
+  border-radius: 5px;
+  opacity: .73;
+}
+
+.form__button {
+  color: #bf9660;
+  background-color: #5c4747;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 35px;
+}
+
+.email__link {
+  color: #9c4e8f;
+  text-decoration: none;
+}
+
+.form__paragraph {
+  margin-top: 50px;
+  font-size: 12px;
+}
 /*# sourceMappingURL=style.css.map */
