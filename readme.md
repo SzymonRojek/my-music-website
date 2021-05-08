@@ -1,8 +1,9 @@
 
 
-## 🎥  Preview site :arrow_right: [clickHere](https://szymonrojek.github.io/business-music-card/)
 
 <img src="./src/images/music-web.gif" width="150" height="250">
+
+## 🎥  Preview site :arrow_right: [clickHere](https://szymonrojek.github.io/business-music-card/)
 
 # Technologies used:
 * [x] Parcel bundler;
