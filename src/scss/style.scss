@@ -606,7 +606,104 @@ html {
     }
   }
 }   
-  
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  color: $color-text-light-mode;
+   &__heading {
+    margin: 70px 0 10px 0;
+    font-size: 36px;
+    position: relative;
+    &::before {
+      content: '';
+      background-image: url(../images/dots-bg.svg);
+      display: block;
+      height: 37px;
+      left: -14px;
+      top: -14px;
+      position: absolute;
+      width: 37px;
+    }
+   }
+   &__description {
+     padding-top: 5px;
+     background-image: url(../images/map.svg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: left;
+     min-height: 100px;
+     &-email {
+      color: $accent-color-secondary;
+    }
+   }
+}
+
+.form {
+  &__list {
+    list-style: none;
+    padding: 0;
+
+  }
+  &__field {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    border: 0;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+    background-color: $bgc-light-mode-300;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px 0px rgba(47, 54, 64, 0.1);
+    &--last {
+      width: 85%;
+      resize: vertical;
+      overflow: auto;
+      min-height: 50px;
+      margin-bottom: 0;
+    }
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+
+  &__button {
+    padding: 10px 20px;
+    font-size: 12px;
+    color: $accent-color-primary;
+    background-color: $color-dark-mode-brighter;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  &__paragraph {
+    margin-top: 50px;
+    font-size: 12px;
+  }
+}
+
+@media(min-width: 540px) {
+  .contact {
+    flex-direction: row;
+    justify-content: space-around;
+    &__heading {
+      margin: 0;
+    }
+    .col-one {
+      width: 40%;
+    }
+    .col-two {
+      margin-top: 30px;
+      padding-left: 30px;
+      width: 60%;
+      max-width: 500px;
+    }
+  }
+}
+
+ 
 .footer {
   max-width: 1200px;
   margin: 70px auto 0 auto;
@@ -657,7 +754,8 @@ html {
 }
 
 
-// change bacground-color and color when dark mode is one
+
+// change bacground-color and color when dark mode is on
 .dark {
   background-color: $color-dark-mode;
 
@@ -725,98 +823,25 @@ html {
       }
     }
   }
-
-
-
-  // contact section
-
+  // contact section 
   .contact {
     color: $color-text-dark-mode;
+    &__description-email {
+      color: $accent-color-primary;
+    }
   }
 
-
-  .email__link {
-    color: $accent-color-primary;
+ .form {
+    &__field {
+      background-color: $color-dark-mode-brighter;
+      color: #fff;
+      &::placeholder {
+        color: #fff;
+      }
+    }
+    &__button {
+      color: $color-dark-mode;
+      background-color: $accent-color-primary;
+    }
   }
-
-  .form__button {
-    color: $color-dark-mode;
-    background-color: $accent-color-primary;
-  }
-
-  .form .form__field {
-    background-color: $color-dark-mode-brighter;
-    color: #fff;
-  }
-
-  .form .form__field::placeholder {
-    color: #fff;
-  }
-}
-
-
-/* // sprawdzx to w nawigavji na swej stronie muzycznej transform y */
-
-// just basic styling contact section at the moment
-.contact {
-  color: $color-text-light-mode;
-   &__heading {
-     // margin: 0;
-     // margin-left: 40px;
-     font-size: 36px;
-     position: relative;
- 
-     &::before {
-       content: '';
-       background-image: url(../images/dots-bg.svg);
-       display: block;
-       height: 37px;
-       left: -14px;
-       top: -14px;
-       position: absolute;
-       width: 37px;
-     }
-   }
-   &__description {
-     background-image: url(../images/map.svg);
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-position: left;
-     min-height: 200px;
-   }
-
-   .form__list {
-     list-style: none;
-     padding-left: 35px;
-   }
-   .form__field {
-     width: 100%;
-    //  min-width: ;
-    padding: 5px;
-    font-size: 18px;
-    border: 1px solid rgba(128, 128, 128, 0.199);
-    background-color: rgb(247, 236, 236);
-    margin-top: 20px;
-    border-radius: 5px;
-    opacity: .73;
-   }
- }
-
-.form__button {
-  color: $accent-color-primary;
-  background-color: $color-dark-mode-brighter;
-  border: 0;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-left: 35px;
-}
-
-.email__link {
-  color: $accent-color-secondary;
-  text-decoration: none;
-}
-
-.form__paragraph {
-  margin-top: 50px;
-  font-size: 12px;
 }
