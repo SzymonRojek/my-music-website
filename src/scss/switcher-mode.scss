@@ -1,0 +1,37 @@
+.switcher {
+  margin-top: 20px;
+  
+  &__checkbox {
+    opacity: 0;
+  }
+
+  &__label {
+    background-color: $color-light-mode;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    height: 28px;
+    width: 28px;
+    transform: scale(1.2);
+    border: 1px solid $color-dark-mode;
+
+    &-circle {
+      border-radius: 50%;
+      position: absolute;
+      top: 1;
+      left: 2px;
+      height: 22px;
+      width: 22px;
+      border: 1px solid $color-dark-mode;
+      background-color:$color-dark-mode;
+    }
+  }
+
+  &__text {
+    color: $color-text-light-mode;
+  }
+}

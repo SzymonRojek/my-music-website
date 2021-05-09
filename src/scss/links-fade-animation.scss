@@ -1,0 +1,14 @@
+.linksFade {
+  animation: linksFade .5s ease forwards;
+}
+
+@keyframes linksFade {
+  from {
+    opacity: 0;
+    transition: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

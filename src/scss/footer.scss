@@ -1,0 +1,48 @@
+.footer {
+  max-width: 1200px;
+  margin: 70px auto 0 auto;
+  padding: 30px 30px 30px 24px;
+  text-align: center;
+  background-color: $color-panel;
+  position: relative;
+
+  &__gg-arrow-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 16px;
+    color: $accent-color-primary;
+    box-shadow: 0 0 5px $grey-600;
+    text-decoration: none;
+    border-radius: 100%;
+    background-color: $grey-500;
+    cursor: pointer;
+    transition: all .3s ease-in;
+ 
+    &:hover {
+      color: $color-panel;
+      background-color:$accent-color-primary;
+    }
+  }
+
+  &__paragraph {
+    opacity: .8;
+    color: $color-light-mode;
+  }
+
+  @media(min-width: 768px) {
+    &__gg-arrow-up {
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+      position: absolute;
+      right: 50px;
+      bottom: 30px;
+    }
+  }
+}

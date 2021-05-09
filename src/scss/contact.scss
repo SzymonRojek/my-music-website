@@ -1,0 +1,98 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  color: $color-text-light-mode;
+   &__heading {
+    margin: 70px 0 10px 0;
+    font-size: 36px;
+    position: relative;
+    &::before {
+      content: '';
+      background-image: url(../images/dots-bg.svg);
+      display: block;
+      height: 37px;
+      left: -14px;
+      top: -14px;
+      position: absolute;
+      width: 37px;
+    }
+   }
+   &__description {
+     padding-top: 5px;
+     background-image: url(../images/map.svg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: left;
+     min-height: 100px;
+     &-email {
+      color: $accent-color-secondary;
+    }
+   }
+
+  .form {
+    &__list {
+      list-style: none;
+      padding: 0;
+    }
+    &__field {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      line-height: 1.5;
+      border: 0;
+      border: 1px solid rgba(128, 128, 128, 0.199);
+      background-color: $bgc-light-mode-300;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 5px 20px 0px rgba(47, 54, 64, 0.1);
+      &--last {
+        width: 85%;
+        resize: vertical;
+        overflow: auto;
+        min-height: 50px;
+        margin-bottom: 0;
+      }
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+    &__button {
+      padding: 10px 20px;
+      font-size: 12px;
+      color: $accent-color-primary;
+      background-color: $color-dark-mode-brighter;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all .3s ease;
+        &:hover {
+          transform: translateY(-1px);
+        }
+        &:active {
+          background-color: $color-dark-mode;
+          transform: translateY(3px);
+        }
+    }
+    &__paragraph {
+      margin-top: 50px;
+      font-size: 12px;
+    }
+  }
+  @media(min-width: 540px) {
+    flex-direction: row;
+    justify-content: space-around;
+    &__heading {
+      margin: 0;
+    }
+    .col-one {
+      width: 40%;
+    }
+    .col-two {
+      margin-top: 30px;
+      padding-left: 30px;
+      width: 60%;
+      max-width: 500px;
+    }
+  }
+}
