@@ -5,25 +5,36 @@
 
 ## 🎥  Preview site :arrow_right: [clickHere](https://szymonrojek.github.io/business-music-card/)
 
-# Technologies used:
-* [x] Parcel bundler;
-* [x] Sass;
-* [x] Flexbox;
-* [x] HTML, CSS, JS
+## Technologies:
+
+<table>
+  <tr>
+    <td><img src="./src/images/parcel-js.png" width="50" height="50"></td>
+    <td><img src="./src/images/sass.svg" width="50" height="50"></td>
+    <td><img src="./src/images/flex-box.png" width="50" height="50"></td>
+    <td><img src="./src/images/html.svg" width="50" height="50"></td>
+    <td><img src="./src/images/css.svg" width="50" height="50"> </td>
+    <td><img src="./src/images/js.svg" width="50" height="50"></td>
+  </tr>
+ </table>
+
+
 
 
 ## I have used:
-- Semantic tags and attributes;
-- Invisible content for Screen Reader users;
-- Detect if the user has requested theme color: light or dark; (prefers-color-scheme);
-- Manually switching the mode between light/dark (smooth transition);
-- RWD, mobile first;
+- Semantic HTML
+- Invisible content for Screen Reader users
+- BEM methodology
+- Detect if the user has requested theme color: light or dark; (prefers-color-scheme)
+- Manually switching the mode between light/dark (smooth transition)
+- Responsive Web Design
+- Mobile first
 
 
 ## ToDo:
-- local storage or session storage;
-- smooth scroll between sections & links navigation;
-- developing project to multi-pages;
+- local storage or session storage
+- smooth scroll between sections & links navigation
+- developing project to multi-pages
 
 ## Usage:
 
