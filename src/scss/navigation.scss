@@ -186,12 +186,12 @@
     &__link {
       opacity: 1;
       &:hover {
-        transform: translateY(-3px);
+        transform: translateY(-1px);
       }
 
       &:active {
         color: $accent-color-primary;
-        transform: translateY(-3px);
+        transform: translateY(2px);
       }
     }
   
