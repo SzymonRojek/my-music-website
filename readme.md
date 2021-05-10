@@ -5,6 +5,10 @@
 
 ## 🎥  Preview site :arrow_right: [clickHere](https://szymonrojek.github.io/business-music-card/)
 
+## Description:
+
+Music is always with me - nylon gutiar is the biggest passion in my live so I have decided to create my personal music website and share my music with you. Please check it out. 
+
 ## Technologies:
 
 <table>
@@ -19,22 +23,20 @@
  </table>
 
 
-
-
 ## I have used:
 - Semantic HTML
 - Invisible content for Screen Reader users
 - BEM methodology
-- Detect if the user has requested theme color: light or dark; (prefers-color-scheme)
+- Detect if the user has requested theme color: light or dark (prefers-color-scheme);
+- Local Storage (store theme color user's preferences)
 - Manually switching the mode between light/dark (smooth transition)
 - Responsive Web Design
 - Mobile first
 
 
 ## ToDo:
-- local storage or session storage
 - smooth scroll between sections & links navigation
-- developing project to multi-pages
+- possibly developing project to multi-pages
 
 ## Usage:
 

@@ -20,7 +20,7 @@
     navigationList.classList.toggle('navigation__list--open');
     fadeLinks();
 
-    if(navigationList.classList.contains('navigation__list--open')) {
+    if (navigationList.classList.contains('navigation__list--open')) {
       navigationHamburgerButton.setAttribute('aria-expanded', true); 
     } else {
       navigationHamburgerButton.setAttribute('aria-expanded', false);
