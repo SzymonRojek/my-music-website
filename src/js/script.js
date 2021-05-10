@@ -1,14 +1,9 @@
-(() => {
+{
 
-  'use strict';
-
-  // navigation 
   const navigationHamburgerButton = document.querySelector('.navigation__hamburgerButton');
   const navigationArrowButton = document.querySelector('.navigation__list-arrowButton');
   const navigationList = document.querySelector('.navigation__list');
   const navigationLinks = document.querySelectorAll('.navigation__link');
-  const arrowRight = '>';
-  const arrowLeft = '<';
 
   const fadeLinks = () => {
     navigationLinks.forEach( link => {
@@ -20,7 +15,7 @@
     })
   }
 
-  navigationHamburgerButton.addEventListener('click', () => {
+  const setNavigationHamburgerButton = () => {
     navigationHamburgerButton.classList.toggle('js-active');
     navigationList.classList.toggle('navigation__list--open');
     fadeLinks();
@@ -31,9 +26,15 @@
       navigationHamburgerButton.setAttribute('aria-expanded', false);
       navigationArrowButton.setAttribute('aria-expanded', false);
     }
-  })
+  }
 
-  navigationArrowButton.addEventListener('click', () => {
+  const setTextNavigationArrowButton = () => {
+    const arrowRight = '>';
+    const arrowLeft = '<';
+    navigationArrowButton.innerText = navigationArrowButton.innerText === arrowRight ? arrowLeft : arrowRight;
+  }
+
+  const setNavigationArrowButton = () => {
     navigationList.classList.toggle('navigation__list--open');
     
     if (navigationList.classList.contains('navigation__list--open')) {
@@ -44,11 +45,9 @@
       navigationArrowButton.setAttribute('aria-expanded', false);
       navigationHamburgerButton.setAttribute('aria-expanded', false);
     }
-
     fadeLinks();
-
-    navigationArrowButton.innerText = navigationArrowButton.innerText === arrowRight ? arrowLeft : arrowRight;
-  })
+    setTextNavigationArrowButton();
+  }
 
   const resetStatesWhenLinkPressed = () => {
     navigationLinks.forEach( link => {
@@ -61,48 +60,60 @@
       })
     })
   }
-  resetStatesWhenLinkPressed();
 
-  window.addEventListener( 'scroll', () => {
+  removeFadeLinksAnimation = () => {
     window.pageYOffset > 200 ? navigationArrowButton.classList.add('navigation__list-arrowButton--active') : navigationArrowButton.classList.remove('navigation__list-arrowButton--active');
-  })
+  }
 
 
-  // mode 
+  // theme mode 
   const body = document.querySelector('body').classList; 
   const modeSwitcher = document.querySelector('.js-switcher__mode');
   const switcherText = document.querySelector('.switcher__text');
 
-  console.log(switcherText);
+  const enableDarkMode = () => {
+    modeSwitcher.checked = true;
+    body.add( 'dark' );
+    localStorage.setItem( 'theme', 'dark' );
+    switcherText.innerText = 'light';
+    modeSwitcher.setAttribute( 'aria-checked', true );
+  }
 
-  const userPrefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        userPrefersDarkMode ? body.add('dark') : body.remove('dark');
-        console.log(`Dark mode is ${userPrefersDarkMode ? '🌒 on' : '☀️ off'}.`);
+  const disableDarkMode = () => {
+    modeSwitcher.checked = false;
+    body.remove( 'dark' );
+    localStorage.setItem( 'theme', 'light' );
+    switcherText.innerText = 'dark';
+    modeSwitcher.setAttribute( 'aria-checked', false );
+  }
 
-        if ( body.contains('dark') ) {
-          modeSwitcher.checked = true;
-          modeSwitcher.setAttribute('aria-checked', true);
-          switcherText.innerText = 'light';
-        } else {
-          switcherText.innerText = 'dark';
-        }
-     
-        modeSwitcher.addEventListener( 'click', () => {
-        if ( modeSwitcher.checked ) {
-          body.add('dark');
-          modeSwitcher.setAttribute('aria-checked', true);
-          switcherText.innerText = 'light';
-          } else {
-          body.remove('dark');
-          modeSwitcher.setAttribute('aria-checked', false);
-          switcherText.innerText = 'dark';
-          }
-        })
+  const getUserThemePreferences = () => {
+    const userThemePreference = window.matchMedia( '(prefers-color-scheme: dark)' ).matches;
+    userThemePreference ? enableDarkMode() : disableDarkMode();
+  }
 
-})();
+  const isThemeAvailable = () => {
+    const theme = localStorage.getItem( 'theme' );
+      if ( theme ) {
+        theme === 'dark' ? enableDarkMode() : disableDarkMode();
+      } else {
+        getUserThemePreferences();
+      }
+  }
 
+  const toggleButton = () => {
+    const theme = localStorage.getItem( 'theme' );
+    theme === 'light' ? enableDarkMode() : disableDarkMode();
+  }
 
+  const init = () => {
+    navigationHamburgerButton.addEventListener('click', setNavigationHamburgerButton);
+    navigationArrowButton.addEventListener('click', setNavigationArrowButton);
+    resetStatesWhenLinkPressed();
+    window.addEventListener( 'scroll', removeFadeLinksAnimation);
+    isThemeAvailable();
+    modeSwitcher.addEventListener('click', toggleButton);
+  }
 
-// todo: => adding local or session storage, better arrow icons
-
-// check toggle accessibility dark mode for the screen users 
+  init();
+}
