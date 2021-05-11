@@ -3,8 +3,7 @@
 
 <img src="./src/images/music-web.gif" width="150" height="250">
 
-## 🎥  Preview site :arrow_right: [clickHere](https://szymonrojek.github.io/business-music-card/)
-
+## 🎥  Preview site :arrow_right: [clickHere](https://szymonrojek.github.io/my-music-website/)
 ## Description:
 
 Music is always with me - nylon gutiar is the biggest passion in my live so I have decided to create my personal music website and share my music with you. Please check it out. 
