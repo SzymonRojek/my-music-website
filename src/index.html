@@ -258,11 +258,12 @@
             </p>
           </div>
         </div>
-        <form action="action=" https://formsubmit.co/sz.rojek@gmail.com" method="POST" class="form col-two">
+        <form action="action=https://formsubmit.co/sz.rojek@gmail.com" method="POST" class="form col-two">
+          <p class="form__paragraph">*Fields required</p>
           <ul class="form__list">
             <li>
               <label class="form__item">
-                <input class="form__field" name="name" placeholder="Name*" autofocus required>
+                <input class="form__field" name="name" placeholder="Name*" min="3" required>
               </label>
             </li>
             <li>
@@ -282,8 +283,7 @@
               </label>
             </li>
           </ul>
-          <button class="form__button" type="submit">Send Message</button>
-          <p class="form__paragraph">*Fields Required</p>
+          <button class="form__button js-submitButton" type="submit">Send Message</button>
         </form>
       </section>
     </main>

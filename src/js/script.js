@@ -105,13 +105,20 @@
     theme === 'light' ? enableDarkMode() : disableDarkMode();
   }
 
+  const onFormSubmit = e => {
+    e.preventDefault;
+  }
+
   const init = () => {
+    const submitButton = document.querySelector('.js-submitButton');
+
     hamburgerButton.addEventListener('click', setHamburgerButton);
     arrowButton.addEventListener('click', setArrowButton);
     resetStatesWhenLinkPressed();
     window.addEventListener( 'scroll', removeFadeLinksAnimation);
     setTheme();
     modeSwitcher.addEventListener('click', toggleButton);
+    submitButton.addEventListener('submit', onFormSubmit);
   }
 
   init();

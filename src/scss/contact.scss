@@ -35,6 +35,11 @@
       list-style: none;
       padding: 0;
     }
+    &__paragraph {
+      margin-top: 50px;
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
     &__field {
       width: 100%;
       padding: 10px;
@@ -61,22 +66,20 @@
       padding: 10px 20px;
       font-size: 12px;
       color: $accent-color-primary;
+      text-transform: uppercase;
       background-color: $color-dark-mode-brighter;
       border: 0;
       border-radius: 5px;
       cursor: pointer;
       transition: all .3s ease;
         &:hover {
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         &:active {
+          transform: translateY(3.5px);
+          color: $color-text-light-mode;
           background-color: $color-dark-mode;
-          transform: translateY(3px);
         }
-    }
-    &__paragraph {
-      margin-top: 50px;
-      font-size: 12px;
     }
   }
   @media(min-width: 540px) {
@@ -85,14 +88,16 @@
     &__heading {
       margin: 0;
     }
+    .form__paragraph {
+      margin-top: 10px;
+    }
     .col-one {
-      width: 40%;
+      flex-grow: 1;
     }
     .col-two {
       margin-top: 30px;
       padding-left: 30px;
-      width: 60%;
-      max-width: 500px;
+      flex-grow: 1;
     }
   }
 }
