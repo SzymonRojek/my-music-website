@@ -1,7 +1,6 @@
 {
-
-  const navigationHamburgerButton = document.querySelector('.navigation__hamburgerButton');
-  const navigationArrowButton = document.querySelector('.navigation__list-arrowButton');
+  const hamburgerButton = document.querySelector('.navigation__hamburgerButton');
+  const arrowButton = document.querySelector('.navigation__list-arrowButton');
   const navigationList = document.querySelector('.navigation__list');
   const navigationLinks = document.querySelectorAll('.navigation__link');
 
@@ -15,67 +14,67 @@
     })
   }
 
-  const setNavigationHamburgerButton = () => {
-    navigationHamburgerButton.classList.toggle('js-active');
+  const setHamburgerButton = () => {
+    hamburgerButton.classList.toggle('js-active');
     navigationList.classList.toggle('navigation__list--open');
     fadeLinks();
 
     if (navigationList.classList.contains('navigation__list--open')) {
-      navigationHamburgerButton.setAttribute('aria-expanded', true); 
+      hamburgerButton.setAttribute('aria-expanded', true); 
     } else {
-      navigationHamburgerButton.setAttribute('aria-expanded', false);
-      navigationArrowButton.setAttribute('aria-expanded', false);
+      hamburgerButton.setAttribute('aria-expanded', false);
+      arrowButton.setAttribute('aria-expanded', false);
     }
   }
 
-  const setTextNavigationArrowButton = () => {
+  const setTextArrowButton = () => {
     const arrowRight = '>';
     const arrowLeft = '<';
-    navigationArrowButton.innerText = navigationArrowButton.innerText === arrowRight ? arrowLeft : arrowRight;
+    arrowButton.innerText = arrowButton.innerText === arrowRight ? arrowLeft : arrowRight;
   }
 
-  const setNavigationArrowButton = () => {
+  const setArrowButton = () => {
     navigationList.classList.toggle('navigation__list--open');
     
     if (navigationList.classList.contains('navigation__list--open')) {
-      navigationHamburgerButton.classList.add('js-active');
-      navigationArrowButton.setAttribute('aria-expanded', true)
+      hamburgerButton.classList.add('js-active');
+      arrowButton.setAttribute('aria-expanded', true)
     } else {
-      navigationHamburgerButton.classList.remove('js-active');
-      navigationArrowButton.setAttribute('aria-expanded', false);
-      navigationHamburgerButton.setAttribute('aria-expanded', false);
+      hamburgerButton.classList.remove('js-active');
+      arrowButton.setAttribute('aria-expanded', false);
+      hamburgerButton.setAttribute('aria-expanded', false);
     }
     fadeLinks();
-    setTextNavigationArrowButton();
+    setTextArrowButton();
   }
 
   const resetStatesWhenLinkPressed = () => {
     navigationLinks.forEach( link => {
       link.addEventListener('click', () => {
         navigationList.classList.remove('navigation__list--open');
-        navigationHamburgerButton.classList.remove('js-active');
-        navigationArrowButton.setAttribute('aria-expanded', false);
-        navigationHamburgerButton.setAttribute('aria-expanded', false);
+        hamburgerButton.classList.remove('js-active');
+        arrowButton.setAttribute('aria-expanded', false);
+        hamburgerButton.setAttribute('aria-expanded', false);
         fadeLinks();
       })
     })
   }
 
   removeFadeLinksAnimation = () => {
-    window.pageYOffset > 200 ? navigationArrowButton.classList.add('navigation__list-arrowButton--active') : navigationArrowButton.classList.remove('navigation__list-arrowButton--active');
+    window.pageYOffset > 200 ? arrowButton.classList.add('navigation__list-arrowButton--active') : arrowButton.classList.remove('navigation__list-arrowButton--active');
   }
 
 
   // theme mode 
   const body = document.querySelector('body').classList; 
   const modeSwitcher = document.querySelector('.js-switcher__mode');
-  const switcherText = document.querySelector('.switcher__text');
+  const textSwitcher = document.querySelector('.switcher__text');
 
   const enableDarkMode = () => {
     modeSwitcher.checked = true;
     body.add( 'dark' );
     localStorage.setItem( 'theme', 'dark' );
-    switcherText.innerText = 'light';
+    textSwitcher.innerText = 'light';
     modeSwitcher.setAttribute( 'aria-checked', true );
   }
 
@@ -83,7 +82,7 @@
     modeSwitcher.checked = false;
     body.remove( 'dark' );
     localStorage.setItem( 'theme', 'light' );
-    switcherText.innerText = 'dark';
+    textSwitcher.innerText = 'dark';
     modeSwitcher.setAttribute( 'aria-checked', false );
   }
 
@@ -92,8 +91,8 @@
     userThemePreference ? enableDarkMode() : disableDarkMode();
   }
 
-  const isThemeAvailable = () => {
-    const theme = localStorage.getItem( 'theme' );
+  const setTheme = theme => {
+    theme = localStorage.getItem( 'theme' );
       if ( theme ) {
         theme === 'dark' ? enableDarkMode() : disableDarkMode();
       } else {
@@ -101,17 +100,17 @@
       }
   }
 
-  const toggleButton = () => {
-    const theme = localStorage.getItem( 'theme' );
+  const toggleButton = theme => {
+    theme = localStorage.getItem( 'theme' );
     theme === 'light' ? enableDarkMode() : disableDarkMode();
   }
 
   const init = () => {
-    navigationHamburgerButton.addEventListener('click', setNavigationHamburgerButton);
-    navigationArrowButton.addEventListener('click', setNavigationArrowButton);
+    hamburgerButton.addEventListener('click', setHamburgerButton);
+    arrowButton.addEventListener('click', setArrowButton);
     resetStatesWhenLinkPressed();
     window.addEventListener( 'scroll', removeFadeLinksAnimation);
-    isThemeAvailable();
+    setTheme();
     modeSwitcher.addEventListener('click', toggleButton);
   }
 
