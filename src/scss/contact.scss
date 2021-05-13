@@ -25,9 +25,13 @@
      background-size: cover;
      background-position: left;
      min-height: 100px;
+     height: 100%;
      &-email {
       color: $accent-color-secondary;
     }
+   }
+   .notesIcon {
+     height: 20px;
    }
 
   .form {
