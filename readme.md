@@ -10,14 +10,20 @@ Music is always with me - nylon gutiar is the biggest passion in my live so I ha
 
 ## Technologies:
 
+
 <table>
   <tr>
-    <td><img src="./src/images/parcel-js.png" width="50" height="50"></td>
-    <td><img src="./src/images/sass.svg" width="50" height="50"></td>
-    <td><img src="./src/images/flex-box.png" width="50" height="50"></td>
-    <td><img src="./src/images/html.svg" width="50" height="50"></td>
-    <td><img src="./src/images/css.svg" width="50" height="50"> </td>
-    <td><img src="./src/images/js.svg" width="50" height="50"></td>
+    <td><img src="./src/images/npm-icon.png" width="50" height="50"></td>
+    <td><img src="./src/images/parcel-js-icon.png" width="50" height="50"></td>
+    <td><img src="./src/images/sass-icon.svg" width="50" height="50"></td>
+    <td><img src="./src/images/flexbox-icon.png" width="50" height="50"></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td><img src="./src/images/html-icon.svg" width="50" height="50"></td>
+    <td><img src="./src/images/css-icon.svg" width="50" height="50"> </td>
+    <td><img src="./src/images/js-icon.svg" width="50" height="50"></td>
   </tr>
  </table>
 
