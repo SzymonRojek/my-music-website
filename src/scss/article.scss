@@ -1,4 +1,4 @@
-// intro, music, feedback: secondary headings & text below them: 
+// intro, music, feedback: secondary headings & text below them:
 
 .article {
   &__img {
@@ -7,12 +7,16 @@
     z-index: -1;
   }
 
+  & > div {
+    background-color: var(--article-bgc);
+  }
+
   &__text {
     margin: auto;
     max-width: 541px;
     line-height: 1.5;
     text-align: center;
-    color: $color-text-light-mode;
+    color: var(--article-text);
   }
 
   &__heading {
@@ -25,7 +29,7 @@
   }
 
   &__special {
-    color: $accent-color-secondary;
+    color: $accent-gold;
   }
 
   &__paragraph {
@@ -35,10 +39,10 @@
       margin-bottom: 50px;
     }
   }
-   
+
   @media (min-width: 540px) {
     position: relative;
-   
+
     &__img {
       display: block;
       margin-top: 120px;
@@ -46,7 +50,7 @@
     }
 
     &__text {
-      transition: background-color .3s linear;
+      transition: background-color 0.3s linear;
     }
 
     &__text--positioning {
@@ -55,7 +59,7 @@
       left: 0;
       padding: 0 40px 0 96px;
       text-align: start;
-      background-color: $color-light-mode;
+      background-color: $color-alabaster;
     }
 
     &__img--margin {

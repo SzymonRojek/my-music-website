@@ -4,51 +4,52 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0; 
+    margin: 0;
 
     &__img {
       display: block;
-      height: auto; 
+      height: auto;
       width: 100%;
       max-width: 400px;
     }
-  
+
     &__text {
       padding: 20px;
       line-height: 1.5;
-      background-color: $bgc-light-mode-300;
+      background-color: var(--feedback-bgc);
+      color: var(--feedback-text);
     }
 
     &__paragraph {
-        opacity: .5;
+      opacity: 0.5;
     }
-  
+
     &__author {
       text-align: right;
 
       &-link {
         text-decoration: none;
         letter-spacing: 1px;
-        color: $accent-color-secondary;
+        color: var(--feedback-author);
         border-bottom: 1.8px solid rgba(179, 137, 137, 0.089);
-        transition: .2s all ease-in;
+        transition: 0.2s all ease-in;
         cursor: pointer;
-  
+
         &:hover {
-          border-bottom: 1.8px solid rgb(192, 143, 183);
+          border-bottom: 1.8px solid var(--feedback-author);
         }
       }
     }
-  } 
+  }
 
   @media (min-width: 440px) {
     .feedback {
       position: relative;
-  
+
       &__img {
         margin-bottom: 200px;
       }
-  
+
       &__text {
         position: absolute;
         bottom: 100px;
@@ -57,19 +58,19 @@
         text-align: start;
         line-height: 2;
         box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.15);
-        opacity: .93;
-  
+        opacity: 0.93;
+
         &--right {
           right: 0;
         }
-  
+
         &--left {
           left: 0;
         }
       }
     }
   }
-  
+
   @media (min-width: 738px) {
     .feedback {
       &__heading {
@@ -80,7 +81,7 @@
       }
     }
   }
-  
+
   @media (min-width: 1024px) {
     .feedback {
       &__text {
@@ -88,4 +89,4 @@
       }
     }
   }
-}   
+}

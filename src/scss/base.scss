@@ -3,14 +3,16 @@ html {
   scroll-behavior: smooth;
 }
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: inherit;
 }
 
 .body {
   font-family: $base-font;
-  background-color: $color-light-mode;
-  transition: background-color .3s linear;
+  background-color: var(--container-bgc);
+  transition: background-color 0.3s linear;
 }
 
 .sr-only {

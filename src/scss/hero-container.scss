@@ -7,17 +7,17 @@
   position: relative;
   z-index: 1;
   overflow-x: hidden;
-  border-bottom: 2px solid $accent-color-primary;
+  border-bottom: 2px solid $accent-gold;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     background-color: $color-overlay;
-    opacity: .4;
+    opacity: 0.4;
     z-index: -1;
   }
 }

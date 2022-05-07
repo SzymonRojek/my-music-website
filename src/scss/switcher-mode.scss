@@ -1,12 +1,18 @@
+.switcher-container {
+  max-width: 100px;
+}
+
 .switcher {
   margin-top: 20px;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &__checkbox {
     opacity: 0;
   }
 
   &__label {
-    background-color: $color-light-mode;
     border-radius: 50px;
     cursor: pointer;
     display: flex;
@@ -17,21 +23,22 @@
     height: 28px;
     width: 28px;
     transform: scale(1.2);
-    border: 1px solid $color-dark-mode;
+    border: 1px solid var(--switcher-text);
 
     &-circle {
+      background-color: var(--switcher-bgc);
       border-radius: 50%;
       position: absolute;
       top: 1;
       left: 2px;
       height: 22px;
       width: 22px;
-      border: 1px solid $color-dark-mode;
-      background-color:$color-dark-mode;
+      border: 1px solid var(--switcher-text);
     }
   }
 
   &__text {
-    color: $color-text-light-mode;
+    color: var(--switcher-text);
+    text-align: center;
   }
 }
