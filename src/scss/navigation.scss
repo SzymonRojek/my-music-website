@@ -83,7 +83,7 @@
     justify-content: center;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
-    background-color: $color-darkBrown;
+    background-color: var(--mobile-nav);
     z-index: 10;
 
     &--open {
@@ -107,7 +107,7 @@
       user-select: none;
       font-size: 20px;
       color: transparent;
-      background-color: $color-darkBrown;
+      background-color: var(--mobile-nav);
       text-align: left;
       will-change: transform, opacity;
       transform: translateX(100%);
@@ -119,7 +119,7 @@
 
       &--active {
         transform: translateX(0);
-        color: $accent-gold;
+        color: var(--arrowIcon);
       }
     }
   }
