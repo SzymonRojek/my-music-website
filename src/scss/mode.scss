@@ -1,0 +1,49 @@
+:root {
+  --color-mode: "light";
+  --color-light: #f8f8f8;
+  --color-light-cream: #f7ecec;
+  --color-light-alfa: #f2f2f2;
+  --color-dark: #2c2323;
+  --color-dark-bright: rgb(92 71 71);
+  --text-light: rgb(100, 88, 88);
+  --color-accent-gold: #bf9660;
+  --color-accent-violet: rgb(156, 78, 143);
+
+  --text-dark-alfa: rgba(204, 192, 192, 0.952);
+  --container-bgc: var(--color-light);
+  --switcher-bgc: var(--color-dark);
+  --switcher-text: var(--color-dark);
+  --article-bgc: var(--color-light);
+  --article-text: var(--text-light);
+  --feedback-bgc: var(--color-light-cream);
+  --feedback-text: var(--color-dark-alfa);
+  --feedback-author: var(--color-accent-violet);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: "dark";
+  }
+
+  :root:not([data-user-color-scheme]) {
+    --container-bgc: var(--color-dark);
+    --switcher-bgc: var(--color-light);
+    --switcher-text: var(--color-light);
+    --article-bgc: var(--color-dark);
+    --article-text: var(--text-dark-alfa);
+    --feedback-bgc: var(--color-dark-bright);
+    --feedback-text: var(--color-light-alfa);
+    --feedback-author: var(--color-accent-gold);
+  }
+}
+
+[data-user-color-scheme="dark"] {
+  --container-bgc: var(--color-dark);
+  --switcher-bgc: var(--color-light-alfa);
+  --switcher-text: var(--color-light-alfa);
+  --article-bgc: var(--color-dark);
+  --article-text: var(--text-dark-alfa);
+  --feedback-bgc: var(--color-dark-bright);
+  --feedback-text: var(--color-light-alfa);
+  --feedback-author: var(--color-accent-gold);
+}
