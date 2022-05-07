@@ -37,8 +37,9 @@ Music is always with me - nylon gutiar is the biggest passion in my live so I ha
 
 ## ToDo:
 
+- validation form and connect to the email.js
 - smooth scroll between sections & links navigation
-- possibly developing project to multi-pages
+- possibly transfer project to React.js
 
 ## Usage:
 
