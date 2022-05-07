@@ -17,7 +17,8 @@
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="scss/main.scss">
-  <script defer src="./js/script.js"></script>
+  <script type="module" src="./js/script.js"></script>
+  <script type="module" src="./js/mode.js"></script>
 </head>
 
 <body class="body">
@@ -70,14 +71,16 @@
       </header>
     </div>
     <main class="main-container">
-      <div class="switcher">
-        <label class="switcher__label">
-          <input type="checkbox" name="toggle-dark-mode" aria-checked="false"
-            class="switcher__checkbox js-switcher__mode" />
-          <div class="switcher__label-circle"></div>
-        </label>
+      <div class="switcher-container">
+        <div class="switcher">
+          <label class="switcher__label">
+            <input type="checkbox" name="toggle-dark-mode" aria-checked="false"
+              class="switcher__checkbox js-switcher__mode" />
+            <div class="switcher__label-circle"></div>
+          </label>
+        </div>
         <div>
-          <p class="switcher__text">light</p>
+          <p class="switcher__text js-switcher__text">light mode</p>
         </div>
       </div>
       <section class="intro-wrapper" id="intro">
