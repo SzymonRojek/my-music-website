@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- <meta name="color-scheme" content="dark light"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Szymon Rojek | Guitar Music Website</title>
   <link rel="icon" href="./images/title-icon.png">
@@ -17,8 +16,18 @@
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="scss/main.scss">
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init(process.env.USER_ID);
+   })();
+</script>
   <script type="module" src="./js/navigation.js"></script>
   <script type="module" src="./js/mode.js"></script>
+  <script type="module" src="./js/form.js"></script>
 </head>
 
 <body class="body">
@@ -260,26 +269,27 @@
             </h4>
           </div>
         </div>
-        <form action="action=https://formsubmit.co/sz.rojek@gmail.com" method="POST" class="form col-two">
+  
+        <form class="form col-two">
           <p class="form__paragraph">*Fields required</p>
           <ul class="form__list">
             <li>
               <label class="form__item">
-                <input class="form__field" name="name" placeholder="Name*" min="3" required>
+                <input class="form__field js-form__field-name" name="name" placeholder="Name*" min="3" required>
               </label>
             </li>
             <li>
               <label class="form__item">
-                <input class="form__field" type="email" name="email" placeholder="Email Address*" required>
+                <input class="form__field js-form__field-email" type="email" name="email" placeholder="Email Address*" required>
               </label>
             </li>
             <li>
-              <label class="form__item">
+              <label class="form__item js-form__field-subject">
                 <input class="form__field" name="subject" placeholder="Subject*" required>
               </label>
             </li>
             <li>
-              <label class="form__item">
+              <label class="form__item js-form__field-area">
                 <textarea class="form__field form__field--last" name="description" placeholder="Message*" rows="7"
                   required></textarea>
               </label>
