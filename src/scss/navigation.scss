@@ -156,7 +156,7 @@
     transition: all 0.2s ease;
 
     &:hover {
-      color: $accent-gold;
+      color: var(--linksHover);
     }
   }
 }

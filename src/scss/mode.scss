@@ -22,6 +22,7 @@
   --contact-container: var(--color-accent-gold);
   --mobile-nav: var(--color-dark-alpha);
   --arrowIcon: var(--color-accent-gold);
+  --linksHover: var(--color-accent-gold);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,6 +42,7 @@
     --contact-container: var(--color-light-alfa);
     --mobile-nav: var(--color-accent-gold);
     --arrowIcon: var(--color-dark);
+    --linksHover: var(--color-dark);
   }
 }
 
@@ -56,4 +58,5 @@
   --contact-container: var(--color-light-alfa);
   --mobile-nav: var(--color-accent-gold);
   --arrowIcon: var(--color-dark);
+  --linksHover: var(--color-dark);
 }
