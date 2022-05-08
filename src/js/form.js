@@ -46,8 +46,6 @@ function showSuccessModal() {
   });
 }
 
-showErrorModal({ error: "something went wrong" });
-
 function showErrorModal(error) {
   Swal.fire({
     icon: "error",
