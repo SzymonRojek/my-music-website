@@ -24,21 +24,27 @@ Music is always with me - nylon gutiar is the biggest passion in my live so I ha
   </tr>
  </table>
 
-## I have used:
+## Goals achived:
+
+- detecting if the user has requested theme color: light or dark by using(prefers-color-scheme);
+- storing object in the browser { mode: light or dark } by using Local Storage
+- manually switching the mode between light/dark (smooth transition)
+- connect Contact Form with an external tool [Email.js](https://www.emailjs.com/)
+
+```js
+EmailJS helps to send emails using client-side technologies only. No server is required – just connect EmailJS to one of the supported email services, create an email template, and use our Javascript library to trigger an email.
+```
+
+- when form is submitted the form User immediately is receiving confirmation - successful modal or Error Modal will appear. In this case I have used an external tool [sweet alert](https://sweetalert2.github.io/#example/)
 
 - Semantic HTML
 - Invisible content for Screen Reader users
 - BEM methodology
-- Detect if the user has requested theme color: light or dark (prefers-color-scheme);
-- Local Storage (store object { mode: light or dark })
-- Manually switching the mode between light/dark (smooth transition)
 - Responsive Web Design
 - Mobile first
 
 ## ToDo:
 
-- validation form and connect to the email.js
-- smooth scroll between sections & links navigation
 - possibly transfer project to React.js
 
 ## Usage:
