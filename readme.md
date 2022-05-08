@@ -45,6 +45,7 @@ EmailJS helps to send emails using client-side technologies only. No server is r
 
 ## ToDo:
 
+- add proper validation to all fields
 - possibly transfer project to React.js
 
 ## Usage:
