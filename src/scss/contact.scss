@@ -1,9 +1,9 @@
 .contact {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  padding: 40px;
-  background-color: var(--contact-container);
+  justify-content: center;
+  margin: auto;
+  background-color: $accent-gold;
 
   &__heading {
     font-size: 40px;
@@ -86,9 +86,8 @@
     }
   }
 
-  @media (min-width: 540px) {
+  @media (min-width: 768px) {
     flex-direction: row;
-    justify-content: space-around;
 
     &__heading {
       margin: 0;
@@ -99,17 +98,18 @@
     }
 
     .col-one {
-      flex-grow: 1;
+      padding: 40px 0 20px 20px;
+      flex-grow: 2;
     }
 
     .col-two {
       margin-top: 30px;
-      padding-left: 30px;
+      padding: 20px;
       flex-grow: 1;
     }
   }
 
-  @media (max-width: 540px) {
+  @media (max-width: 767px) {
     padding: 15px;
 
     &__heading {
@@ -126,10 +126,12 @@
       font-size: 18px;
     }
 
-    .form {
-      display: flex;
-      flex-direction: column;
+    .col-two {
+      width: 80%;
+      margin: auto;
+    }
 
+    .form {
       &__paragraph {
         font-size: 12px;
       }
@@ -138,6 +140,12 @@
         margin: 20px 0 40px 0;
         font-size: 12px;
       }
+    }
+  }
+
+  @media (max-width: 540px) {
+    .col-two {
+      width: 100%;
     }
   }
 }

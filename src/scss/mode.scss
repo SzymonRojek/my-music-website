@@ -20,9 +20,6 @@
   --feedback-text: var(--color-dark-alfa);
   --feedback-author: var(--color-accent-violet);
   --contact-container: var(--color-accent-gold);
-  --mobile-nav: var(--color-dark-alpha);
-  --arrowIcon: var(--color-accent-gold);
-  --linksHover: var(--color-accent-gold);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,9 +37,6 @@
     --feedback-text: var(--color-light-alfa);
     --feedback-author: var(--color-accent-gold);
     --contact-container: var(--color-light-alfa);
-    --mobile-nav: var(--color-accent-gold);
-    --arrowIcon: var(--color-dark);
-    --linksHover: var(--color-dark);
   }
 }
 
@@ -56,7 +50,4 @@
   --feedback-text: var(--color-light-alfa);
   --feedback-author: var(--color-accent-gold);
   --contact-container: var(--color-light-alfa);
-  --mobile-nav: var(--color-accent-gold);
-  --arrowIcon: var(--color-dark);
-  --linksHover: var(--color-dark);
 }
