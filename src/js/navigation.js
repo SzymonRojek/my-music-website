@@ -14,13 +14,15 @@ function init() {
 }
 
 function setNavigationAction(event) {
-  if (event.target.matches("button") || event.target.matches("a")) {
-    hamburgerButton.classList.toggle("js-active");
-    navigationLinkList.classList.toggle("navigation__list--open");
-
-    fadeLinks();
-    setDirectionArrowButton();
+  if (!(event.target.closest("button") || event.target.closest("li"))) {
+    return;
   }
+
+  hamburgerButton.classList.toggle("js-active");
+  navigationLinkList.classList.toggle("navigation__list--open");
+
+  fadeLinks();
+  setDirectionArrowButton();
 
   if (navigationLinkList.classList.contains("navigation__list--open")) {
     hamburgerButton.setAttribute("aria-expanded", true);
