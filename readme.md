@@ -37,6 +37,18 @@ EmailJS helps to send emails using client-side technologies only. No server is r
 
 - when form is submitted the form User immediately is receiving confirmation - successful modal or Error Modal will appear. In this case I have used an external tool [sweet alert](https://sweetalert2.github.io/#example/)
 
+<table>
+  <tr>
+    <img src="./src/images/error.png">
+  </tr>
+   <tr>
+    <img src="./src/images/success.png">
+  </tr>
+   <tr>
+    <img src="./src/images/email-sent.png">
+  </tr>
+</table>
+
 - Semantic HTML
 - Invisible content for Screen Reader users
 - BEM methodology
