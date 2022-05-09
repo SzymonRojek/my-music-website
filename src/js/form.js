@@ -30,6 +30,7 @@ function sendMessage(config) {
     .then((response) => {
       if (response.status === 200) {
         showSuccessModal();
+        $form.reset();
       }
     })
     .catch((error) => showErrorModal(error));
