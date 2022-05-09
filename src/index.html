@@ -12,19 +12,23 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,400&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  <link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    crossorigin="anonymous"
+    />
   <link rel="stylesheet" href="scss/main.scss">
-  <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init(process.env.USER_ID);
-   })();
-</script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init(process.env.USER_ID);
+    })();
+  </script>
   <script type="module" src="./js/navigation.js"></script>
   <script type="module" src="./js/mode.js"></script>
   <script type="module" src="./js/form.js"></script>
@@ -269,29 +273,40 @@
             </h4>
           </div>
         </div>
-  
+
         <form class="form col-two">
           <p class="form__paragraph">*Fields required</p>
           <ul class="form__list">
-            <li>
-              <label class="form__item">
-                <input class="form__field js-form__field-name" name="name" placeholder="Name*" min="3" required>
-              </label>
+            <li class="form__item">
+              <label class="form__item-label" for="name">Name*:</label>
+              <i class="fas fa-user form__item-icon"></i>
+              <input class="form__item-field js-form__field-name" name="name" placeholder="type here" min="3">
+              <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
+              <i class="far fa-check-circle form__item-icon form__item-icon-success"></i>
+              <p class="form__item-error"></p>
             </li>
-            <li>
-              <label class="form__item">
-                <input class="form__field js-form__field-email" type="email" name="email" placeholder="Email Address*" required>
-              </label>
+            <li class="form__item">
+              <label class="form__item-label" for="email">Email*:</label>
+              <i class="far fa-envelope form__item-icon"></i>
+              <input class="form__item-field js-form__field-email" name="email" placeholder="type here" id="email">
+              <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
+              <i class="far fa-check-circle form__item-icon form__item-icon-success"></i>
+              <p class="form__item-error"></p>
             </li>
-            <li>
-              <label class="form__item js-form__field-subject">
-                <input class="form__field" name="subject" placeholder="Subject*" required>
-              </label>
+            <li class="form__item">
+              <label class="form__item-label" for="subject">Subject*:</label>
+              <i class="fas fa-book form__item-icon"></i>
+              <input class="form__item-field js-form__field-subject" name="subject" placeholder="type here" id="subject">
+              <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
+              <i class="far fa-check-circle form__item-icon form__item-icon-success"></i>
+              <p class="form__item-error"></p>
             </li>
-            <li>
-              <label class="form__item js-form__field-area">
-                <textarea class="form__field form__field--last" name="description" placeholder="Message*" rows="7"
-                  required></textarea>
+            <li class="form__item">
+              <label class="form__item-label" for="message">Message*:</label>
+                <textarea class="form__item-field form__item-field--last js-form__field-area" name="description" placeholder="type here" id="message" rows="7"></textarea>
+                <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
+                <i class="far fa-check-circle form__item-icon form__item-icon-success"></i>
+                <p class="form__item-error"></p>
               </label>
             </li>
           </ul>
