@@ -278,35 +278,45 @@
           <p class="form__paragraph">*Fields required</p>
           <ul class="form__list">
             <li class="form__item">
-              <label class="form__item-label" for="name">Name*:</label>
+              <!-- <label class="form__item-label" for="name">Name*:</label> -->
               <i class="fas fa-user form__item-icon"></i>
-              <input class="form__item-field js-form__field-name" name="name" placeholder="type here" min="3">
+              <input class="form__item-field js-form__field-name" name="name" placeholder="name*" min="3" id="name">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
-              <i class="far fa-check-circle form__item-icon form__item-icon-success"></i>
-              <p class="form__item-error"></p>
+              <i class="fas fa-check form__item-icon form__item-icon-success"></i>
+            </input>
+              <div class="form__item-error">
+                <p class="form__item-error-text"></p>
+              </div>
             </li>
             <li class="form__item">
-              <label class="form__item-label" for="email">Email*:</label>
+              <!-- <label class="form__item-label" for="email">Email*:</label> -->
               <i class="far fa-envelope form__item-icon"></i>
-              <input class="form__item-field js-form__field-email" name="email" placeholder="type here" id="email">
+              <input class="form__item-field js-form__field-email" name="email" placeholder="email*" id="email">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
-              <i class="far fa-check-circle form__item-icon form__item-icon-success"></i>
-              <p class="form__item-error"></p>
+              <i class="fas fa-check form__item-icon form__item-icon-success"></i>
+              <div class="form__item-error">
+                <p class="form__item-error-text"></p>
+              </div>
             </li>
             <li class="form__item">
-              <label class="form__item-label" for="subject">Subject*:</label>
+              <!-- <label class="form__item-label" for="subject">Subject*:</label> -->
               <i class="fas fa-book form__item-icon"></i>
-              <input class="form__item-field js-form__field-subject" name="subject" placeholder="type here" id="subject">
+              <input class="form__item-field js-form__field-subject" name="subject" placeholder="subject*" id="subject">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
-              <i class="far fa-check-circle form__item-icon form__item-icon-success"></i>
-              <p class="form__item-error"></p>
+              <i class="fas fa-check form__item-icon form__item-icon-success"></i>
+              <div class="form__item-error">
+                <p class="form__item-error-text"></p>
+              </div>
             </li>
             <li class="form__item">
-              <label class="form__item-label" for="message">Message*:</label>
-                <textarea class="form__item-field form__item-field--last js-form__field-area" name="description" placeholder="type here" id="message" rows="7"></textarea>
+              <!-- <label class="form__item-label" for="message">Message*:</label> -->
+              <i class="far fa-comment-dots form__item-icon"></i>
+                <textarea class="form__item-field form__item-field--last js-form__field-message" name="description" placeholder="message*" id="message" rows="7"></textarea>
                 <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
-                <i class="far fa-check-circle form__item-icon form__item-icon-success"></i>
-                <p class="form__item-error"></p>
+                <i class="fas fa-check form__item-icon form__item-icon-success"></i>
+                <div class="form__item-error">
+                  <p class="form__item-error-text"></p>
+                </div>
               </label>
             </li>
           </ul>
