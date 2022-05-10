@@ -1,13 +1,25 @@
 const $form = document.querySelector(".form");
 const $submitFormButton = document.querySelector(".js-submitButton");
-const errorMessage = document.getElementsByClassName("form__item-error-text");
-const listFields = document.getElementsByClassName(".form__list");
-const formListInputs = document.querySelector(".form__list");
-const successIcons = document.querySelectorAll(".form__item-icon-success");
+const $errorMessage = document.getElementsByClassName("form__item-error-text");
+const $listFields = document.getElementsByClassName(".form__list");
+const $formListInputs = document.querySelector(".form__list");
+const $successIcons = document.querySelectorAll(".form__item-icon-success");
 
 init();
 
 function init() {
+  $formListInputs.addEventListener("input", (event) => {
+    if (event.target.attributes[1].nodeValue === "email") {
+      event.target.parentElement.children[3].style.opacity = `${
+        isEmailValid(event.target.value) ? 1 : 0
+      }`;
+    } else {
+      event.target.parentElement.children[3].style.opacity = `${
+        isLengthValid(event.target.value) ? 1 : 0
+      }`;
+    }
+  });
+
   $form.addEventListener("submit", onFormSubmit);
 }
 
@@ -56,14 +68,16 @@ function onFormSubmit(event) {
     description,
   };
 
-  const existingElements = document.querySelectorAll(".form__item-error-text");
-  const isAnyErrorMessage = !Array.from(existingElements).find(
+  const $existingErrorsElements = document.querySelectorAll(
+    ".form__item-error-text"
+  );
+  const isAnyErrorMessage = !Array.from($existingErrorsElements).find(
     (error) => error.textContent !== ""
   );
 
   if (isAnyErrorMessage) {
     sendMessage(templateParams);
-    resetIcons(successIcons);
+    resetIcons($successIcons);
   }
 }
 
@@ -79,26 +93,14 @@ function sendMessage(config) {
     .catch((error) => showErrorModal(error));
 }
 
-formListInputs.addEventListener("input", (event) => {
-  if (event.target.attributes[1].nodeValue === "email") {
-    event.target.parentElement.children[3].style.opacity = `${
-      isEmailValid(event.target.value) ? 1 : 0
-    }`;
-  } else {
-    event.target.parentElement.children[3].style.opacity = `${
-      isLengthValid(event.target.value) ? 1 : 0
-    }`;
-  }
-});
-
 function validateInputOnSubmit(element, callback, messageCallback) {
   const inputControl = element.parentElement;
-  const errorMessage = inputControl.querySelector(".form__item-error-text");
+  const $errorMessage = inputControl.querySelector(".form__item-error-text");
 
   const errors = setErrorOnSubmit(element, callback, messageCallback) || [];
 
   if (errors.length) {
-    errorMessage.textContent = errors.length ? errors[0].message : "";
+    $errorMessage.textContent = errors.length ? errors[0].message : "";
   }
 
   if (!errors.length) {
@@ -108,8 +110,8 @@ function validateInputOnSubmit(element, callback, messageCallback) {
 
 function setErrorOnSubmit(element, callback, messageCallback) {
   const inputControl = element.parentElement;
-  const errorIcon = inputControl.querySelector(".form__item-icon-failure");
-  const successIcon = inputControl.querySelector(".form__item-icon-success");
+  const $errorIcon = inputControl.querySelector(".form__item-icon-failure");
+  const $successIcon = inputControl.querySelector(".form__item-icon-success");
 
   const errors = [];
 
@@ -121,21 +123,22 @@ function setErrorOnSubmit(element, callback, messageCallback) {
     errors.push({ message: messageCallback });
   }
 
-  successIcon.style.opacity = "0";
-  errorIcon.style.opacity = "1";
+  $successIcon.style.opacity = "0";
+  $errorIcon.style.opacity = "1";
 
   return errors;
 }
 
 function setSuccessOnSubmit(element) {
   const inputControl = element.parentElement;
-  const errorMessage = inputControl.querySelector(".form__item-error-text");
-  const errorIcon = inputControl.querySelector(".form__item-icon-failure");
-  const successIcon = inputControl.querySelector(".form__item-icon-success");
+  const $errorIcon = inputControl.querySelector(".form__item-icon-failure");
+  const $successIcon = inputControl.querySelector(".form__item-icon-success");
 
-  errorMessage.textContent = "";
-  errorIcon.style.opacity = "0";
-  successIcon.style.opacity = "1";
+  const $errorMessage = inputControl.querySelector(".form__item-error-text");
+
+  $errorMessage.textContent = "";
+  $errorIcon.style.opacity = "0";
+  $successIcon.style.opacity = "1";
 }
 
 // modals
