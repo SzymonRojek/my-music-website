@@ -43,7 +43,7 @@ function onFormSubmit(event) {
     "minimum 3 characters required"
   );
 
-  // sendind message finally
+  // send message finally
 
   const { name, subject, email, description } = Object.fromEntries(
     new FormData($form).entries()
