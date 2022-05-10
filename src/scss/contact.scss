@@ -34,7 +34,6 @@
   .form {
     &__list {
       padding: 0;
-      margin-bottom: 15px;
       list-style: none;
       display: flex;
       flex-direction: column;
@@ -43,14 +42,14 @@
     }
 
     &__item {
+      margin-bottom: 14.5px;
       &-label {
-        display: block;
         margin-bottom: 8px;
+        display: block;
       }
 
       &-field {
-        padding: 0 30px;
-        margin-bottom: 20px;
+        padding: 23px 30px;
         width: 100%;
         height: 40px;
         border: 0;
@@ -61,7 +60,7 @@
           resize: vertical;
           overflow: auto;
           min-height: 200px;
-          padding: 20px 10px;
+          padding: 15px 30px;
         }
 
         &::placeholder {
@@ -71,26 +70,26 @@
 
       &-icon {
         position: absolute;
-        padding: 10px;
+        padding: 15px 10px;
 
         &-failure {
-          color: red;
+          color: #c21b3d;
           right: 0;
           opacity: 0;
         }
 
         &-success {
-          color: "green";
+          color: green;
           right: 0;
           opacity: 0;
         }
       }
 
       &-error {
+        height: 12px;
+        margin: 10px 0;
         font-size: 14.5px;
-        // padding: 2px 0 10px 0;
-        margin-top: 5px;
-        color: #ff3860;
+        color: #700016;
       }
     }
 
