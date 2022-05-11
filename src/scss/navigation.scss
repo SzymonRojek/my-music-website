@@ -80,7 +80,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
     background-color: $color-darkBrown;
@@ -171,6 +171,7 @@
       width: 80%;
       display: flex;
       flex-direction: row;
+      justify-content: flex-end;
       align-items: center;
       background-color: transparent;
       will-change: transform, opacity;
