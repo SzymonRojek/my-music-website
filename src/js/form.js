@@ -5,21 +5,37 @@ const $listFields = document.getElementsByClassName(".form__list");
 const $formListInputs = document.querySelector(".form__list");
 const $successIcons = document.querySelectorAll(".form__item-icon-success");
 
+const HIDE_ICON = 0;
+const SHOW_ICON = 1;
+
 init();
 
 function init() {
-  $formListInputs.addEventListener("input", (event) => {
-    if (event.target.attributes[1].nodeValue === "email") {
-      event.target.parentElement.children[3].style.opacity = `${
-        isEmailValid(event.target.value) ? 1 : 0
+  // all actions on input keyup change
+
+  $formListInputs.addEventListener("keyup", ({ target }) => {
+    const actualInput = target.parentElement;
+
+    if (target.attributes[1].nodeValue === "email") {
+      target.parentElement.children[3].style.opacity = `${
+        isEmailValid(target.value) ? SHOW_ICON : HIDE_ICON
       }`;
+
+      actualInput.querySelector(".form__item-error-text").textContent = "";
+      actualInput.querySelector(".form__item-icon-failure").style.opacity =
+        HIDE_ICON;
     } else {
-      event.target.parentElement.children[3].style.opacity = `${
-        isLengthValid(event.target.value) ? 1 : 0
+      target.parentElement.children[3].style.opacity = `${
+        isLengthValid(target.value) ? SHOW_ICON : HIDE_ICON
       }`;
+
+      actualInput.querySelector(".form__item-error-text").textContent = "";
+      actualInput.querySelector(".form__item-icon-failure").style.opacity =
+        HIDE_ICON;
     }
   });
 
+  // submit form
   $form.addEventListener("submit", onFormSubmit);
 }
 
@@ -123,8 +139,8 @@ function setErrorOnSubmit(element, callback, messageCallback) {
     errors.push({ message: messageCallback });
   }
 
-  $successIcon.style.opacity = "0";
-  $errorIcon.style.opacity = "1";
+  $successIcon.style.opacity = HIDE_ICON;
+  $errorIcon.style.opacity = SHOW_ICON;
 
   return errors;
 }
@@ -133,12 +149,11 @@ function setSuccessOnSubmit(element) {
   const inputControl = element.parentElement;
   const $errorIcon = inputControl.querySelector(".form__item-icon-failure");
   const $successIcon = inputControl.querySelector(".form__item-icon-success");
-
   const $errorMessage = inputControl.querySelector(".form__item-error-text");
 
   $errorMessage.textContent = "";
-  $errorIcon.style.opacity = "0";
-  $successIcon.style.opacity = "1";
+  $errorIcon.style.opacity = HIDE_ICON;
+  $successIcon.style.opacity = SHOW_ICON;
 }
 
 // modals
@@ -179,5 +194,5 @@ function isLengthValid(text) {
 }
 
 function resetIcons(icons) {
-  return Array.from(icons).forEach((icon) => (icon.style.opacity = "0"));
+  return Array.from(icons).forEach((icon) => (icon.style.opacity = HIDE_ICON));
 }
