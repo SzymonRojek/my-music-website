@@ -4,20 +4,29 @@
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
-  position: relative;
-  z-index: 1;
-  overflow-x: hidden;
   border-bottom: 2px solid $accent-gold;
+}
+
+.animation-drops {
+  position: relative;
+  width: 100%;
+  background: #333;
+  overflow: hidden;
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-image: url(../images/min-sr1.jpg);
+  z-index: 1;
 
   &::after {
     content: "";
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     background-color: $color-overlay;
-    opacity: 0.4;
+    opacity: 0.45;
     z-index: -1;
   }
 }
