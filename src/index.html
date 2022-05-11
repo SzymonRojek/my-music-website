@@ -12,6 +12,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,400&display=swap"
     rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap" rel="stylesheet">
   <link
     rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -41,13 +44,16 @@
     <div class="hero-container">
 
       <nav class="navigation">
-        <div class="navigation__logoContainer">
+        <!-- <div class="navigation__logoContainer">
           <a href="#">
             <img class="navigation__logoImg" src="../src/images/logo.png"
               alt="personal logo surname with the guitar pattern">
           </a>
+        </div> -->
+        <div class="navigation__container">
+          <div class="navigation__container-content"><h1 class="navigation__container-content-heading">Szymon Rojek</h1>
+         </div>
         </div>
-
         <ul class="navigation__list">
           <button class="navigation__list-arrowButton" type="button" aria-expanded="false">
             <span class="sr-only">Menu</span>
@@ -77,12 +83,6 @@
         </button>
       </nav>
 
-      <!-- <header class="header">
-        <h1 class="header__heading">
-          <span class="header__mainHeading">Szymon Rojek</span>
-          <span class="header__subHeading">Guitarist, composer & arranger</span>
-        </h1>
-      </header> -->
       <div class="animation-drops">
         <canvas id="demo-canvas"></canvas>
       </div>
