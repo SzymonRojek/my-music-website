@@ -1,9 +1,13 @@
-.track {
-  width: 100%;
-  padding: 20px 0 20px 0;
+.pair-tracks {
+  background-color: $accent-gold;
 
-  &--marginTop {
-    margin-top: 30px;
+  &__track {
+    width: 100%;
+    padding: 20px;
+
+    &--marginTop {
+      margin-top: 30px;
+    }
   }
 }
 
@@ -13,9 +17,7 @@
     justify-content: center;
     align-items: center;
 
-    .track {
-      padding: 20px;
-
+    &__track {
       &--marginTop {
         margin: 0;
       }
