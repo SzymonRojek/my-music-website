@@ -1,11 +1,10 @@
 .hero-container {
   position: relative;
   min-height: 100vh;
-  background-image: url(../images/min-sr1.jpg);
+  background-image: url("../images/min-sr1.jpg");
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
-  z-index: 1;
 
   #bg-dots {
     position: absolute;
@@ -13,7 +12,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: 4;
   }
 
   &::after {
@@ -23,11 +22,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    display: block;
-    height: 100%;
-    width: 100%;
     background-color: $color-overlay;
     opacity: 0.4;
-    z-index: 10;
   }
 }
