@@ -1,20 +1,20 @@
 particlesJS("bg-dots", {
   particles: {
     number: {
-      value: 100,
+      value: 60,
       density: {
         enable: true,
         value_area: 1000,
       },
     },
     color: {
-      value: "f2f2f2",
+      value: "f7ecec",
     },
     shape: {
       type: "circle",
       stroke: {
         width: 0,
-        color: "#ffffff",
+        color: "f7ecec",
       },
       polygon: {
         nb_sides: 5,
@@ -26,7 +26,7 @@ particlesJS("bg-dots", {
       },
     },
     opacity: {
-      value: 0.8,
+      value: 0.6,
       random: true,
       anim: {
         enable: true,
@@ -36,7 +36,7 @@ particlesJS("bg-dots", {
       },
     },
     size: {
-      value: 5,
+      value: 8,
       random: true,
       anim: {
         enable: true,
@@ -55,7 +55,7 @@ particlesJS("bg-dots", {
     move: {
       enable: true,
       speed: 1,
-      direction: "top",
+      direction: "bottom",
       random: true,
       straight: false,
       out_mode: "out",
