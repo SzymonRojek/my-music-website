@@ -31,29 +31,3 @@
     z-index: 10;
   }
 }
-
-// .animation-drops {
-//   position: relative;
-//   width: 100%;
-//   background: #333;
-//   overflow: hidden;
-//   background-size: cover;
-//   background-position: right;
-//   background-repeat: no-repeat;
-//   background-image: url(../images/min-sr1.jpg);
-//   z-index: 1;
-
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     display: block;
-//     height: 100%;
-//     width: 100%;
-//     background-color: $color-overlay;
-
-//     opacity: 0.4;
-//     z-index: -1;
-//   }
-// }
