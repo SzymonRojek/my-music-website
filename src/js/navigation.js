@@ -7,8 +7,14 @@ const $navigationLinks = document.querySelectorAll(".navigation__link");
 init();
 
 function init() {
+  $navigation.addEventListener("wheel", preventScroll, { passive: false });
   $navigation.addEventListener("click", (event) => setNavigationAction(event));
   window.addEventListener("scroll", setActionArrowButtonOnScroll);
+}
+
+function preventScroll(event) {
+  event.preventDefault();
+  event.stopPropagation();
 }
 
 function setNavigationAction(event) {
