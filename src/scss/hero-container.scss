@@ -1,32 +1,59 @@
 .hero-container {
+  position: relative;
   min-height: 100vh;
   background-image: url(../images/min-sr1.jpg);
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
-  border-bottom: 2px solid $accent-gold;
-}
-
-.animation-drops {
-  position: relative;
-  width: 100%;
-  background: #333;
-  overflow: hidden;
-  background-size: cover;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-image: url(../images/min-sr1.jpg);
   z-index: 1;
+
+  #bg-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 
   &::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
     height: 100%;
     width: 100%;
     background-color: $color-overlay;
-    opacity: 0.45;
-    z-index: -1;
+    opacity: 0.4;
+    z-index: 10;
   }
 }
+
+// .animation-drops {
+//   position: relative;
+//   width: 100%;
+//   background: #333;
+//   overflow: hidden;
+//   background-size: cover;
+//   background-position: right;
+//   background-repeat: no-repeat;
+//   background-image: url(../images/min-sr1.jpg);
+//   z-index: 1;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     display: block;
+//     height: 100%;
+//     width: 100%;
+//     background-color: $color-overlay;
+
+//     opacity: 0.4;
+//     z-index: -1;
+//   }
+// }

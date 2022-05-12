@@ -35,14 +35,13 @@
   <script type="module" src="./js/navigation.js"></script>
   <script type="module" src="./js/mode.js"></script>
   <script type="module" src="./js/form.js"></script>
-  <script type="module" src="./js/animation-drops.js"></script>
+  <script defer src="./js/particles.min.js"></script>
+  <script defer src="./js/animation-dots.js"></script>
 </head>
 
 <body class="body">
   <div class="container" id="home">
-
-    <div class="hero-container">
-
+ 
       <nav class="navigation">
         <!-- <div class="navigation__logoContainer">
           <a href="#">
@@ -82,10 +81,8 @@
           <div class="navigation__firstLine"></div>
         </button>
       </nav>
-
-      <div class="animation-drops">
-        <canvas id="demo-canvas"></canvas>
-      </div>
+      <div class="hero-container">
+      <div id="bg-dots"></div>
     </div>
     <main class="main-container">
       <div class="switcher-container">
