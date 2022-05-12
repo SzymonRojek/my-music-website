@@ -3,17 +3,8 @@
   justify-content: space-between;
   align-items: center;
   background-color: $color-whitesmoke;
-  z-index: 999;
-
-  // &__logoContainer {
-  //   max-width: 120px;
-  //   text-align: center;
-  // }
-
-  // &__logoImg {
-  //   height: auto;
-  //   width: 100%;
-  // }
+  opacity: 1;
+  z-index: 20;
 
   &__container {
     display: flex;
@@ -32,18 +23,27 @@
         padding-left: 14px;
         margin-bottom: -10px;
         text-transform: uppercase;
+
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
       }
 
       &::after {
         content: "guitarist";
         position: absolute;
         top: 20px;
-
         left: 200px;
         font-family: $accent-font;
         font-size: 15px;
         color: $accent-gold;
         letter-spacing: 4px;
+
+        @media (max-width: 576px) {
+          top: 20px;
+          left: 165px;
+          font-size: 10px;
+        }
       }
     }
   }
@@ -79,6 +79,10 @@
     background-color: $color-darkBrown;
     border-radius: 4px;
     transition: transform 0.15 ease;
+
+    @media (max-width: 576px) {
+      width: 25px;
+    }
   }
 
   &__firstLine {
@@ -109,10 +113,10 @@
 
   &__list {
     position: fixed;
-    top: 10vh;
+    top: 65px;
     right: 0;
     width: 60%;
-    height: 80vh;
+    height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -121,6 +125,16 @@
     transition: transform 0.5s ease-in;
     background-color: $color-darkBrown;
     z-index: 10;
+
+    // &__logoContainer {
+    //   max-width: 120px;
+    //   text-align: center;
+    // }
+
+    // &__logoImg {
+    //   height: auto;
+    //   width: 100%;
+    // }
 
     &--open {
       transform: translateX(0);
@@ -182,7 +196,7 @@
   }
 
   &__link {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     color: $accent-gold;
     text-decoration: none;
@@ -211,7 +225,7 @@
       background-color: transparent;
       will-change: transform, opacity;
       transform: translateX(0%);
-      padding-bottom: 30px;
+      padding-bottom: 18px;
     }
 
     &__item {
@@ -221,7 +235,9 @@
     }
 
     &__link {
+      font-size: 14px;
       opacity: 1;
+
       &:hover {
         transform: translateY(-1px);
         color: $color-darkBrown;
