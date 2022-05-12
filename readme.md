@@ -55,8 +55,6 @@ EmailJS helps to send emails using client-side technologies only. No server is r
 - Responsive Web Design
 - Mobile first
 
-I have used animation dots from [here](https://tympanus.net/codrops/2014/09/23/animated-background-headers/)
-
 ## ToDo:
 
 - possibly transfer project to React.js
