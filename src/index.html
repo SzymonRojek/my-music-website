@@ -27,73 +27,67 @@
   <link rel="stylesheet" href="scss/main.scss">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script type="text/javascript">
-    (function(){
-        emailjs.init(process.env.USER_ID);
-    })();
-  </script>
-  <script type="module" src="./js/navigation.js"></script>
-  <script type="module" src="./js/mode.js"></script>
-  <script type="module" src="./js/form.js"></script>
+
   <script defer src="./js/particles.min.js"></script>
   <script defer src="./js/animation-dots.js"></script>
+  <script defer src="./js/navigation.js"></script>
+  <script defer src="./js/mode.js"></script>
+  <script defer src="./js/form.js"></script>
+  <script defer src="./js/observer.js"></script>
 </head>
 
 <body class="body">
-  <div class="container" id="home">
+  <!-- check the container - probably is not useful! -->
+  <div class="container" id="home"> 
+      <header>
+        <nav class="navigation">
+          <div class="navigation__container">
+            <div class="navigation__container-content"><h1 class="navigation__container-content-heading obs-styles">Szymon Rojek</h1>
+          </div>
+          </div>
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a class="navigation__link" href="#home">home</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#intro">intro</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#music">music</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#feedback">feedback</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#contact">contact</a>
+            </li>
+          </ul>
 
-      <nav class="navigation">
-        <div class="navigation__container">
-          <div class="navigation__container-content"><h1 class="navigation__container-content-heading">Szymon Rojek</h1>
-         </div>
-        </div>
-        <ul class="navigation__list">
-          <button class="navigation__list-arrowButton" type="button" aria-expanded="false">
+          <button class="navigation__hamburgerButton" type="button" aria-expanded="false">
             <span class="sr-only">Menu</span>
-            &lt;
+            <div class="navigation__firstLine"></div>
           </button>
-
-          <li class="navigation__item">
-            <a class="navigation__link" href="#home">home</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#intro">intro</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#music">music</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#feedback">feedback</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#contact">contact</a>
-          </li>
-        </ul>
-
-        <button class="navigation__hamburgerButton" type="button" aria-expanded="false">
-          <span class="sr-only">Menu</span>
-          <div class="navigation__firstLine"></div>
-        </button>
-      </nav>
+        </nav>
+      </header>
       <div class="hero-container">
-      <div id="bg-dots"></div>
-    </div>
-
+        <div id="bg-dots"></div>
+      </div>
 
     <main class="main-container">
-      <div class="switcher-container">
-        <div class="switcher">
-          <label class="switcher__label">
-            <input type="checkbox" name="toggle-dark-mode" aria-checked="false"
-              class="switcher__checkbox js-switcher__mode" />
-            <div class="switcher__label-circle"></div>
-          </label>
-        </div>
-        <div>
-          <p class="switcher__text js-switcher__text">light mode</p>
-        </div>
-      </div>
+
       <section class="intro-wrapper" id="intro">
+        <div class="switcher-container">
+          <div class="switcher">
+            <label class="switcher__label">
+              <input type="checkbox" name="toggle-dark-mode" aria-checked="false"
+                class="switcher__checkbox js-switcher__mode" />
+              <div class="switcher__label-circle"></div>
+            </label>
+          </div>
+          <div>
+            <p class="switcher__text js-switcher__text">light mode</p>
+          </div>
+        </div>
         <article class="article">
           <div class="article__text article__text--positioning">
             <h2 class="article__heading"><span class="article__special">great</span> passion</h2>
@@ -275,7 +269,6 @@
           <p class="form__paragraph">*Fields required</p>
           <ul class="form__list">
             <li class="form__item">
-              <!-- <label class="form__item-label" for="name">Name*:</label> -->
               <i class="fas fa-user form__item-icon"></i>
               <input class="form__item-field js-form__field-name" name="name" placeholder="name*" min="3" id="name">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
@@ -286,7 +279,6 @@
               </div>
             </li>
             <li class="form__item">
-              <!-- <label class="form__item-label" for="email">Email*:</label> -->
               <i class="far fa-envelope form__item-icon"></i>
               <input class="form__item-field js-form__field-email" name="email" placeholder="email*" id="email">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
@@ -296,7 +288,6 @@
               </div>
             </li>
             <li class="form__item">
-              <!-- <label class="form__item-label" for="subject">Subject*:</label> -->
               <i class="fas fa-book form__item-icon"></i>
               <input class="form__item-field js-form__field-subject" name="subject" placeholder="subject*" id="subject">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
@@ -306,7 +297,6 @@
               </div>
             </li>
             <li class="form__item">
-              <!-- <label class="form__item-label" for="message">Message*:</label> -->
               <i class="far fa-comment-dots form__item-icon"></i>
                 <textarea class="form__item-field form__item-field--last js-form__field-message" name="description" placeholder="message*" id="message" rows="7"></textarea>
                 <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
@@ -330,6 +320,12 @@
       </p>
     </footer>
   </div>
+  <script defer type="text/javascript">
+    (function(){
+        emailjs.init(process.env.USER_ID);
+    })();
+  </script>
+
 </body>
 
 </html>
