@@ -26,11 +26,14 @@ header {
       transition: color 200ms ease-in;
 
       &-heading {
+        --text: #2c2323;
+
         font-size: 18px;
         width: 200px;
         padding-left: 14px;
         margin-bottom: -10px;
         text-transform: uppercase;
+        color: var(--text);
 
         @media (max-width: 576px) {
           font-size: 14px;
