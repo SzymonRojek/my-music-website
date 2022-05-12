@@ -1,21 +1,29 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: $color-whitesmoke;
-  opacity: 1;
-  z-index: 20;
+  transition: background 200ms ease-in;
+  height: 10vh;
 
   &__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $color-darkBrown;
     letter-spacing: 3px;
 
     &-content {
       display: flex;
       position: relative;
+      transition: color 200ms ease-in;
 
       &-heading {
         font-size: 18px;
@@ -56,16 +64,12 @@
     height: 45px;
     border: 0;
     cursor: pointer;
-    background-color: $color-whitesmoke;
+    background-color: transparent;
     margin: 10px;
     transition: background 0.4s ease;
 
     &:focus {
       outline: 2px dotted $color-darkBrown;
-    }
-
-    &:hover {
-      background-color: $grey-500;
     }
   }
 
@@ -76,7 +80,7 @@
     height: 3px;
     position: absolute;
     bottom: 12px;
-    background-color: $color-darkBrown;
+    background-color: $accent-gold;
     border-radius: 4px;
     transition: transform 0.15 ease;
 
@@ -113,7 +117,7 @@
 
   &__list {
     position: fixed;
-    top: 65px;
+    top: 10vh;
     right: 0;
     width: 60%;
     height: 100vh;
@@ -126,51 +130,8 @@
     background-color: $color-darkBrown;
     z-index: 10;
 
-    // &__logoContainer {
-    //   max-width: 120px;
-    //   text-align: center;
-    // }
-
-    // &__logoImg {
-    //   height: auto;
-    //   width: 100%;
-    // }
-
     &--open {
       transform: translateX(0);
-    }
-
-    &-arrowButton {
-      position: fixed;
-      position: absolute;
-      top: 40%;
-      right: 100%;
-      height: 50px;
-      width: 23px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 0;
-      cursor: pointer;
-      border-top-left-radius: 7px;
-      border-bottom-left-radius: 7px;
-      user-select: none;
-      font-size: 20px;
-      color: transparent;
-      background-color: $color-darkBrown;
-      text-align: left;
-      will-change: transform, opacity;
-      transform: translateX(100%);
-      transition: transform 0.5s ease-in;
-
-      &:focus {
-        outline: 2px dotted $color-thunder;
-      }
-
-      &--active {
-        transform: translateX(0);
-        color: $accent-gold;
-      }
     }
   }
 
@@ -213,6 +174,7 @@
 
 @media (min-width: 868px) {
   .navigation {
+    height: 8vh;
     &__list {
       position: relative;
       top: 0;
@@ -225,7 +187,7 @@
       background-color: transparent;
       will-change: transform, opacity;
       transform: translateX(0%);
-      padding-bottom: 18px;
+      padding-bottom: 30px;
     }
 
     &__item {
@@ -275,4 +237,18 @@
       width: 100%;
     }
   }
+}
+
+.header-scrolled {
+  background-color: var(--nav-scroll-observer);
+  box-shadow: 0 3px 20px rgba(black, 0.2);
+}
+
+.heading-scrolled {
+  color: whitesmoke;
+  color: var(--heading-scroll-observer);
+}
+
+.heading-white {
+  color: rgb(245, 245, 245);
 }
