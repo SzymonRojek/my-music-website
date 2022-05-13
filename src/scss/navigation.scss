@@ -160,7 +160,7 @@ header {
   &__link {
     font-size: 12px;
     font-weight: 700;
-    color: $color-darkBrown;
+    color: $color-whitesmoke;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -199,6 +199,7 @@ header {
 
     &__link {
       font-size: 14px;
+      color: $color-darkBrown;
       opacity: 1;
 
       &:active {
