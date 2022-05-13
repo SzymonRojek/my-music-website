@@ -68,6 +68,6 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({3:[function(require,module,exports) {
+})({7:[function(require,module,exports) {
 const e="mode",t="--color-mode",o=document.querySelector(".js-switcher__mode"),r=document.querySelector(".js-switcher__text"),l=e=>{let t=getComputedStyle(document.documentElement).getPropertyValue(e);return t.length&&(t=t.replace(/\"/g,"").trim()),t},c=e=>{let t=e||localStorage.getItem("mode");t&&(document.documentElement.setAttribute("data-user-color-scheme",t),d(t))},d=e=>{r.textContent=`${"dark"===e?"light":"dark"} mode`},a=()=>{let e=localStorage.getItem("mode");switch(e){case null:e="dark"===l("--color-mode")?"light":"dark";break;case"light":e="dark";break;case"dark":e="light"}return localStorage.setItem("mode",e),e};o.addEventListener("click",()=>c(a())),c();
-},{}]},{},[3])
+},{}]},{},[7])

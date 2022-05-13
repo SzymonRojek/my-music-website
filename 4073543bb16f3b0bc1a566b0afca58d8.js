@@ -68,6 +68,6 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({14:[function(require,module,exports) {
+})({9:[function(require,module,exports) {
 const e=document.querySelector("nav"),n=document.querySelector(".hero-container"),t=document.querySelector(".navigation__container-content-heading"),o={rootMargin:"-80px 0px 0px 0px"},r=new IntersectionObserver(function(n,t){n.forEach(n=>{n.isIntersecting?e.classList.remove("header-scrolled"):e.classList.add("header-scrolled")})},o);r.observe(n);const c=new IntersectionObserver(function(e,n){e.forEach(e=>{if(e.isIntersecting)t.classList.remove("heading-white");else{const e=s(".main-container","background-color");"rgb(245, 245, 245)"===e&&t.classList.add("heading-white")}})},o);function s(e,n){const t=document.querySelector(e);return window.getComputedStyle(t).getPropertyValue(n)}c.observe(n);
-},{}]},{},[14])
+},{}]},{},[9])
