@@ -1,7 +1,7 @@
 particlesJS("bg-dots", {
   particles: {
     number: {
-      value: 60,
+      value: 100,
       density: {
         enable: true,
         value_area: 1000,
@@ -36,7 +36,7 @@ particlesJS("bg-dots", {
       },
     },
     size: {
-      value: 8,
+      value: 2,
       random: true,
       anim: {
         enable: true,
@@ -78,7 +78,7 @@ particlesJS("bg-dots", {
         enable: false,
         mode: "push",
       },
-      resize: true,
+      resize: false,
     },
     modes: {
       grab: {
