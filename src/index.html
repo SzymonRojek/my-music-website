@@ -27,13 +27,14 @@
   <link rel="stylesheet" href="scss/main.scss">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-  <script defer src="./js/particles.min.js"></script>
-  <script defer src="./js/animation-dots.js"></script>
-  <script defer src="./js/navigation.js"></script>
-  <script defer src="./js/mode.js"></script>
-  <script defer src="./js/form.js"></script>
-  <script defer src="./js/observer.js"></script>
+  <script type="module" src="./js/particles.min.js"></script>
+  <script type="module" src="./js/animation-dots.js"></script>
+  <script type="module" src="./js/navigation.js"></script>
+  <script type="module" src="./js/mode.js"></script>
+  <script type="module" src="./js/form.js"></script>
+  <script type="module" src="./js/observer.js"></script>
 </head>
 
 <body class="body">
@@ -270,7 +271,7 @@
           <ul class="form__list">
             <li class="form__item">
               <i class="fas fa-user form__item-icon"></i>
-              <input class="form__item-field js-form__field-name" name="name" placeholder="name*" min="3" id="name">
+              <input class="form__item-field js-form__field-name" name="name" placeholder="name*" min="3">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
               <i class="fas fa-check form__item-icon form__item-icon-success"></i>
             </input>
@@ -280,7 +281,7 @@
             </li>
             <li class="form__item">
               <i class="far fa-envelope form__item-icon"></i>
-              <input class="form__item-field js-form__field-email" name="email" placeholder="email*" id="email">
+              <input class="form__item-field js-form__field-email" name="email" placeholder="email*">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
               <i class="fas fa-check form__item-icon form__item-icon-success"></i>
               <div class="form__item-error">
@@ -289,7 +290,7 @@
             </li>
             <li class="form__item">
               <i class="fas fa-book form__item-icon"></i>
-              <input class="form__item-field js-form__field-subject" name="subject" placeholder="subject*" id="subject">
+              <input class="form__item-field js-form__field-subject" name="subject" placeholder="subject*">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
               <i class="fas fa-check form__item-icon form__item-icon-success"></i>
               <div class="form__item-error">
@@ -298,7 +299,7 @@
             </li>
             <li class="form__item">
               <i class="far fa-comment-dots form__item-icon"></i>
-                <textarea class="form__item-field form__item-field--last js-form__field-message" name="description" placeholder="message*" id="message" rows="7"></textarea>
+                <textarea class="form__item-field form__item-field--last js-form__field-message" name="message" placeholder="message*" rows="7"></textarea>
                 <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
                 <i class="fas fa-check form__item-icon form__item-icon-success"></i>
                 <div class="form__item-error">
@@ -320,12 +321,5 @@
       </p>
     </footer>
   </div>
-  <script defer type="text/javascript">
-    (function(){
-        emailjs.init(process.env.USER_ID);
-    })();
-  </script>
-
 </body>
-
 </html>
