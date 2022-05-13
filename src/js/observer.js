@@ -35,15 +35,17 @@ const sectionOneObserverColor = new IntersectionObserver(
 
         if (actualColor === colorWhiteSmoke) {
           $mainHeading.classList.add("observer-nav-color");
-          $navigationLinks.forEach((link) => {
-            link.classList.add("observer-nav-color");
-          });
+          window.matchMedia("(min-width: 868px)").matches &&
+            $navigationLinks.forEach((link) => {
+              link.classList.add("observer-nav-color");
+            });
         }
       } else {
         $mainHeading.classList.remove("observer-nav-color");
-        $navigationLinks.forEach((link) => {
-          link.classList.remove("observer-nav-color");
-        });
+        window.matchMedia("(min-width: 868px)").matches &&
+          $navigationLinks.forEach((link) => {
+            link.classList.remove("observer-nav-color");
+          });
       }
     }),
   sectionOneOptions
