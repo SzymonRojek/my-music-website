@@ -55,7 +55,7 @@ particlesJS("bg-dots", {
     move: {
       enable: true,
       speed: 1,
-      direction: "bottom",
+      direction: "top",
       random: true,
       straight: false,
       out_mode: "out",
