@@ -68,6 +68,6 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({21:[function(require,module,exports) {
+})({6:[function(require,module,exports) {
 const t=document.querySelector(".navigation"),e=document.querySelector(".navigation__hamburgerButton"),n=document.querySelector(".navigation__list"),a=document.querySelectorAll(".navigation__link");function i(){t.addEventListener("wheel",s,{passive:!1}),t.addEventListener("click",t=>o(t))}function s(t){t.preventDefault(),t.stopPropagation()}function o(t){(t.target.closest("button")||t.target.closest("li"))&&(e.classList.toggle("js-active"),n.classList.toggle("navigation__list--open"),c(),n.classList.contains("navigation__list--open")?e.setAttribute("aria-expanded",!0):e.setAttribute("aria-expanded",!1))}function c(){a.forEach(t=>window.matchMedia("(max-width: 767px)").matches&&!t.classList.contains("linksFade")?t.classList.add("linksFade"):t.classList.remove("linksFade"))}i();
-},{}]},{},[21])
+},{}]},{},[6])
