@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   &__checkbox {
     opacity: 0;
   }
@@ -18,7 +17,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
     position: relative;
     height: 28px;
     width: 28px;
@@ -29,7 +27,7 @@
       background-color: var(--switcher-bgc);
       border-radius: 50%;
       position: absolute;
-      top: 1;
+      top: 1.8;
       left: 2px;
       height: 22px;
       width: 22px;
