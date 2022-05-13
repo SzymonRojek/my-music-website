@@ -3,12 +3,13 @@ const sectionOne = document.querySelector(".hero-container");
 const heading = document.querySelector(
   ".navigation__container-content-heading"
 );
+const colorWhiteSmoke = "rgb(245, 245, 245)";
 
 const sectionOneOptions = {
   rootMargin: "-80px 0px 0px 0px",
 };
 
-const sectionOneObserver = new IntersectionObserver(function (
+const sectionOneObserverBackground = new IntersectionObserver(function (
   entries,
   sectionOneObserver
 ) {
@@ -22,22 +23,22 @@ const sectionOneObserver = new IntersectionObserver(function (
 },
 sectionOneOptions);
 
-sectionOneObserver.observe(sectionOne);
+sectionOneObserverBackground.observe(sectionOne);
 
-const sectionOneObserverOne = new IntersectionObserver(function (
+const sectionOneObserverColor = new IntersectionObserver(function (
   entries,
   sectionOneObserver
 ) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      const a = getPropertyValue(".main-container", "background-color");
+      const actualColor = getPropertyValue(
+        ".main-container",
+        "background-color"
+      );
 
-      console.log(a);
-
-      if (a === "rgb(245, 245, 245)") {
+      if (actualColor === colorWhiteSmoke) {
         heading.classList.add("heading-white");
       }
-      // heading.classList.add("heading-scrolled");
     } else {
       heading.classList.remove("heading-white");
     }
@@ -45,15 +46,7 @@ const sectionOneObserverOne = new IntersectionObserver(function (
 },
 sectionOneOptions);
 
-sectionOneObserverOne.observe(sectionOne);
-
-// const observer = new IntersectionObserver(([entry]) => {
-//   const color = entry.isIntersecting ? "#2c2323" : "#f5f5f5";
-//   // document.documentElement.style.setProperty("--header-text-color", color);
-//   console.log(color);
-// }, sectionOneOptions);
-
-// observer.observe(sectionOne);
+sectionOneObserverColor.observe(sectionOne);
 
 function getPropertyValue(selector, property) {
   const element = document.querySelector(selector);
