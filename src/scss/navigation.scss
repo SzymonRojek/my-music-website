@@ -26,14 +26,12 @@ header {
       transition: color 200ms ease-in;
 
       &-heading {
-        --text: #2c2323;
-
         font-size: 18px;
         width: 200px;
         padding-left: 14px;
         margin-bottom: -10px;
         text-transform: uppercase;
-        color: var(--text);
+        color: $color-darkBrown;
 
         @media (max-width: 576px) {
           font-size: 14px;
@@ -162,7 +160,7 @@ header {
   &__link {
     font-size: 12px;
     font-weight: 700;
-    color: $accent-gold;
+    color: $color-darkBrown;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -242,16 +240,13 @@ header {
   }
 }
 
-.header-scrolled {
+// observer classes
+
+.observer-nav-background {
   background-color: var(--nav-scroll-observer);
   box-shadow: 0 3px 20px rgba(black, 0.2);
 }
 
-.heading-scrolled {
-  color: whitesmoke;
-  color: var(--heading-scroll-observer);
-}
-
-.heading-white {
+.observer-nav-color {
   color: rgb(245, 245, 245);
 }
