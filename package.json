@@ -2,7 +2,6 @@
   "name": "my-music-website",
   "version": "1.0.0",
   "description": "This is going to be my business music card writing from the scratch - pure CSS and JS",
-  "main": "script.js",
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html --public-url ./",
