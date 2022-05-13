@@ -1,7 +1,6 @@
+import { sendMessage, showErrorModal, showSuccessModal } from "./sendMessage";
+
 const $form = document.querySelector(".form");
-const $submitFormButton = document.querySelector(".js-submitButton");
-const $errorMessage = document.getElementsByClassName("form__item-error-text");
-const $listFields = document.getElementsByClassName(".form__list");
 const $formListInputs = document.querySelector(".form__list");
 const $successIcons = document.querySelectorAll(".form__item-icon-success");
 
@@ -41,48 +40,36 @@ function init() {
 
 function onFormSubmit(event) {
   event.preventDefault();
-
   const $name = document.querySelector(".js-form__field-name");
   const $email = document.querySelector(".js-form__field-email");
   const $subject = document.querySelector(".js-form__field-subject");
   const $message = document.querySelector(".js-form__field-message");
 
+  const { name, email, subject, message } = Object.fromEntries(
+    new FormData($form).entries()
+  );
+
   validateInputOnSubmit(
     $name,
-    () => isLengthValid($name.value),
+    () => isLengthValid(name),
     "minimum 3 characters required"
   );
 
-  validateInputOnSubmit(
-    $email,
-    () => isEmailValid($email.value),
-    "email is invalid"
-  );
+  validateInputOnSubmit($email, () => isEmailValid(email), "email is invalid");
 
   validateInputOnSubmit(
     $subject,
-    () => isLengthValid($subject.value),
+    () => isLengthValid(subject),
     "minimum 3 characters required"
   );
 
   validateInputOnSubmit(
     $message,
-    () => isLengthValid($message.value),
+    () => isLengthValid(message),
     "minimum 3 characters required"
   );
 
   // send message finally
-
-  const { name, subject, email, description } = Object.fromEntries(
-    new FormData($form).entries()
-  );
-
-  const templateParams = {
-    name,
-    subject,
-    email,
-    description,
-  };
 
   const $existingErrorsElements = document.querySelectorAll(
     ".form__item-error-text"
@@ -92,21 +79,24 @@ function onFormSubmit(event) {
   );
 
   if (isAnyErrorMessage) {
-    sendMessage(templateParams);
-    resetIcons($successIcons);
-  }
-}
+    showSuccessModal();
+    $form.reset();
 
-function sendMessage(config) {
-  emailjs
-    .send(process.env.SERVICE_ID, process.env.TEMPLATE_ID, config)
-    .then((response) => {
-      if (response.status === 200) {
-        showSuccessModal();
-        $form.reset();
-      }
-    })
-    .catch((error) => showErrorModal(error));
+    // at the moment email.js is during dev production so modals appers depends on errors
+
+    /*
+      sendMessage({
+        name,
+        subject,
+        email,
+        message,
+      });
+    */
+
+    resetIcons($successIcons);
+  } else {
+    showErrorModal();
+  }
 }
 
 function validateInputOnSubmit(element, callback, messageCallback) {
@@ -154,31 +144,6 @@ function setSuccessOnSubmit(element) {
   $errorMessage.textContent = "";
   $errorIcon.style.opacity = HIDE_ICON;
   $successIcon.style.opacity = SHOW_ICON;
-}
-
-// modals
-
-function showSuccessModal() {
-  Swal.fire({
-    position: "center",
-    icon: "success",
-    title: "Your  message has been sent",
-    text: "I will respond soon 👋",
-    timer: 3000,
-    color: "#2c2323",
-    confirmButtonColor: "green",
-  });
-}
-
-function showErrorModal(error) {
-  Swal.fire({
-    icon: "error",
-    title: "Email has not been sent 😕",
-    text: `${
-      error.text ? error.text : "Something went wront, please send it again"
-    }`,
-    confirmButtonColor: "crimson",
-  });
 }
 
 // validation
