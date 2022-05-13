@@ -168,7 +168,7 @@ header {
     transition: all 0.2s ease;
 
     &:hover {
-      color: $grey-100;
+      color: $accent-gold;
     }
   }
 }
@@ -200,11 +200,6 @@ header {
     &__link {
       font-size: 14px;
       opacity: 1;
-
-      &:hover {
-        transform: translateY(-1px);
-        color: $color-darkBrown;
-      }
 
       &:active {
         color: $accent-gold;
