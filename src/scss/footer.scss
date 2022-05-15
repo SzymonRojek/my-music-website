@@ -1,11 +1,12 @@
 .footer {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   margin: 25px auto 0 auto;
   padding: 20px 50px 70px 50px;
   font-size: 14px;
   text-align: center;
   background-color: $color-darkBrown;
-  position: relative;
 
   &__buttonUp {
     position: fixed;
@@ -20,13 +21,55 @@
     border-radius: 50%;
     background-color: $accent-gold;
     cursor: pointer;
-    z-index: 100;
     transform: translateY(100px);
     transition: all 0.5s ease;
     opacity: 0.7;
 
+    &:focus {
+      outline: 1px solid $color-darkBrown;
+      outline-offset: 0.5px;
+    }
+
     &--show {
       transform: translateY(0);
+    }
+  }
+
+  &__buttonToggle {
+    position: fixed;
+    bottom: 27px;
+    left: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    cursor: pointer;
+    transform: translateY(100px);
+    transition: all 0.5s ease;
+    opacity: 0.7;
+
+    &:focus {
+      outline: 1px solid $accent-gold;
+      outline-offset: 0.5px;
+    }
+
+    &--show {
+      transform: translateY(0);
+    }
+
+    &-icon {
+      background-image: var(--button-icon);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      width: 30px;
+      height: 30px;
+      filter: var(--button-icon-filter);
+      transition: filter 500ms ease-in-out;
     }
   }
 
