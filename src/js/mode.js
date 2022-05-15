@@ -2,7 +2,6 @@ const STORAGE_KEY = "mode";
 const COLOR_MODE_KEY = "--color-mode";
 
 const $modeToggle = document.querySelector(".js-switcher__mode");
-const $modeToggleText = document.querySelector(".js-switcher__text");
 
 const getCSSCustomProp = (propKey) => {
   let response = getComputedStyle(document.documentElement).getPropertyValue(
@@ -24,14 +23,7 @@ const applySetting = (passedSetting) => {
       "data-user-color-scheme",
       currentSetting
     );
-    setSwitcherLabel(currentSetting);
   }
-};
-
-const setSwitcherLabel = (currentSetting) => {
-  $modeToggleText.textContent = `${
-    currentSetting === "dark" ? "light" : "dark"
-  } mode`;
 };
 
 const toggleSetting = () => {
