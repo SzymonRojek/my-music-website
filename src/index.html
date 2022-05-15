@@ -34,10 +34,11 @@
   <script type="module" src="./js/navigation.js"></script>
   <script type="module" src="./js/mode.js"></script>
   <script type="module" src="./js/form.js"></script>
-  <script type="module" src="./js/observer.js"></script>
+  <script type="module" src="./js/navigationObserver.js"></script>
+  <script type="module" src="./js/footerButtonObserver.js"></script>
 </head>
 
-<body class="body">
+<body class="body" id="top">
   <!-- check the container - probably is not useful! -->
   <div class="container" id="home"> 
       <header>
@@ -163,7 +164,7 @@
                     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1031699374&color=%23130906&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false"></iframe>
             <div>
               <a href="https://soundcloud.com/simon-royek" title="Szymon Rojek" target="_blank" class="pair-tracks__track-link">
-                Szymon Rojek</a> · 
+                Szymon Rojek</a> 
               <a href="https://soundcloud.com/simon-royek/release" title="Release" target="_blank" class="pair-tracks__track-link">
                 Release
               </a>
@@ -312,9 +313,9 @@
       </section>
     </main>
     <footer class="footer">
-      <a href="#" class="footer__gg-arrow-up js-scrollTop">
-        <i class="gg-arrow-up"></i>
-      </a>
+      <button class="footer__buttonUp js-scrollTop">
+        <i class="gg-arrow-up footer__buttonUp-icon"></i>
+      </button>
       <p class="footer__paragraph">
         &#169; 2021 | Coded by Szymon Rojek
       </p>
