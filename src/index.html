@@ -27,7 +27,6 @@
   <link rel="stylesheet" href="scss/main.scss">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
   <script defer src="./js/particles.min.js"></script>
   <script type="module" src="./js/animation-dots.js"></script>
@@ -78,18 +77,6 @@
     <main class="main-container">
 
       <section class="intro-wrapper" id="intro">
-        <div class="switcher-container">
-          <div class="switcher">
-            <label class="switcher__label">
-              <input type="checkbox" name="toggle-dark-mode" aria-checked="false"
-                class="switcher__checkbox js-switcher__mode" />
-              <div class="switcher__label-circle"></div>
-            </label>
-          </div>
-          <div>
-            <p class="switcher__text js-switcher__text">light mode</p>
-          </div>
-        </div>
         <article class="article">
           <div class="article__text article__text--positioning">
             <h2 class="article__heading"><span class="article__special">great</span> passion</h2>
@@ -164,7 +151,8 @@
                     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1031699374&color=%23130906&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false"></iframe>
             <div>
               <a href="https://soundcloud.com/simon-royek" title="Szymon Rojek" target="_blank" class="pair-tracks__track-link">
-                Szymon Rojek</a> 
+                Szymon Rojek
+              </a>
               <a href="https://soundcloud.com/simon-royek/release" title="Release" target="_blank" class="pair-tracks__track-link">
                 Release
               </a>
@@ -313,12 +301,17 @@
       </section>
     </main>
     <footer class="footer">
-      <button class="footer__buttonUp js-scrollTop">
-        <i class="gg-arrow-up footer__buttonUp-icon"></i>
-      </button>
       <p class="footer__paragraph">
         &#169; 2021 | Coded by Szymon Rojek
       </p>
+      <div>
+          <button class="footer__buttonToggle js-switcher__mode">
+            <span class="footer__buttonToggle-icon" aria-hidden="true"></span>
+          </button>
+        <button class="footer__buttonUp js-scrollTop">
+          <i class="gg-arrow-up footer__buttonUp-icon"></i>
+        </button>
+      </div>
     </footer>
   </div>
 </body>
