@@ -1,8 +1,8 @@
-.linksFade {
-  animation: linksFade .5s ease forwards;
+.fade-links {
+  animation: fade-links 0.5s ease forwards;
 }
 
-@keyframes linksFade {
+@keyframes fade-links {
   from {
     opacity: 0;
     transition: translateX(50px);
