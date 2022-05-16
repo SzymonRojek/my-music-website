@@ -27,6 +27,9 @@
   // opacity: 0;
   // background-color: #fff;
   z-index: 900;
+  box-sizing: content-box;
+  padding: 0;
+
   &:focus {
     outline: 1px solid $accent-gold;
     outline-offset: 0.5px;
@@ -41,8 +44,8 @@
     background-image: var(--button-icon);
     background-repeat: no-repeat;
     background-position: 50%;
-    box-sizing: content-box;
-    padding: 0;
+    width: 30px;
+    height: 30px;
   }
 
   @media (min-width: 500px) {
