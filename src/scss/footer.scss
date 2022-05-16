@@ -8,44 +8,14 @@
   text-align: center;
   background-color: $color-darkBrown;
 
-  &__buttonUp {
-    position: fixed;
-    bottom: 27px;
-    right: 27px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background-color: $accent-gold;
-    cursor: pointer;
-    transform: translateY(100px);
-    transition: all 0.5s ease;
-    opacity: 0.7;
-    z-index: 900;
-
-    &:focus {
-      outline: 1px solid $color-darkBrown;
-      outline-offset: 0.5px;
-    }
-
-    &--show {
-      transform: translateY(0);
-    }
-  }
-
   &__buttonToggle {
     position: fixed;
     bottom: 27px;
     left: 27px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    box-sizing: content-box;
+    padding: 0;
+    width: 30px;
+    height: 30px;
     background: var(--button-background);
     color: var(--button-color);
     border: none;
@@ -53,8 +23,10 @@
     transform: translateY(100px);
     transition: all 0.5s ease;
     opacity: 0.7;
-    box-sizing: content-box;
-    padding: 0;
+    background-image: var(--button-icon);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
 
     &:focus {
       outline: 1px solid $accent-gold;
@@ -64,13 +36,35 @@
     &--show {
       transform: translateY(0);
     }
+  }
 
-    &-icon {
-      background-image: var(--button-icon);
-      background-repeat: no-repeat;
-      background-position: 50%;
-      width: 30px;
-      height: 30px;
+  &__buttonUp {
+    position: fixed;
+    bottom: 27px;
+    right: 27px;
+    box-sizing: content-box;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    background-color: $accent-gold;
+    color: var(--button-color);
+    border: none;
+    cursor: pointer;
+    transform: translateY(100px);
+    transition: all 0.5s ease;
+    opacity: 0.7;
+    background-image: url("../images/up-arrow-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+
+    &:focus {
+      outline: 1px solid $color-darkBrown;
+      outline-offset: 0.5px;
+    }
+
+    &--show {
+      transform: translateY(0);
     }
   }
 
@@ -83,5 +77,15 @@
     margin-top: 100px;
     padding: 20px;
     font-size: 16px;
+
+    &__buttonToggle {
+      height: 40px;
+      width: 40px;
+    }
+
+    &__buttonUp {
+      height: 40px;
+      width: 40px;
+    }
   }
 }

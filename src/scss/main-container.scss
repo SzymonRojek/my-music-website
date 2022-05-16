@@ -8,27 +8,25 @@
 }
 
 .buttonToggle {
-  position: fixed;
-  top: 0px;
-  right: 20px;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  top: -100px;
+  right: 20;
+  box-sizing: content-box;
+  padding: 0;
+  width: 30px;
+  height: 30px;
   background: var(--button-background);
   color: var(--button-color);
   border: none;
   cursor: pointer;
-  // transform: translateY(-100px);
+  transform: translateY(100px);
   transition: all 0.5s ease;
-  // opacity: 0;
-  // background-color: #fff;
+  opacity: 0.7;
+  background-image: var(--button-icon);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
   z-index: 900;
-  box-sizing: content-box;
-  padding: 0;
 
   &:focus {
     outline: 1px solid $accent-gold;
@@ -40,16 +38,10 @@
     opacity: 0.7;
   }
 
-  &-icon {
-    background-image: var(--button-icon);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    width: 30px;
-    height: 30px;
-  }
-
   @media (min-width: 500px) {
-    top: 27px;
+    top: -73px;
     right: 27px;
+    height: 40px;
+    width: 40px;
   }
 }
