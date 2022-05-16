@@ -1,29 +1,56 @@
 const $footer = document.querySelector(".footer");
-const $scrollToTopButton = document.querySelector(".footer__buttonUp");
+const $scrollToTopButton = document.querySelector(".js-scrollTop");
 const $togglerMode = document.querySelector(".footer__buttonToggle");
 const $rootElement = document.documentElement;
+const $mainContent = document.getElementById("music");
 
-function toggleObserverCallback(entries, observer) {
+// toggle button
+function toggleCallback(entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      $scrollToTopButton.classList.add("footer__buttonUp--show");
       $togglerMode.classList.add("footer__buttonToggle--show");
     } else {
-      $scrollToTopButton.classList.remove("footer__buttonUp--show");
       $togglerMode.classList.remove("footer__buttonToggle--show");
     }
   });
 }
 
-const footerObserver = new IntersectionObserver(toggleObserverCallback);
+const toggleObserver = new IntersectionObserver(toggleCallback);
+toggleObserver.observe($footer);
 
-footerObserver.observe($footer);
+// scroll top button
 
-function scrollToTop() {
-  $rootElement.scrollTo({
-    top: 0,
-    behavior: "smooth",
+function scrollTopCallback(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      console.log(entry.target);
+      $scrollToTopButton.classList.add("footer__buttonUp--show");
+    } else {
+      if (
+        $scrollToTopButton.classList.contains("footer__buttonUp--show") &&
+        entry.boundingClientRect.y > 0
+      ) {
+        $scrollToTopButton.classList.remove("footer__buttonUp--show");
+        $scrollToTopButton.addEventListener(
+          "transitionend",
+          removeScrollFromView
+        );
+      }
+    }
   });
 }
+const scrollTopObserver = new IntersectionObserver(scrollTopCallback);
 
-$scrollToTopButton.addEventListener("click", scrollToTop);
+function removeScrollFromView() {
+  $scrollToTopButton.removeEventListener("transitionend", removeScrollFromView);
+  if ($scrollToTopButton.classList.contains("footer__buttonUp--show")) return;
+}
+
+scrollTopObserver.observe($mainContent);
+
+$scrollToTopButton.addEventListener("click", () =>
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+);
