@@ -1,2 +1,0 @@
-const o=document.querySelector(".footer"),e=document.querySelector(".footer__buttonUp"),t=document.documentElement;new IntersectionObserver((function(o,t){o.forEach((o=>o.isIntersecting?e.classList.add("footer__buttonUp--show"):e.classList.remove("footer__buttonUp--show")))})).observe(o),e.addEventListener("click",(function(){t.scrollTo({top:0,behavior:"smooth"})}));
-//# sourceMappingURL=index.0dda5cca.js.map
