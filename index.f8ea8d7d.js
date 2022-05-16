@@ -1,2 +1,0 @@
-const o=document.querySelector(".footer"),e=document.querySelector(".footer__buttonUp"),t=document.querySelector(".footer__buttonToggle"),s=document.documentElement;new IntersectionObserver((function(o,s){o.forEach((o=>{o.isIntersecting?(e.classList.add("footer__buttonUp--show"),t.classList.add("footer__buttonToggle--show")):(e.classList.remove("footer__buttonUp--show"),t.classList.remove("footer__buttonToggle--show"))}))})).observe(o),e.addEventListener("click",(function(){s.scrollTo({top:0,behavior:"smooth"})}));
-//# sourceMappingURL=index.f8ea8d7d.js.map
