@@ -35,8 +35,8 @@ function setNavigationAction(event) {
 function fadeLinks() {
   $navigationLinks.forEach((link) =>
     window.matchMedia("(max-width: 767px)").matches &&
-    !link.classList.contains("linksFade")
-      ? link.classList.add("linksFade")
-      : link.classList.remove("linksFade")
+    !link.classList.contains("fade-links")
+      ? link.classList.add("fade-links")
+      : link.classList.remove("fade-links")
   );
 }
