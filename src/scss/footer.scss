@@ -22,7 +22,6 @@
     cursor: pointer;
     transform: translateY(100px);
     transition: all 0.5s ease;
-    opacity: 0.7;
     background-image: var(--button-icon);
     background-repeat: no-repeat;
     background-position: 50%;
@@ -51,12 +50,12 @@
     border: none;
     cursor: pointer;
     transform: translateY(100px);
-    transition: all 0.5s ease;
-    opacity: 0.7;
+    opacity: 0;
     background-image: url("../images/up-arrow-svgrepo-com.svg");
     background-repeat: no-repeat;
     background-position: 50%;
     border-radius: 50%;
+    transition: transform 0.5s, opacity 0.5s;
 
     &:focus {
       outline: 1px solid $color-darkBrown;
@@ -65,6 +64,7 @@
 
     &--show {
       transform: translateY(0);
+      opacity: 0.7;
     }
   }
 
