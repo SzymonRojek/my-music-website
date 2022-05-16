@@ -1,7 +1,8 @@
 const STORAGE_KEY = "mode";
 const COLOR_MODE_KEY = "--color-mode";
 
-const $modeToggle = document.querySelector(".js-switcher__mode");
+const $modeToggleOne = document.querySelector(".js-footerSwitcher__mode");
+const $modeToggleTwo = document.querySelector(".js-buttonToggle__mode");
 
 const getCSSCustomProp = (propKey) => {
   let response = getComputedStyle(document.documentElement).getPropertyValue(
@@ -49,6 +50,7 @@ const toggleSetting = () => {
   return currentSetting;
 };
 
-$modeToggle.addEventListener("click", () => applySetting(toggleSetting()));
-
-applySetting();
+$modeToggleOne.addEventListener("click", () => applySetting(toggleSetting()));
+$modeToggleTwo.addEventListener("click", () => {
+  applySetting(toggleSetting());
+});
