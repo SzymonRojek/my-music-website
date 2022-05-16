@@ -120,15 +120,16 @@ header {
     position: fixed;
     top: 10vh;
     right: 0;
-    width: 60%;
-    height: 100vh;
-    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 60%;
+    height: 100vh;
+    margin: 0;
+    background-color: $color-darkBrown;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
-    background-color: $color-darkBrown;
+
     z-index: 1000;
 
     &--open {
@@ -137,8 +138,8 @@ header {
   }
 
   &__item {
+    margin: 15px 0;
     list-style: none;
-    padding: 20px 10px;
 
     &:nth-of-type(1) a {
       animation-delay: 0.3s;
@@ -158,6 +159,8 @@ header {
   }
 
   &__link {
+    position: relative;
+    padding: 14px 20px 10px;
     font-size: 12px;
     font-weight: 700;
     color: $color-whitesmoke;
@@ -167,15 +170,64 @@ header {
     opacity: 0;
     transition: all 0.2s ease;
 
-    &:hover {
-      color: $accent-gold;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    &--drawBorders {
+      &::before,
+      &::after {
+        // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+        border: 2px solid transparent;
+        width: 0;
+        height: 0;
+      }
+
+      // This covers the top & right borders (expands right, then down)
+      &::before {
+        top: 0;
+        left: 0;
+      }
+
+      // And this the bottom & left borders (expands left, then up)
+      &::after {
+        bottom: 0;
+        right: 0;
+      }
+
+      &:hover {
+        color: $accent-gold;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover::before {
+        border-top-color: $accent-gold;
+        border-right-color: $accent-gold;
+        transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+      }
+
+      &:hover::after {
+        border-bottom-color: $accent-gold;
+        border-left-color: $accent-gold;
+        top: 0;
+        left: 0;
+        transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+      }
     }
   }
 }
 
 @media (min-width: 868px) {
   .navigation {
-    height: 8vh;
     &__list {
       position: relative;
       top: 0;
@@ -184,17 +236,10 @@ header {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-      align-items: flex-end;
+      align-items: center;
       background-color: transparent;
       will-change: transform, opacity;
       transform: translateX(0%);
-      padding-bottom: 30px;
-    }
-
-    &__item {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 20px 0 20px;
     }
 
     &__link {
@@ -209,10 +254,6 @@ header {
     }
 
     &__hamburgerButton {
-      display: none;
-    }
-
-    &__list-arrowButton {
       display: none;
     }
   }
