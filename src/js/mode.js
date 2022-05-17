@@ -54,3 +54,5 @@ $modeToggleOne.addEventListener("click", () => applySetting(toggleSetting()));
 $modeToggleTwo.addEventListener("click", () => {
   applySetting(toggleSetting());
 });
+
+applySetting();
