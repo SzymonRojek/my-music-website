@@ -1,5 +1,5 @@
-.feedback-wrapper {
-  .feedback {
+.feedback {
+  &__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,32 +19,32 @@
       background-color: var(--feedback-bgc);
       color: var(--feedback-text);
       cursor: pointer;
-    }
 
-    &__paragraph {
-      opacity: 0.5;
-    }
+      &-paragraph {
+        opacity: 0.5;
+      }
 
-    &__author {
-      text-align: right;
+      &-author {
+        text-align: right;
 
-      &-link {
-        text-decoration: none;
-        letter-spacing: 1px;
-        color: var(--feedback-author);
-        border-bottom: 1.8px solid rgba(179, 137, 137, 0.089);
-        transition: 0.2s all ease-in;
-        cursor: pointer;
+        &-link {
+          text-decoration: none;
+          letter-spacing: 1px;
+          color: var(--feedback-author);
+          border-bottom: 1.8px solid rgba(179, 137, 137, 0.089);
+          transition: 0.2s all ease-in;
+          cursor: pointer;
 
-        &:hover {
-          border-bottom: 1.8px solid var(--feedback-author);
+          &:hover {
+            border-bottom: 1.8px solid var(--feedback-author);
+          }
         }
       }
     }
   }
 
   @media (min-width: 440px) {
-    .feedback {
+    .feedback__content {
       position: relative;
 
       &__img {
@@ -73,10 +73,7 @@
   }
 
   @media (min-width: 738px) {
-    .feedback {
-      &__heading {
-        margin-top: 50px;
-      }
+    .feedback__content {
       &__text {
         max-width: 400px;
       }
@@ -84,7 +81,7 @@
   }
 
   @media (min-width: 1024px) {
-    .feedback {
+    .feedback__content {
       &__text {
         max-width: 500px;
         overflow: hidden;
