@@ -1,47 +1,76 @@
+// navigation background-color change
 const $navigation = document.querySelector(".navigation");
 const $heroContainer = document.querySelector(".hero-container");
-const $mainHeading = document.querySelector(
-  ".navigation__container-content-heading"
-);
-const $navigationLinks = document.querySelectorAll(".navigation__link");
 
-const colorWhiteSmoke = "rgb(245, 245, 245)";
 const sectionOneOptions = {
-  rootMargin: "-80px 0px 0px 0px",
+  rootMargin: "-100px 0px 0px 0px",
 };
 
-const sectionOneObserver = new IntersectionObserver((entries, options) => {
+function heroObserverCallback(entries, options) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
       $navigation.classList.add("observer-nav-background");
-      const actualColor = getPropertyValue(
-        ".main-container",
-        "background-color"
-      );
-
-      if (actualColor === colorWhiteSmoke) {
-        $mainHeading.classList.add("observer-nav-color");
-        window.matchMedia("(min-width: 868px)").matches &&
-          $navigationLinks.forEach((link) => {
-            link.classList.add("observer-nav-color");
-          });
-      }
     } else {
       $navigation.classList.remove("observer-nav-background");
-      $mainHeading.classList.remove("observer-nav-color");
-      window.matchMedia("(min-width: 868px)").matches &&
-        $navigationLinks.forEach((link) => {
-          link.classList.remove("observer-nav-color");
-        });
     }
   });
-}, sectionOneOptions);
+}
 
-sectionOneObserver.observe($heroContainer);
+const heroObserver = new IntersectionObserver(
+  heroObserverCallback,
+  sectionOneOptions
+);
+
+heroObserver.observe($heroContainer);
 
 function getPropertyValue(selector, property) {
   const element = document.querySelector(selector);
   const compStyles = window.getComputedStyle(element);
 
   return compStyles.getPropertyValue(property);
+}
+
+// navigation links change - add border depends on the section page
+
+const sections = [
+  selectElementByClass("intro"),
+  selectElementByClass("music"),
+  selectElementByClass("feedback"),
+  selectElementByClass("contact"),
+];
+
+const navigationLinks = [
+  selectElementByClass("js-navigation__link-intro"),
+  selectElementByClass("js-navigation__link-music"),
+  selectElementByClass("js-navigation__link-feedback"),
+  selectElementByClass("js-navigation__link-contact"),
+];
+
+function linksObserverCallback(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const index = Array.from(sections).indexOf(entry.target);
+
+      navigationLinks.forEach((link) => {
+        link.classList.remove("navigation__link--active");
+      });
+      navigationLinks[index].classList.add("navigation__link--active");
+    } else {
+      selectElementByClass("js-navigation__link-intro").classList.remove(
+        "navigation__link--active"
+      );
+    }
+  });
+}
+
+const sectionsObserver = new IntersectionObserver(linksObserverCallback, {
+  threshold: 0.25,
+});
+
+sections.forEach((section) => sectionsObserver.observe(section));
+
+// helpers
+
+function selectElementByClass(className) {
+  return document.querySelector(`.${className}`);
 }
