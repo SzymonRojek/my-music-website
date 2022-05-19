@@ -31,8 +31,7 @@ header {
         padding-left: 14px;
         margin-bottom: -10px;
         text-transform: uppercase;
-        color: $color-darkBrown;
-
+        color: $accent-gold;
         @media (max-width: 576px) {
           font-size: 14px;
         }
@@ -45,7 +44,7 @@ header {
         left: 200px;
         font-family: $accent-font;
         font-size: 15px;
-        color: $accent-gold;
+        color: #a5a1a1;
         letter-spacing: 4px;
 
         @media (max-width: 576px) {
@@ -160,15 +159,16 @@ header {
 
   &__link {
     position: relative;
-    padding: 14px 20px 10px;
+    padding: 12px 15px;
     font-size: 12px;
     font-weight: 700;
-    color: $color-whitesmoke;
+    color: $accent-gold;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
     opacity: 0;
-    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    transition: all 0.5s ease-in;
 
     &::before,
     &::after {
@@ -176,51 +176,24 @@ header {
       position: absolute;
       width: 100%;
       height: 100%;
+      top: 0;
+      left: 0;
     }
 
-    &--drawBorders {
-      &::before,
-      &::after {
-        // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
-        border: 2px solid transparent;
-        width: 0;
-        height: 0;
-      }
+    &::before,
+    &::after {
+      border: 2px solid transparent;
+      width: 0;
+      height: 0;
+    }
 
-      // This covers the top & right borders (expands right, then down)
+    &--active {
       &::before {
-        top: 0;
-        left: 0;
-      }
-
-      // And this the bottom & left borders (expands left, then up)
-      &::after {
-        bottom: 0;
-        right: 0;
-      }
-
-      &:hover {
-        color: $accent-gold;
-      }
-
-      &:hover::before,
-      &:hover::after {
+        content: "";
+        border: 2px solid $accent-gold;
+        display: block;
         width: 100%;
         height: 100%;
-      }
-
-      &:hover::before {
-        border-top-color: $accent-gold;
-        border-right-color: $accent-gold;
-        transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
-      }
-
-      &:hover::after {
-        border-bottom-color: $accent-gold;
-        border-left-color: $accent-gold;
-        top: 0;
-        left: 0;
-        transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
       }
     }
   }
@@ -228,6 +201,8 @@ header {
 
 @media (min-width: 868px) {
   .navigation {
+    background-color: transparent;
+
     &__list {
       position: relative;
       top: 0;
@@ -244,12 +219,38 @@ header {
 
     &__link {
       font-size: 14px;
-      color: $color-darkBrown;
       opacity: 1;
 
-      &:active {
-        color: $accent-gold;
-        transform: translateY(2px);
+      &--drawBorders {
+        &::before {
+          top: 0;
+          left: 0;
+        }
+
+        &::after {
+          bottom: 0;
+          right: 0;
+        }
+
+        &:hover::before,
+        &:hover::after {
+          width: 100%;
+          height: 100%;
+        }
+
+        &:hover::before {
+          border-top-color: $accent-gold;
+          border-right-color: $accent-gold;
+          transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+        }
+
+        &:hover::after {
+          border-bottom-color: $accent-gold;
+          border-left-color: $accent-gold;
+          top: 0;
+          left: 0;
+          transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+        }
       }
     }
 
@@ -278,12 +279,11 @@ header {
 }
 
 // observer classes
-
 .observer-nav-background {
   background-color: var(--nav-scroll-observer);
   box-shadow: 0 3px 20px rgba(black, 0.2);
 }
 
 .observer-nav-color {
-  color: rgb(245, 245, 245);
+  color: var(--headingLogo);
 }
