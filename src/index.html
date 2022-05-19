@@ -37,10 +37,10 @@
   <script type="module" src="./js/footerButtonsObserver.js"></script>
 </head>
 
-<body class="body" id="top">
+<body class="body">
   <!-- check the container - probably is not useful! -->
-  <div class="container" id="home"> 
-      <header>
+  <div class="page container" >
+      <header >
         <nav class="navigation">
           <div class="navigation__container">
             <div class="navigation__container-content"><h1 class="navigation__container-content-heading obs-styles">Szymon Rojek</h1>
@@ -48,19 +48,19 @@
           </div>
           <ul class="navigation__list">
             <li class="navigation__item">
-              <a class="navigation__link navigation__link--drawBorders" href="#home">home</a>
+              <a class="navigation__link navigation__link--drawBorders js-navigation__link-home" href="#home">home</a>
             </li>
             <li class="navigation__item">
-              <a class="navigation__link navigation__link--drawBorders" href="#intro">intro</a>
+              <a class="navigation__link navigation__link--drawBorders js-navigation__link-intro" href="#intro">intro</a>
             </li>
             <li class="navigation__item">
-              <a class="navigation__link navigation__link--drawBorders" href="#music">music</a>
+              <a class="navigation__link navigation__link--drawBorders js-navigation__link-music" href="#music">music</a>
             </li>
             <li class="navigation__item">
-              <a class="navigation__link navigation__link--drawBorders" href="#feedback">feedback</a>
+              <a class="navigation__link navigation__link--drawBorders js-navigation__link-feedback" href="#feedback">feedback</a>
             </li>
             <li class="navigation__item">
-              <a class="navigation__link navigation__link--drawBorders" href="#contact">contact</a>
+              <a class="navigation__link navigation__link--drawBorders js-navigation__link-contact" href="#contact">contact</a>
             </li>
           </ul>
 
@@ -78,11 +78,11 @@
     <main class="main-container">
       <button class="buttonToggle js-buttonToggle__mode"></button>
 
-      <section class="intro-wrapper" id="intro">
+      <section class="intro" id="intro">
         <article class="article">
           <div class="article__text article__text--positioning">
-            <h2 class="article__heading"><span class="article__special">great</span> passion</h2>
-            <p class="article__paragraph">
+            <h2 class="article__text-heading"><span>great</span> passion</h2>
+            <p class="article__text-paragraph">
               Welcome to my music website. I play classical guitar, which is my greatest passion. I fell in love with
               this instrument many years ago. That was also the first time when I heard Baden Powell's and Luiz
               Bonfa's
@@ -95,17 +95,17 @@
             alt="perspective of the guitar and hands while playing by Szymon Rojek">
         </article>
       </section>
-      <section class="music-container" id="music">
+      <section class="music" id="music">
         <article class="article">
           <div class="article__text article__text--positioning">
-            <h2 class="article__heading"><span class="article__special">great</span> music</h2>
-            <p class="article__paragraph">
+            <h2 class="article__text-heading"><span class="article__special">great</span> music</h2>
+            <p class="article__text-paragraph">
               Guitar music can create a <em>great atmosphere</em> anywhere people interact with one another. It has an
               enormous meaning in the process of creating any kind of relations. In my repertoire, people may find
               famous tracks and musical pieces from popular music, especially jazz, as well as my compositions, which
               altogether create a romantic and energetic content.
             </p>
-            <p class="article__paragraph article__paragraph--marginBottom">
+            <p class="article__text-paragraph article__text-paragraph--marginBottom">
               Let me invite you to listen to two well-known tracks which I have adapted as well as two of my own
               compositions: <em>Imagine</em> and <em>Release</em>. You will find them below.
             </p>
@@ -162,11 +162,11 @@
           </div>
         </div>
       </section>
-      <section class="feedback-wrapper" id="feedback">
+      <section class="feedback" id="feedback">
         <article class="article">
           <div class="article__text">
-            <h2 class="article__heading"><span class="article__special">great</span> feedback</h2>
-            <p class="article__paragraph">
+            <h2 class="article__text-heading"><span>great</span> feedback</h2>
+            <p class="article__text-paragraph">
               In my musical arrangements and compositions, my principal aim is to improvise with joy and fun. Because
               of
               that, I am able to capture the moment of 'here and now'. Moreover, it is particularly importnat for me
@@ -174,72 +174,72 @@
               create a kind of sound which will not only be pleasant to listen to but will also bring back good
               memories.
             </p>
-            <p class="article__paragraph article__paragraph article__paragraph--marginBottom">
+            <p class="article__text-paragraph article__text-paragraph--marginBottom">
               On my journey, I had the pleasure of meeting a number of wonderful musicians who kindly gave me feedback
               which you will find below.
             </p>
           </div>
         </article>
-        <figure class="feedback">
-          <img class="feedback__img" src="../src/images/paul_richards.jpg" alt="Paul Richards">
-          <div class="feedback__text feedback__text--right">
+        <figure class="feedback__content">
+          <img class="feedback__content__img" src="../src/images/paul_richards.jpg" alt="Paul Richards">
+          <div class="feedback__content__text feedback__content__text--right">
             <blockquote>
-              <p class="feedback__paragraph">
+              <p class="feedback__content__text-paragraph">
                 Szymon has a beautiful touch on the instrument which breathes life into his playing!
               </p>
             </blockquote>
-            <figcaption class="feedback__author">
-              <a class="feedback__author-link" href="http://paulrichardsguitar.com/" rel="noreferrer noopener"
+            <figcaption class="feedback__content__text-author">
+              <a class="feedback__content__text-author-link" href="http://paulrichardsguitar.com/" rel="noreferrer noopener"
                 target="_blank" title="personal website"><em>Paul Richards</em></a>
             </figcaption>
           </div>
         </figure>
-        <figure class="feedback">
-          <img class="feedback__img" src="../src/images/andrea_valeri.jpg" alt="Andrea Valeri">
-          <div class="feedback__text feedback__text--left">
+        <figure class="feedback__content">
+          <img class="feedback__content__img" src="../src/images/andrea_valeri.jpg" alt="Andrea Valeri">
+          <div class="feedback__content__text feedback__content__text--left">
             <blockquote>
-              <p class="feedback__paragraph">
+              <p class="feedback__content__text-paragraph">
                 Szymon, you are doing absolutely great my Brother. I know there is a wonderful future ahead of You,
                 keep
                 rockin' with your music!
               </p>
             </blockquote>
-            <figcaption class="feedback__author">
-              <a class="feedback__author-link" href="http://www.andreavaleri.com/" rel="noreferrer noopener"
+            <figcaption class="feedback__content__text-author">
+              <a class="feedback__content__text-author-link" href="http://www.andreavaleri.com/" rel="noreferrer noopener"
                 target="_blank" title="personal website"><em>Andrea
                   Valeri</em></a>
             </figcaption>
           </div>
         </figure>
 
-        <figure class="feedback">
-          <img class="feedback__img" src="../src/images/piotr_krepec.jpg" alt="Piotr Krępeć">
-          <div class="feedback__text feedback__text--right">
+        <figure class="feedback__content">
+          <img class="feedback__content__img" src="../src/images/piotr_krepec.jpg" alt="Piotr Krępeć">
+          <div class="feedback__content__text feedback__content__text--right">
             <blockquote>
-              <p class="feedback__paragraph">
+              <p class="feedback__content__text-paragraph">
                 Szymon Rojek is an outstanding guitarist filled with enormous sensitivity and music taste. His music
                 compositions touch a listener, and bring in a good mood.
               </p>
             </blockquote>
-            <figcaption class="feedback__author">
-              <a class="feedback__author-link" href="https://piotrkrepec.com/" rel="noreferrer noopener" target="_blank"
+            <figcaption class="feedback__content__text-author">
+              <a class="feedback__content__text-author-link" href="https://piotrkrepec.com/" rel="noreferrer noopener" target="_blank"
                 title="personal website"><em>Piotr
                   Krępeć</em></a>
             </figcaption>
           </div>
         </figure>
 
-        <figure class="feedback">
-          <img class="feedback__img" src="../src/images/filip_fiebiger.jpg" alt="Filip Fiebiger">
-          <div class="feedback__text feedback__text--left">
+        <figure class="feedback__content">
+          <img class="feedback__content__img" src="../src/images/filip_fiebiger.jpg" alt="Filip Fiebiger">
+          <div class="feedback__content__text feedback__content__text--left">
             <blockquote>
-              <p class="feedback__paragraph">
+              <p class="feedback__content__text-paragraph">
                 I notice a lot of passion and naturalness in Rojek's performance. He has mastered classical guitar and
                 he perfectly finds himself in popular music: jazz, swing and Latin America music.
               </p>
             </blockquote>
-            <figcaption class="feedback__author">
-              <a class="feedback__author-link" href="http://filipfiebiger.pl/" rel="noreferrer noopener" target="_blank"
+            <figcaption class="feedback__content__text-author">
+              <a class="feedback__content__text-author-link" href="http://filipfiebiger.pl/" rel="noreferrer noopener" target="_blank"
                 title="personal website"><em>Filip
                   Fiebiger</em></a>
             </figcaption>
