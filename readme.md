@@ -31,9 +31,7 @@ Music is always with me - nylon gutiar is the biggest passion in my live so I ha
 - manually switching the mode between light/dark (smooth transition)
 - connect Contact Form with an external tool [Email.js](https://www.emailjs.com/)
 
-```js
-EmailJS helps to send emails using client-side technologies only. I have connected the form to EmailJS, created an email template, and at the end after successful error verification triggering sending an email by clicking the submit button.
-```
+EmailJS helps to send emails by using client-side technologies only. I have created an email template and at the end after successful error verification the user triggers sending an email by clicking the submit button.
 
 - when form is submitted the form User immediately is information as a successful modal or Error Modal will appear if there were any errors on the way. In this case I have used an external tool [sweet alert](https://sweetalert2.github.io/#example/)
 
