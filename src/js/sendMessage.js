@@ -1,11 +1,11 @@
 import emailjs from "@emailjs/browser";
 
-export function sendMessage(configParams) {
+export function sendMessage(formData) {
   const $form = document.querySelector(".form");
   const { SERVICE_ID, TEMPLATE_ID, USER_ID } = process.env;
 
   emailjs
-    .send(SERVICE_ID, TEMPLATE_ID, configParams, USER_ID)
+    .send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID)
     .then((response) => {
       if (response.status === 200) {
         showSuccessModal();
