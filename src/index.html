@@ -261,7 +261,7 @@
           <ul class="form__list">
             <li class="form__item">
               <i class="fas fa-user form__item-icon"></i>
-              <input class="form__item-field js-form__field-name" name="name" placeholder="name*" min="3">
+              <input class="form__item-field js-form__field-name" name="name" placeholder="name*" min="3" data-validate="name">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
               <i class="fas fa-check form__item-icon form__item-icon-success"></i>
             </input>
@@ -271,7 +271,7 @@
             </li>
             <li class="form__item">
               <i class="far fa-envelope form__item-icon"></i>
-              <input class="form__item-field js-form__field-email" name="email" placeholder="email*">
+              <input class="form__item-field js-form__field-email" name="email" placeholder="email*" data-validate="email">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
               <i class="fas fa-check form__item-icon form__item-icon-success"></i>
               <div class="form__item-error">
@@ -280,7 +280,7 @@
             </li>
             <li class="form__item">
               <i class="fas fa-book form__item-icon"></i>
-              <input class="form__item-field js-form__field-subject" name="subject" placeholder="subject*">
+              <input class="form__item-field js-form__field-subject" name="subject" placeholder="subject*" data-validate="subject">
               <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
               <i class="fas fa-check form__item-icon form__item-icon-success"></i>
               <div class="form__item-error">
@@ -289,7 +289,7 @@
             </li>
             <li class="form__item">
               <i class="far fa-comment-dots form__item-icon"></i>
-                <textarea class="form__item-field form__item-field--last js-form__field-message" name="message" placeholder="message*" rows="7"></textarea>
+                <textarea class="form__item-field form__item-field--last js-form__field-message" name="message" placeholder="message*" rows="7" data-validate="message"></textarea>
                 <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
                 <i class="fas fa-check form__item-icon form__item-icon-success"></i>
                 <div class="form__item-error">
