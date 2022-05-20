@@ -67,7 +67,8 @@ function onFormSubmit(event) {
     $form.reset();
     resetIcons($successIcons);
 
-    sendMessage(formData);
+    // sendMessage(formData); at the moment is locked because email.js has got max 200 request per months for free
+    showSuccessModal();
   }
 }
 
@@ -166,4 +167,16 @@ function isError(data) {
 
 function resetIcons(icons) {
   return icons.forEach((icon) => (icon.style.opacity = HIDE_ICON));
+}
+
+function showSuccessModal() {
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Your  message has been sent",
+    text: "I will respond soon 👋",
+    timer: 3000,
+    color: "#2c2323",
+    confirmButtonColor: "green",
+  });
 }
