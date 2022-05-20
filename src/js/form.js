@@ -1,38 +1,54 @@
-import { sendMessage, showErrorModal, showSuccessModal } from "./sendMessage";
+import { sendMessage } from "./sendMessage";
 
 const $form = document.querySelector(".form");
 const $formListInputs = document.querySelector(".form__list");
+const $fieldsControls = document.querySelectorAll(".form__item-field");
 const $successIcons = document.querySelectorAll(".form__item-icon-success");
 
 const HIDE_ICON = 0;
 const SHOW_ICON = 1;
 
+const validation = {
+  isLengthValid(input, errorMessage) {
+    return input.length > 0 || { message: errorMessage };
+  },
+  isMinLength(input, min, errorMessage) {
+    return input.length >= min || { message: errorMessage };
+  },
+  isEmailValid(input, errorMessage) {
+    const regexPattern =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return (
+      regexPattern.test(String(input).toLowerCase()) || {
+        message: errorMessage,
+      }
+    );
+  },
+};
+
 init();
 
 function init() {
-  // all actions on input keyup change
+  // add icon to Input onChange when there is no error
 
-  $formListInputs.addEventListener("keyup", ({ target }) => {
-    const actualInput = target.parentElement;
+  $formListInputs.addEventListener(
+    "keyup",
+    debounce(({ target }) => {
+      const actualInput = target.parentElement;
+      const inputName = target.attributes["data-validate"].value;
+      const error = checkInputOnChange(inputName, target.value);
 
-    if (target.attributes[1].nodeValue === "email") {
-      target.parentElement.children[3].style.opacity = `${
-        isEmailValid(target.value) ? SHOW_ICON : HIDE_ICON
-      }`;
-
-      actualInput.querySelector(".form__item-error-text").textContent = "";
-      actualInput.querySelector(".form__item-icon-failure").style.opacity =
-        HIDE_ICON;
-    } else {
-      target.parentElement.children[3].style.opacity = `${
-        isLengthValid(target.value) ? SHOW_ICON : HIDE_ICON
-      }`;
-
-      actualInput.querySelector(".form__item-error-text").textContent = "";
-      actualInput.querySelector(".form__item-icon-failure").style.opacity =
-        HIDE_ICON;
-    }
-  });
+      if (error?.message) {
+        actualInput.children[3].style.opacity = HIDE_ICON;
+      } else {
+        actualInput.children[3].style.opacity = SHOW_ICON;
+        actualInput.querySelector(".form__item-error-text").textContent = "";
+        actualInput.querySelector(".form__item-icon-failure").style.opacity =
+          HIDE_ICON;
+      }
+    }, 500)
+  );
 
   // submit form
   $form.addEventListener("submit", onFormSubmit);
@@ -40,124 +56,114 @@ function init() {
 
 function onFormSubmit(event) {
   event.preventDefault();
-  const $name = document.querySelector(".js-form__field-name");
-  const $email = document.querySelector(".js-form__field-email");
-  const $subject = document.querySelector(".js-form__field-subject");
-  const $message = document.querySelector(".js-form__field-message");
 
-  const { name, email, subject, message } = Object.fromEntries(
-    new FormData($form).entries()
-  );
+  const formData = Object.fromEntries(new FormData($form).entries());
 
-  validateInputOnSubmit(
-    $name,
-    () => isLengthValid(name),
-    "minimum 3 characters required"
-  );
+  const errors = checkFieldsOnSubmit(formData);
 
-  validateInputOnSubmit($email, () => isEmailValid(email), "email is invalid");
+  displayError(errors);
 
-  validateInputOnSubmit(
-    $subject,
-    () => isLengthValid(subject),
-    "minimum 3 characters required"
-  );
-
-  validateInputOnSubmit(
-    $message,
-    () => isLengthValid(message),
-    "minimum 3 characters required"
-  );
-
-  // send message finally
-
-  const $existingErrorsElements = document.querySelectorAll(
-    ".form__item-error-text"
-  );
-  const isAnyErrorMessage = !Array.from($existingErrorsElements).find(
-    (error) => error.textContent !== ""
-  );
-
-  if (isAnyErrorMessage) {
-    showSuccessModal();
+  if (!isError(errors)) {
     $form.reset();
-
-    // at the moment email.js is during dev production so modals appers depends on errors
-
-    /*
-      sendMessage({
-        name,
-        subject,
-        email,
-        message,
-      });
-    */
-
     resetIcons($successIcons);
-  } else {
-    showErrorModal();
+
+    sendMessage(formData);
   }
 }
 
-function validateInputOnSubmit(element, callback, messageCallback) {
-  const inputControl = element.parentElement;
-  const $errorMessage = inputControl.querySelector(".form__item-error-text");
+// helpers
 
-  const errors = setErrorOnSubmit(element, callback, messageCallback) || [];
+function checkInputOnChange(inputName, targetValue) {
+  const validate = {
+    name: validation.isMinLength(
+      targetValue,
+      3,
+      "must be at least 3 characters"
+    ),
+    email: validation.isEmailValid(
+      targetValue,
+      "email is not valid - has to contains @ ."
+    ),
+    subject: validation.isMinLength(
+      targetValue,
+      3,
+      "must be at least 3 characters"
+    ),
+    message: validation.isMinLength(
+      targetValue,
+      3,
+      "must be at least 3 characters"
+    ),
+  };
 
-  if (errors.length) {
-    $errorMessage.textContent = errors.length ? errors[0].message : "";
-  }
-
-  if (!errors.length) {
-    setSuccessOnSubmit(element);
+  for (const key in validate) {
+    if (key === inputName) {
+      return validate[inputName];
+    }
   }
 }
 
-function setErrorOnSubmit(element, callback, messageCallback) {
-  const inputControl = element.parentElement;
-  const $errorIcon = inputControl.querySelector(".form__item-icon-failure");
-  const $successIcon = inputControl.querySelector(".form__item-icon-success");
+function checkFieldsOnSubmit(formData) {
+  const { name, email, subject, message } = formData;
 
-  const errors = [];
-
-  if (!element.value) {
-    errors.push({ message: "field is required" });
-  }
-
-  if (!callback()) {
-    errors.push({ message: messageCallback });
-  }
-
-  $successIcon.style.opacity = HIDE_ICON;
-  $errorIcon.style.opacity = SHOW_ICON;
-
-  return errors;
+  return {
+    name: [
+      validation.isLengthValid(name, "name is required"),
+      validation.isMinLength(name, 3, "must be at least 3 characters"),
+    ],
+    email: [
+      validation.isLengthValid(email, "email is required"),
+      validation.isEmailValid(
+        email,
+        "email is not valid - has to contains @ ."
+      ),
+    ],
+    subject: [
+      validation.isLengthValid(subject, "subject is required"),
+      validation.isMinLength(subject, 3, "must be at least 3 characters"),
+    ],
+    message: [
+      validation.isLengthValid(message, "message is required"),
+      validation.isMinLength(message, 3, "must be at least 3 characters"),
+    ],
+  };
 }
 
-function setSuccessOnSubmit(element) {
-  const inputControl = element.parentElement;
-  const $errorIcon = inputControl.querySelector(".form__item-icon-failure");
-  const $successIcon = inputControl.querySelector(".form__item-icon-success");
-  const $errorMessage = inputControl.querySelector(".form__item-error-text");
+function displayError(errors) {
+  const $errorsParagraphs = document.querySelectorAll(".form__item-error-text");
 
-  $errorMessage.textContent = "";
-  $errorIcon.style.opacity = HIDE_ICON;
-  $successIcon.style.opacity = SHOW_ICON;
+  Object.values(errors).forEach((error, index) => {
+    const foundError = error.find((error) => error?.message);
+
+    const errorText = $errorsParagraphs[index];
+    const inputField = $fieldsControls[index].parentElement;
+    const errorIcon = inputField.querySelector(".form__item-icon-failure");
+
+    errorIcon.style.opacity = error?.message ? SHOW_ICON : HIDE_ICON;
+    errorText.textContent = foundError?.message;
+  });
 }
 
-// validation
-const isEmailValid = (email) => {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+function debounce(fn, delay) {
+  let id;
 
-  return re.test(String(email).toLowerCase());
-};
+  return (...args) => {
+    if (id) clearTimeout(id);
 
-function isLengthValid(text) {
-  return text.length >= 3;
+    id = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+}
+
+function isError(data) {
+  return Object.values(data).reduce((acc, val) => {
+    acc = !!val.find((error) => error?.message);
+
+    return acc;
+  }, true);
 }
 
 function resetIcons(icons) {
-  return Array.from(icons).forEach((icon) => (icon.style.opacity = HIDE_ICON));
+  return icons.forEach((icon) => (icon.style.opacity = HIDE_ICON));
 }
