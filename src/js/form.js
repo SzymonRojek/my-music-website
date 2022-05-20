@@ -38,11 +38,12 @@ function init() {
       const actualInput = target.parentElement;
       const inputName = target.attributes["data-validate"].value;
       const error = checkInputOnChange(inputName, target.value);
+      const childOfInput = 3;
 
       if (error?.message) {
-        actualInput.children[3].style.opacity = HIDE_ICON;
+        actualInput.children[childOfInput].style.opacity = HIDE_ICON;
       } else {
-        actualInput.children[3].style.opacity = SHOW_ICON;
+        actualInput.children[childOfInput].style.opacity = SHOW_ICON;
         actualInput.querySelector(".form__item-error-text").textContent = "";
         actualInput.querySelector(".form__item-icon-failure").style.opacity =
           HIDE_ICON;
@@ -51,6 +52,7 @@ function init() {
   );
 
   // submit form
+
   $form.addEventListener("submit", onFormSubmit);
 }
 
@@ -67,7 +69,14 @@ function onFormSubmit(event) {
     $form.reset();
     resetIcons($successIcons);
 
-    // sendMessage(formData); at the moment is locked because email.js has got max 200 request per months for free
+    /*
+
+    sendMessage(formData);
+
+    function call commented now because I do not want to use limited numbers of email.js requests
+
+    */
+
     showSuccessModal();
   }
 }
