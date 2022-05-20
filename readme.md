@@ -32,10 +32,17 @@ Music is always with me - nylon gutiar is the biggest passion in my live so I ha
 - connect Contact Form with an external tool [Email.js](https://www.emailjs.com/)
 
 ```js
-EmailJS helps to send emails using client-side technologies only. No server is required – just connect EmailJS to one of the supported email services, create an email template, and use our Javascript library to trigger an email.
+EmailJS helps to send emails using client-side technologies only. I have connected the form to EmailJS, created an email template, and at the end after successful error verification triggering sending an email by clicking the submit button.
 ```
 
-- when form is submitted the form User immediately is receiving confirmation - successful modal or Error Modal will appear. In this case I have used an external tool [sweet alert](https://sweetalert2.github.io/#example/)
+- when form is submitted the form User immediately is information as a successful modal or Error Modal will appear if there were any errors on the way. In this case I have used an external tool [sweet alert](https://sweetalert2.github.io/#example/)
+
+The form has two actions:
+
+- check the inputs value on keyup change
+- check the inputs value on submit
+
+I have added a custom debounce function just to prevent unnecessary events being triggered on every inpout change, also there is an event delegation - in this case I have a single handler on their common ancestor.
 
 <table>
   <tr>
