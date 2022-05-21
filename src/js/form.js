@@ -2,8 +2,8 @@ import { sendMessage } from "./sendMessage";
 
 const $form = document.querySelector(".form");
 const $formListInputs = document.querySelector(".form__list");
-const $fieldsControls = document.querySelectorAll(".form__item-field");
-const $successIcons = document.querySelectorAll(".form__item-icon-success");
+const $fieldsControls = document.querySelectorAll(".form__item__field");
+const $successIcons = document.querySelectorAll(".form__item__icon-success");
 
 const HIDE_ICON = 0;
 const SHOW_ICON = 1;
@@ -35,18 +35,26 @@ function init() {
   $formListInputs.addEventListener(
     "keyup",
     debounce(({ target }) => {
-      const actualInput = target.parentElement;
+      const listItemParent = target.parentElement;
       const inputName = target.attributes["data-validate"].value;
       const error = checkInputOnChange(inputName, target.value);
-      const childOfInput = 3;
 
-      if (error?.message) {
-        actualInput.children[childOfInput].style.opacity = HIDE_ICON;
+      if (!error?.message) {
+        listItemParent.querySelector(
+          ".form__item__icon-success"
+        ).style.opacity = SHOW_ICON;
+
+        listItemParent.querySelector(
+          ".form__item__icon-failure"
+        ).style.opacity = HIDE_ICON;
+
+        listItemParent.nextSibling.nextSibling.querySelector(
+          ".form__error-text"
+        ).textContent = "";
       } else {
-        actualInput.children[childOfInput].style.opacity = SHOW_ICON;
-        actualInput.querySelector(".form__item-error-text").textContent = "";
-        actualInput.querySelector(".form__item-icon-failure").style.opacity =
-          HIDE_ICON;
+        listItemParent.querySelector(
+          ".form__item__icon-success"
+        ).style.opacity = HIDE_ICON;
       }
     }, 500)
   );
@@ -62,12 +70,10 @@ function onFormSubmit(event) {
   const formData = Object.fromEntries(new FormData($form).entries());
 
   const errors = checkFieldsOnSubmit(formData);
-
   displayError(errors);
 
   if (!isError(errors).length) {
     $form.reset();
-
     resetIcons($successIcons);
 
     /*
@@ -141,16 +147,15 @@ function checkFieldsOnSubmit(formData) {
 }
 
 function displayError(errors) {
-  const $errorsParagraphs = document.querySelectorAll(".form__item-error-text");
+  const $errorsParagraphs = document.querySelectorAll(".form__error-text");
 
   Object.values(errors).forEach((error, index) => {
     const foundError = error.find((error) => error?.message);
-
     const errorText = $errorsParagraphs[index];
-    const inputField = $fieldsControls[index].parentElement;
-    const errorIcon = inputField.querySelector(".form__item-icon-failure");
+    const listItem = $fieldsControls[index].parentElement;
+    const errorIcon = listItem.querySelector(".form__item__icon-failure");
 
-    errorIcon.style.opacity = error?.message ? SHOW_ICON : HIDE_ICON;
+    errorIcon.style.opacity = foundError ? SHOW_ICON : HIDE_ICON;
     errorText.textContent = foundError?.message;
   });
 }
