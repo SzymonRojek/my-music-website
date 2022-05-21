@@ -155,14 +155,14 @@ function displayError(errors) {
 }
 
 function debounce(fn, delay) {
-  let id;
+  let timeoutId;
 
   return (...args) => {
-    if (id) clearTimeout(id);
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
 
-    id = setTimeout(() => {
-      fn(...args);
-    }, delay);
+    timeoutId = setTimeout(() => fn(...args), delay);
   };
 }
 
