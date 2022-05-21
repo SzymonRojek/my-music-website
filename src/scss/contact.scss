@@ -41,55 +41,146 @@
       position: relative;
     }
 
-    &__item {
-      margin-bottom: 14.5px;
-      &-label {
-        margin-bottom: 8px;
-        display: block;
-      }
+    .form__item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      box-shadow: 0px 5px 20px 0px rgba(47, 54, 64, 0.1);
 
-      &-field {
-        padding: 23px 40px;
+      &__field {
         width: 100%;
-        height: 40px;
-        border: 0;
-        border-radius: 5px;
-        box-shadow: 0px 5px 20px 0px rgba(47, 54, 64, 0.1);
+        min-height: 60px;
+        padding: 20px 0 0 7px;
+        color: $color-thunder;
+        background-color: $color-whitesmoke;
+        border: none;
+
+        &:focus {
+          outline: none;
+          + {
+            .form__item__label {
+              .form__item__label-span {
+                transform: translateY(-100%);
+                font-size: 14px;
+                left: 10px;
+                color: inherit;
+              }
+              &::after {
+                transform: translateX(0%);
+              }
+            }
+          }
+        }
+
+        &:valid {
+          + {
+            .form__item__label {
+              .form__item__label-span {
+                transform: translateY(-100%);
+                font-size: 14px;
+                left: 10px;
+                color: $grey-200;
+              }
+              &::after {
+                transform: translateX(0%);
+              }
+            }
+          }
+        }
 
         &--last {
           resize: vertical;
           overflow: auto;
-          min-height: 200px;
-          padding: 15px 40px;
-        }
+          padding: 30px 0 0 7px;
 
-        &::placeholder {
-          font-size: 14px;
+          &:focus {
+            outline: none;
+            + {
+              .form__item__label {
+                .form__item__label-span {
+                  transform: translateY(-14%);
+                }
+              }
+            }
+          }
+
+          &:valid {
+            + {
+              .form__item__label {
+                .form__item__label-span {
+                  transform: translateY(-14%);
+                }
+              }
+            }
+          }
         }
       }
 
-      &-icon {
+      &__label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 1px solid $color-whitesmoke;
+        color: $grey-200;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -1px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          border-bottom: 3px solid $color-thunder;
+          transform: translateX(-100%);
+          transition: all 0.3s ease;
+        }
+
+        .form__item__label-span {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          padding-bottom: 5px;
+          transition: all 0.3s ease;
+
+          &--last {
+            top: 30px;
+          }
+        }
+
+        &--last {
+          left: 0;
+          top: -5px;
+        }
+      }
+
+      &__icon {
         position: absolute;
         padding: 15px 10px;
 
         &-failure {
-          color: #c21b3d;
+          color: $red-icon-failure;
           right: 0;
           opacity: 0;
         }
 
         &-success {
-          color: green;
+          color: $green-icon-success;
           right: 0;
           opacity: 0;
         }
       }
+    }
 
-      &-error {
-        height: 12px;
-        margin: 10px 0;
-        font-size: 14.5px;
-        color: #700016;
+    .form__error {
+      height: 10px;
+      margin-bottom: 15px;
+
+      &-text {
+        font-size: 12px;
+        color: $error-text-color;
       }
     }
 
@@ -112,6 +203,29 @@
       &:active {
         transform: translateY(3.5px);
       }
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+
+    &__heading {
+      margin: 0;
+    }
+
+    .form__paragraph {
+      margin-top: 10px;
+    }
+
+    .col-one {
+      padding: 40px 0 20px 20px;
+      flex-grow: 2;
+    }
+
+    .col-two {
+      margin-top: 30px;
+      padding: 20px;
+      flex-grow: 1;
     }
   }
 
