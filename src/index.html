@@ -256,46 +256,60 @@
           </div>
         </div>
 
-        <form class="form col-two">
+        <form class="form col-two" novalidate>
           <p class="form__paragraph">*Fields required</p>
           <ul class="form__list">
-            <li class="form__item">
-              <i class="fas fa-user form__item-icon"></i>
-              <input class="form__item-field js-form__field-name" name="name" placeholder="name*" min="3" data-validate="name">
-              <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
-              <i class="fas fa-check form__item-icon form__item-icon-success"></i>
-            </input>
-              <div class="form__item-error">
-                <p class="form__item-error-text"></p>
+            <li>
+              <div class="form__item">
+                <input name="name" id="name" class="form__item__field js-form__item__field-name" required data-validate="name"/>
+                <label for="name" class="form__item__label">
+                  <span class="form__item__label-span">name*</span>
+                </label>
+                <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
+                <i class="fas fa-check form__item__icon form__item__icon-success"></i>
+              </div>
+              <div class="form__error form__error-last">
+                <p class="form__error-text"></p>
               </div>
             </li>
-            <li class="form__item">
-              <i class="far fa-envelope form__item-icon"></i>
-              <input class="form__item-field js-form__field-email" name="email" placeholder="email*" data-validate="email">
-              <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
-              <i class="fas fa-check form__item-icon form__item-icon-success"></i>
-              <div class="form__item-error">
-                <p class="form__item-error-text"></p>
+            <li>
+              <div class="form__item">
+                <input name="email" id="email" class="form__item__field js-form__item__field-email" required data-validate="email"/>
+                <label for="email" class="form__item__label">
+                  <span class="form__item__label-span">email*</span>
+                </label>
+                <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
+                <i class="fas fa-check form__item__icon form__item__icon-success"></i>
+              </div>
+              <div class="form__error form__error-last">
+                <p class="form__error-text"></p>
               </div>
             </li>
-            <li class="form__item">
-              <i class="fas fa-book form__item-icon"></i>
-              <input class="form__item-field js-form__field-subject" name="subject" placeholder="subject*" data-validate="subject">
-              <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
-              <i class="fas fa-check form__item-icon form__item-icon-success"></i>
-              <div class="form__item-error">
-                <p class="form__item-error-text"></p>
+            <li>
+              <div class="form__item">
+                <input name="subject" id="subject" class="form__item__field js-form__item__field-subject" required data-validate="subject"/>
+                <label for="subject" class="form__item__label">
+                  <span class="form__item__label-span">subject*</span>
+                </label>
+                <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
+                <i class="fas fa-check form__item__icon form__item__icon-success"></i>
+              </div>
+              <div class="form__error form__error-last">
+                <p class="form__error-text"></p>
               </div>
             </li>
-            <li class="form__item">
-              <i class="far fa-comment-dots form__item-icon"></i>
-                <textarea class="form__item-field form__item-field--last js-form__field-message" name="message" placeholder="message*" rows="7" data-validate="message"></textarea>
-                <i class="fas fa-exclamation-circle form__item-icon form__item-icon-failure"></i>
-                <i class="fas fa-check form__item-icon form__item-icon-success"></i>
-                <div class="form__item-error">
-                  <p class="form__item-error-text"></p>
-                </div>
-              </label>
+            <li>
+              <div class="form__item">
+                <textarea name="description" id="description" class="form__item__field form__item__field--last js-form__item__field-description" rows="7" required data-validate="description"></textarea>
+                <label for="description" class="form__item__label form__item__label--last">
+                  <span class="form__item__label-span form__item__label-span--last">description*</span>
+                </label>
+                <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
+                <i class="fas fa-check form__item__icon form__item__icon-success"></i>
+              </div>
+              <div class="form__error form__error-last">
+                <p class="form__error-text"></p>
+              </div>
             </li>
           </ul>
           <button class="form__button js-submitButton" type="submit">Send Message</button>
