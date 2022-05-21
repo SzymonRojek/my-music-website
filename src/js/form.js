@@ -65,15 +65,16 @@ function onFormSubmit(event) {
 
   displayError(errors);
 
-  if (!isError(errors)) {
+  if (!isError(errors).length) {
     $form.reset();
+
     resetIcons($successIcons);
 
     /*
 
-    sendMessage(formData);
+      sendMessage(formData);
 
-    function call commented now because I do not want to use limited numbers of email.js requests
+      function call commented now because I do not want to use limited numbers of email.js requests
 
     */
 
@@ -99,7 +100,7 @@ function checkInputOnChange(inputName, targetValue) {
       3,
       "must be at least 3 characters"
     ),
-    message: validation.isMinLength(
+    description: validation.isMinLength(
       targetValue,
       3,
       "must be at least 3 characters"
@@ -114,7 +115,7 @@ function checkInputOnChange(inputName, targetValue) {
 }
 
 function checkFieldsOnSubmit(formData) {
-  const { name, email, subject, message } = formData;
+  const { name, email, subject, description } = formData;
 
   return {
     name: [
@@ -132,9 +133,9 @@ function checkFieldsOnSubmit(formData) {
       validation.isLengthValid(subject, "subject is required"),
       validation.isMinLength(subject, 3, "must be at least 3 characters"),
     ],
-    message: [
-      validation.isLengthValid(message, "message is required"),
-      validation.isMinLength(message, 3, "must be at least 3 characters"),
+    description: [
+      validation.isLengthValid(description, "description is required"),
+      validation.isMinLength(description, 3, "must be at least 3 characters"),
     ],
   };
 }
@@ -168,10 +169,10 @@ function debounce(fn, delay) {
 
 function isError(data) {
   return Object.values(data).reduce((acc, val) => {
-    acc = !!val.find((error) => error?.message);
+    val.filter((error) => (error?.message ? acc.push(error.message) : true));
 
     return acc;
-  }, true);
+  }, []);
 }
 
 function resetIcons(icons) {
