@@ -247,24 +247,18 @@
         </figure>
       </section>
       <section class="contact" id="contact">
-        <div class="col-one">
-          <h3 class="contact__heading">Say Hi!</h3>
-          <div class="contact__description">
-            <h4>
-              Send me an <strong class="contact__description-email">email</strong> 👋
-            </h4>
-          </div>
+        <div class="contact__header">
+          <h3 class="contact__header__heading">Say Hi!</h3>
+          <h4 class="contact__header__sub-heading">Send me an email 👋</h4>
         </div>
 
-        <form class="form col-two" novalidate>
+        <form class="form" novalidate>
           <p class="form__paragraph">*Fields required</p>
           <ul class="form__list">
             <li>
               <div class="form__item">
-                <input name="name" id="name" class="form__item__field js-form__item__field-name" required data-validate="name"/>
-                <label for="name" class="form__item__label">
-                  <span class="form__item__label-span">name*</span>
-                </label>
+                <input name="name" id="name" class="form__item__field js-form__item__field-name" placeholder=" " required data-validate="name"/>
+                <label for="name" class="form__item__label">name*</label>
                 <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
                 <i class="fas fa-check form__item__icon form__item__icon-success"></i>
               </div>
@@ -274,10 +268,8 @@
             </li>
             <li>
               <div class="form__item">
-                <input name="email" id="email" class="form__item__field js-form__item__field-email" required data-validate="email"/>
-                <label for="email" class="form__item__label">
-                  <span class="form__item__label-span">email*</span>
-                </label>
+                <input name="email" id="email" class="form__item__field js-form__item__field-email" placeholder=" " required data-validate="email"/>
+                <label for="email" class="form__item__label">email*</label>
                 <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
                 <i class="fas fa-check form__item__icon form__item__icon-success"></i>
               </div>
@@ -287,10 +279,8 @@
             </li>
             <li>
               <div class="form__item">
-                <input name="subject" id="subject" class="form__item__field js-form__item__field-subject" required data-validate="subject"/>
-                <label for="subject" class="form__item__label">
-                  <span class="form__item__label-span">subject*</span>
-                </label>
+                <input name="subject" id="subject" class="form__item__field js-form__item__field-subject" placeholder=" " required data-validate="subject"/>
+                <label for="subject" class="form__item__label">subject*</label>
                 <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
                 <i class="fas fa-check form__item__icon form__item__icon-success"></i>
               </div>
@@ -300,14 +290,12 @@
             </li>
             <li>
               <div class="form__item">
-                <textarea name="description" id="description" class="form__item__field form__item__field--last js-form__item__field-description" rows="7" required data-validate="description"></textarea>
-                <label for="description" class="form__item__label form__item__label--last">
-                  <span class="form__item__label-span form__item__label-span--last">description*</span>
-                </label>
+                <textarea name="description" id="description" class="form__item__field form__item__field--last js-form__item__field-description" placeholder=" " required data-validate="description"></textarea>
+                <label for="description" class="form__item__label form__item__label--last">description*</label>
                 <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
                 <i class="fas fa-check form__item__icon form__item__icon-success"></i>
               </div>
-              <div class="form__error form__error-last">
+              <div class="form__error">
                 <p class="form__error-text"></p>
               </div>
             </li>
