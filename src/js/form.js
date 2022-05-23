@@ -195,3 +195,15 @@ function showSuccessModal() {
     confirmButtonColor: "green",
   });
 }
+
+// text area change size
+
+const $textArea = document.querySelector(".form__item__field--last");
+
+function resizeTextArea({ target }) {
+  target.style.height = "auto";
+
+  const scrollHeight = target.scrollHeight;
+  target.style.height = `${scrollHeight}px`;
+}
+$textArea.addEventListener("keyup", resizeTextArea);
