@@ -2,12 +2,12 @@
   &__img {
     width: 100%;
     max-width: 770px;
-    z-index: -1;
   }
 
   & > div {
     background-color: var(--article-bgc);
     transition: background-color 0.3s linear;
+    padding: 20px;
   }
 
   &__text {
