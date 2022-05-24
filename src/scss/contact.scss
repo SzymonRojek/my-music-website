@@ -1,18 +1,29 @@
 .contact {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
   background-color: $accent-gold;
   background: url("../images/DSC_8660-logo.webp");
   background-size: cover;
   background-position: -400px;
   background-repeat: no-repeat;
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-  justify-items: center;
-  object-fit: cover;
+  // z-index: 1;
 
   &::before {
+    content: "";
+    background-image: url("../images/dots-bg.svg");
+    display: block;
+    height: 37px;
+    left: 20px;
+    top: -18px;
+    position: absolute;
+    width: 37px;
+    z-index: 2;
+  }
+
+  &::after {
     content: "";
     position: absolute;
     top: 0;
@@ -21,7 +32,7 @@
     bottom: 0;
     background-color: rgb(85, 80, 80);
     opacity: 0.6;
-    z-index: -1;
+    z-index: 1;
   }
 
   &__header {
@@ -31,19 +42,10 @@
     padding-left: 40px;
     color: $color-whitesmoke;
     text-align: center;
+    z-index: 2;
 
     &__heading {
       text-align: left;
-      &::before {
-        content: "";
-        background-image: url("../images/dots-bg.svg");
-        display: block;
-        height: 37px;
-        left: 30px;
-        top: -18px;
-        position: absolute;
-        width: 37px;
-      }
     }
 
     &__sub-heading {
@@ -205,8 +207,11 @@
 
   @media (min-width: 768px) {
     justify-items: end;
-    margin: 40px;
     background-position: center;
+
+    &__header {
+      margin-top: 75px;
+    }
 
     .form {
       padding: 25px;
