@@ -1,4 +1,4 @@
-<img src="./src/images/music-web.gif" width="150" height="250">
+<!-- <img src="./src/images/music-web.gif" width="150" height="250"> -->
 
 ## 🎥 Preview site :arrow_right: [live demo](https://szymonrojek.github.io/my-music-website/)
 
