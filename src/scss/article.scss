@@ -8,6 +8,17 @@
     background-color: var(--article-bgc);
     transition: background-color 0.3s linear;
     padding: 20px;
+
+    &:nth-child(1n):not(:last-child)::before {
+      content: "";
+      background-image: url("../images/dots-bg.svg");
+      display: block;
+      height: 37px;
+      left: 20px;
+      top: -18px;
+      position: absolute;
+      width: 37px;
+    }
   }
 
   &__text {
@@ -19,8 +30,7 @@
 
     &-heading {
       padding: 50px 0 20px 0;
-      font-weight: 200;
-      font-weight: 300;
+      font-weight: 350;
       line-height: 1.5;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -32,6 +42,7 @@
 
     &-paragraph {
       padding-bottom: 10px;
+      font-weight: 300;
 
       &--marginBottom {
         margin-bottom: 50px;
@@ -39,7 +50,7 @@
     }
   }
 
-  @media (min-width: 540px) {
+  @media (min-width: 768px) {
     position: relative;
 
     &__text {
@@ -52,6 +63,14 @@
         padding: 0 40px 0 96px;
         text-align: start;
         background-color: $color-alabaster;
+      }
+
+      &-heading {
+        font-size: 30px;
+      }
+
+      &-paragraph {
+        font-size: 20px;
       }
     }
 
