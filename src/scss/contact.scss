@@ -219,7 +219,11 @@
   }
 }
 
-.form__item__field:focus ~ .form__item__label,
+.form__item__field:focus ~ .form__item__label {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+}
 .form__item__field:not(:placeholder-shown).form__item__field:not(:focus)
   ~ .form__item__label {
   top: -0.5rem;
