@@ -2,7 +2,7 @@
   background-color: $accent-gold;
   background: url("../images/DSC_8660-logo.webp");
   background-size: cover;
-  background-position: right;
+  background-position: -400px;
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
@@ -10,6 +10,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   justify-items: center;
+  object-fit: cover;
 
   &::before {
     content: "";
@@ -39,7 +40,7 @@
         display: block;
         height: 37px;
         left: 30px;
-        top: -14px;
+        top: -18px;
         position: absolute;
         width: 37px;
       }
@@ -205,6 +206,7 @@
   @media (min-width: 768px) {
     justify-items: end;
     margin: 40px;
+    background-position: center;
 
     .form {
       padding: 25px;
