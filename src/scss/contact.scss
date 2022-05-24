@@ -167,3 +167,11 @@
     }
   }
 }
+
+// webkit safari
+
+i {
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration: 100ms;
+  -webkit-transition-delay: 100ms;
+}
