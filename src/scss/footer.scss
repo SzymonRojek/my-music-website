@@ -44,13 +44,13 @@
   }
 
   @media (min-width: 576px) {
-    margin-top: 100px;
     padding: 20px;
     font-size: 16px;
 
     &__buttonUp {
       height: 40px;
       width: 40px;
+      z-index: 20;
     }
   }
 }
