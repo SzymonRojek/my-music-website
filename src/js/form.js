@@ -227,8 +227,6 @@ const validation = {
   },
 };
 
-
-
 /* currently working on the second version fo the validation form - using OOP
 
 
@@ -343,3 +341,5 @@ form.constructor("form", (property, formData) => {
     }
   }
 });
+
+*/
