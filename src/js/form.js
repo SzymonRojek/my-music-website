@@ -207,3 +207,139 @@ function resizeTextArea({ target }) {
   target.style.height = `${scrollHeight}px`;
 }
 $textArea.addEventListener("keyup", resizeTextArea);
+
+const validation = {
+  isLengthValid(input, errorMessage) {
+    return input.length > 0 || { message: errorMessage };
+  },
+  isMinLength(input, min, errorMessage) {
+    return input.length >= min || { message: errorMessage };
+  },
+  isEmailValid(input, errorMessage) {
+    const regexPattern =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return (
+      regexPattern.test(String(input).toLowerCase()) || {
+        message: errorMessage,
+      }
+    );
+  },
+};
+
+
+
+/* currently working on the second version fo the validation form - using OOP
+
+
+const Validator = {
+  constructor: function (form, callback) {
+    this._elForm = form;
+    this.callback = callback;
+
+    this.init();
+  },
+
+  init: function () {
+    this.addListenerOnChange();
+    this.addListenerOnSubmit();
+  },
+
+  errors: [],
+
+  addListenerOnChange: function () {
+    const formSelector = this._elForm;
+    const $form = document.querySelector(formSelector);
+
+    $form.addEventListener(
+      "input",
+      (e) => {
+        const formData = Object.fromEntries(new FormData($form).entries());
+        const currentField = e.target.attributes["data-validate"].value;
+
+        this.errors = this.validateOnChange(
+          currentField,
+          formData[currentField]
+        );
+
+        this.displayError(
+          e,
+          this.validateOnChange(currentField, formData[currentField])
+        );
+      },
+      false
+    );
+  },
+
+  addListenerOnSubmit() {
+    const formSelector = this._elForm;
+    const $form = document.querySelector(formSelector);
+
+    $form.addEventListener(
+      "submit",
+      (e) => {
+        e.preventDefault();
+
+        const formData = Object.fromEntries(new FormData($form).entries());
+        const currentField = e.target.attributes["data-validate"].value;
+
+        if (!this.errors.length) {
+        }
+      },
+      false
+    );
+  },
+
+  validateOnChange: function (currentValue, formData) {
+    const isFieldValid = this.callback;
+
+    return isFieldValid(currentValue, formData);
+  },
+
+  displayError: function (e, error) {
+    const currentField = e.target;
+    const parentElement = currentField.parentElement;
+    parentElement.nextSibling.nextSibling.querySelector(
+      ".form__error-text"
+    ).textContent = error?.message ? error?.message : "";
+
+    parentElement.querySelector(".form__item__icon-failure").style.opacity =
+      error ? SHOW_ICON : HIDE_ICON;
+
+    parentElement.querySelector(".form__item__icon-success").style.opacity =
+      !error ? SHOW_ICON : HIDE_ICON;
+  },
+};
+
+const form = Object.create(Validator);
+
+form.constructor("form", (property, formData) => {
+  const validationData = {
+    name: [
+      validation.isLengthValid(formData, "name is required"),
+      validation.isMinLength(formData, 3, "must be at least 3 characters"),
+    ],
+    email: [
+      validation.isLengthValid(formData, "email is required"),
+      validation.isMinLength(formData, 3, "must be at least 3 characters"),
+      validation.isEmailValid(
+        formData,
+        "email is not valid - has to contains @ ."
+      ),
+    ],
+    subject: [
+      validation.isLengthValid(formData, "subject is required"),
+      validation.isMinLength(formData, 3, "must be at least 3 characters"),
+    ],
+    description: [
+      validation.isLengthValid(formData, "description is required"),
+      validation.isMinLength(formData, 3, "must be at least 3 characters"),
+    ],
+  };
+
+  for (const functionValidation of validationData[property]) {
+    if (functionValidation?.message) {
+      return functionValidation;
+    }
+  }
+});
