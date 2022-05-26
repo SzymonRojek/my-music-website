@@ -208,6 +208,8 @@ function resizeTextArea({ target }) {
 }
 $textArea.addEventListener("keyup", resizeTextArea);
 
+/* currently working on the second version fo the validation form - using OOP
+
 const validation = {
   isLengthValid(input, errorMessage) {
     return input.length > 0 || { message: errorMessage };
@@ -226,9 +228,6 @@ const validation = {
     );
   },
 };
-
-/* currently working on the second version fo the validation form - using OOP
-
 
 const Validator = {
   constructor: function (form, callback) {
