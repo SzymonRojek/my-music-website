@@ -1,188 +1,166 @@
-import { sendMessage } from "./sendMessage";
+// import { sendMessage } from "./sendMessage";
 
-const $form = document.querySelector(".form");
-const $formListInputs = document.querySelector(".form__list");
-const $fieldsControls = document.querySelectorAll(".form__item__field");
-const $successIcons = document.querySelectorAll(".form__item__icon-success");
-
+const $form = document.querySelector("[data-form]");
+const $errorsText = document.querySelectorAll("[data-error]");
+const $icons = document.querySelectorAll("[data-icon]");
 const HIDE_ICON = 0;
 const SHOW_ICON = 1;
 
 const validation = {
   isLengthValid(input, errorMessage) {
-    return input.length > 0 || { message: errorMessage };
+    const trimedValue = input.trim();
+    return trimedValue.length > 0 || { message: errorMessage };
   },
   isMinLength(input, min, errorMessage) {
-    return input.length >= min || { message: errorMessage };
+    const trimedValue = input.trim();
+    return trimedValue.length >= min || { message: errorMessage };
+  },
+  isOverMaxLength(input, max, errorMessage) {
+    const trimedValue = input.trim();
+    return trimedValue.length <= max || { message: errorMessage };
   },
   isEmailValid(input, errorMessage) {
+    const trimedValue = input.trim();
     const regexPattern =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     return (
-      regexPattern.test(String(input).toLowerCase()) || {
+      regexPattern.test(String(trimedValue).toLowerCase()) || {
         message: errorMessage,
       }
     );
   },
 };
 
-init();
+const Validator = {
+  constructor(form, validationCallback) {
+    this.form = form;
+    this.validationCallback = validationCallback;
 
-function init() {
-  // add icon to Input onChange when there is no error
+    this.init();
+  },
 
-  $formListInputs.addEventListener(
-    "keyup",
-    debounce(({ target }) => {
-      const listItemParent = target.parentElement;
-      const inputName = target.attributes["data-validate"].value;
-      const error = checkInputOnChange(inputName, target.value);
+  init() {
+    this.addListenerOnChange();
+    this.addListenerOnSubmit();
+  },
 
-      if (!error?.message) {
-        listItemParent.querySelector(
-          ".form__item__icon-success"
-        ).style.opacity = SHOW_ICON;
+  addListenerOnChange() {
+    this.form.addEventListener(
+      "keyup",
+      (e) => {
+        const formData = Object.fromEntries(new FormData(this.form).entries());
 
-        listItemParent.querySelector(
-          ".form__item__icon-failure"
-        ).style.opacity = HIDE_ICON;
+        const errors = this.validationCallback(formData);
+        const targetCurrentName = e.target.attributes["name"].value;
+        const currentErrorsArray = errors[targetCurrentName];
+        const error = currentErrorsArray.find((error) => error.message);
 
-        listItemParent.nextSibling.nextSibling.querySelector(
-          ".form__error-text"
-        ).textContent = "";
-      } else {
-        listItemParent.querySelector(
-          ".form__item__icon-success"
-        ).style.opacity = HIDE_ICON;
-      }
-    }, 500)
-  );
+        const parentElement = e.target.parentElement;
+        const errorText = parentElement.querySelector("[data-error]");
+        const targetIcon = parentElement.querySelector("[data-icon]");
 
-  // submit form
+        errorText.textContent = error?.message || "";
 
-  $form.addEventListener("submit", onFormSubmit);
-}
+        this.toggleIcon(error, targetIcon);
+      },
+      false
+    );
+  },
 
-function onFormSubmit(event) {
-  event.preventDefault();
+  addListenerOnSubmit() {
+    this.form.addEventListener(
+      "submit",
+      (e) => {
+        e.preventDefault();
 
-  const formData = Object.fromEntries(new FormData($form).entries());
+        const formData = Object.fromEntries(new FormData(this.form).entries());
 
-  const errors = checkFieldsOnSubmit(formData);
-  displayError(errors);
+        const errors = this.validationCallback(formData);
 
-  if (!isError(errors).length) {
-    $form.reset();
-    resetIcons($successIcons);
+        Object.values(errors).map((arrayErrors, index) => {
+          const errorText = $errorsText[index];
+          const icon = $icons[index];
+          const foundError = arrayErrors.find((el) => el.message);
 
-    /*
+          errorText.textContent = foundError?.message || "";
+          this.toggleIcon(foundError, icon);
+        });
 
-      sendMessage(formData);
+        const isError = Object.values(errors)
+          .flat(Infinity)
+          .find((el) => el.message);
 
-      function call commented now because I do not want to use limited numbers of email.js requests
+        if (!isError) {
+          showSuccessModal();
+          $form.reset();
+          this.resetIcons($icons);
 
-    */
+          //     /*
+          //       sendMessage(formData);
+          //       function call commented now because I do not want to use limited numbers of email.js requests
+          //     */
+        }
+      },
 
-    showSuccessModal();
-  }
-}
+      false
+    );
+  },
 
-// helpers
-
-function checkInputOnChange(inputName, targetValue) {
-  const validate = {
-    name: validation.isMinLength(
-      targetValue,
-      3,
-      "must be at least 3 characters"
-    ),
-    email: validation.isEmailValid(
-      targetValue,
-      "email is not valid - has to contains @ ."
-    ),
-    subject: validation.isMinLength(
-      targetValue,
-      3,
-      "must be at least 3 characters"
-    ),
-    description: validation.isMinLength(
-      targetValue,
-      3,
-      "must be at least 3 characters"
-    ),
-  };
-
-  for (const key in validate) {
-    if (key === inputName) {
-      return validate[inputName];
+  toggleIcon(error, icon) {
+    const classesSuccessIcon = ["fa-check", "form__item__icon-success"];
+    const classesFailureIcon = [
+      "fa-exclamation-circle",
+      "form__item__icon-failure",
+    ];
+    if (error?.message) {
+      icon.classList.add(...classesFailureIcon);
+      icon.classList.remove(...classesSuccessIcon);
+    } else {
+      icon.classList.add(...classesSuccessIcon);
+      icon.classList.remove(...classesFailureIcon);
     }
-  }
-}
 
-function checkFieldsOnSubmit(formData) {
+    icon.style.opacity = SHOW_ICON;
+  },
+
+  resetIcons(icons) {
+    return icons.forEach((icon) => (icon.style.opacity = HIDE_ICON));
+  },
+};
+
+const form = Object.create(Validator);
+
+form.constructor($form, (formData) => {
   const { name, email, subject, description } = formData;
 
-  return {
+  const validationData = {
     name: [
       validation.isLengthValid(name, "name is required"),
       validation.isMinLength(name, 3, "must be at least 3 characters"),
+      validation.isOverMaxLength(name, 15, "must be maximum 15 characters"),
     ],
     email: [
       validation.isLengthValid(email, "email is required"),
+      validation.isMinLength(email, 3, "must be at least 3 characters"),
       validation.isEmailValid(
         email,
-        "email is not valid - has to contains @ ."
+        "email is not valid - has to contains @ and ."
       ),
     ],
     subject: [
       validation.isLengthValid(subject, "subject is required"),
       validation.isMinLength(subject, 3, "must be at least 3 characters"),
+      validation.isOverMaxLength(subject, 15, "must be maximum 15 characters"),
     ],
     description: [
       validation.isLengthValid(description, "description is required"),
       validation.isMinLength(description, 3, "must be at least 3 characters"),
     ],
   };
-}
 
-function displayError(errors) {
-  const $errorsParagraphs = document.querySelectorAll(".form__error-text");
-
-  Object.values(errors).forEach((error, index) => {
-    const foundError = error.find((error) => error?.message);
-    const errorText = $errorsParagraphs[index];
-    const listItem = $fieldsControls[index].parentElement;
-    const errorIcon = listItem.querySelector(".form__item__icon-failure");
-
-    errorIcon.style.opacity = foundError ? SHOW_ICON : HIDE_ICON;
-    errorText.textContent = foundError?.message;
-  });
-}
-
-function debounce(fn, delay) {
-  let timeoutId;
-
-  return (...args) => {
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
-
-    timeoutId = setTimeout(() => fn(...args), delay);
-  };
-}
-
-function isError(data) {
-  return Object.values(data).reduce((acc, val) => {
-    val.filter((error) => (error?.message ? acc.push(error.message) : true));
-
-    return acc;
-  }, []);
-}
-
-function resetIcons(icons) {
-  return icons.forEach((icon) => (icon.style.opacity = HIDE_ICON));
-}
+  return validationData;
+});
 
 function showSuccessModal() {
   Swal.fire({
@@ -198,147 +176,26 @@ function showSuccessModal() {
 
 // text area change size
 
-const $textArea = document.querySelector(".form__item__field--last");
-
 function resizeTextArea({ target }) {
   target.style.height = "auto";
 
   const scrollHeight = target.scrollHeight;
   target.style.height = `${scrollHeight}px`;
 }
+
+const $textArea = document.querySelector("[data-area]");
 $textArea.addEventListener("keyup", resizeTextArea);
 
-/* currently working on the second version fo the validation form - using OOP
+// additionally I could use the debunce function and do not call input target all the time when key is pressed
 
-const validation = {
-  isLengthValid(input, errorMessage) {
-    return input.length > 0 || { message: errorMessage };
-  },
-  isMinLength(input, min, errorMessage) {
-    return input.length >= min || { message: errorMessage };
-  },
-  isEmailValid(input, errorMessage) {
-    const regexPattern =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+function debounce(fn, delay) {
+  let timeoutId;
 
-    return (
-      regexPattern.test(String(input).toLowerCase()) || {
-        message: errorMessage,
-      }
-    );
-  },
-};
-
-const Validator = {
-  constructor: function (form, callback) {
-    this._elForm = form;
-    this.callback = callback;
-
-    this.init();
-  },
-
-  init: function () {
-    this.addListenerOnChange();
-    this.addListenerOnSubmit();
-  },
-
-  errors: [],
-
-  addListenerOnChange: function () {
-    const formSelector = this._elForm;
-    const $form = document.querySelector(formSelector);
-
-    $form.addEventListener(
-      "input",
-      (e) => {
-        const formData = Object.fromEntries(new FormData($form).entries());
-        const currentField = e.target.attributes["data-validate"].value;
-
-        this.errors = this.validateOnChange(
-          currentField,
-          formData[currentField]
-        );
-
-        this.displayError(
-          e,
-          this.validateOnChange(currentField, formData[currentField])
-        );
-      },
-      false
-    );
-  },
-
-  addListenerOnSubmit() {
-    const formSelector = this._elForm;
-    const $form = document.querySelector(formSelector);
-
-    $form.addEventListener(
-      "submit",
-      (e) => {
-        e.preventDefault();
-
-        const formData = Object.fromEntries(new FormData($form).entries());
-        const currentField = e.target.attributes["data-validate"].value;
-
-        if (!this.errors.length) {
-        }
-      },
-      false
-    );
-  },
-
-  validateOnChange: function (currentValue, formData) {
-    const isFieldValid = this.callback;
-
-    return isFieldValid(currentValue, formData);
-  },
-
-  displayError: function (e, error) {
-    const currentField = e.target;
-    const parentElement = currentField.parentElement;
-    parentElement.nextSibling.nextSibling.querySelector(
-      ".form__error-text"
-    ).textContent = error?.message ? error?.message : "";
-
-    parentElement.querySelector(".form__item__icon-failure").style.opacity =
-      error ? SHOW_ICON : HIDE_ICON;
-
-    parentElement.querySelector(".form__item__icon-success").style.opacity =
-      !error ? SHOW_ICON : HIDE_ICON;
-  },
-};
-
-const form = Object.create(Validator);
-
-form.constructor("form", (property, formData) => {
-  const validationData = {
-    name: [
-      validation.isLengthValid(formData, "name is required"),
-      validation.isMinLength(formData, 3, "must be at least 3 characters"),
-    ],
-    email: [
-      validation.isLengthValid(formData, "email is required"),
-      validation.isMinLength(formData, 3, "must be at least 3 characters"),
-      validation.isEmailValid(
-        formData,
-        "email is not valid - has to contains @ ."
-      ),
-    ],
-    subject: [
-      validation.isLengthValid(formData, "subject is required"),
-      validation.isMinLength(formData, 3, "must be at least 3 characters"),
-    ],
-    description: [
-      validation.isLengthValid(formData, "description is required"),
-      validation.isMinLength(formData, 3, "must be at least 3 characters"),
-    ],
-  };
-
-  for (const functionValidation of validationData[property]) {
-    if (functionValidation?.message) {
-      return functionValidation;
+  return (...args) => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
     }
-  }
-});
 
-*/
+    timeoutId = setTimeout(() => fn(...args), delay);
+  };
+}
