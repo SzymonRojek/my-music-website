@@ -251,51 +251,39 @@
           <h4 class="contact__header__sub-heading">Send me an email 👋</h4>
         </div>
 
-        <form class="form" novalidate>
+        <form class="form" novalidate data-form>
           <p class="form__information">*Fields required</p>
           <ul class="form__list">
             <li>
               <div class="form__item">
-                <input name="name" id="name" class="form__item__field js-form__item__field-name" placeholder=" " required data-validate="name"/>
+                <input name="name" id="name" class="form__item__field js-form__item__field-name" placeholder=" " required data-validate/>
                 <label for="name" class="form__item__label">name*</label>
-                <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
-                <i class="fas fa-check form__item__icon form__item__icon-success"></i>
-              </div>
-              <div class="form__error form__error-last">
-                <p class="form__error-text"></p>
+                <i class="fas form__item__icon" data-icon></i>
+                <p class="form__item__error" data-error></p>
               </div>
             </li>
             <li>
               <div class="form__item">
-                <input name="email" id="email" class="form__item__field js-form__item__field-email" placeholder=" " required data-validate="email"/>
+                <input name="email" id="email" class="form__item__field js-form__item__field-email" placeholder=" " required data-validate/>
                 <label for="email" class="form__item__label">email*</label>
-                <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
-                <i class="fas fa-check form__item__icon form__item__icon-success"></i>
-              </div>
-              <div class="form__error form__error-last">
-                <p class="form__error-text"></p>
+                <i class="fas form__item__icon" data-icon></i>
+                <p class="form__item__error" data-error></p>
               </div>
             </li>
             <li>
               <div class="form__item">
-                <input name="subject" id="subject" class="form__item__field js-form__item__field-subject" placeholder=" " required data-validate="subject"/>
+                <input name="subject" id="subject" class="form__item__field js-form__item__field-subject" placeholder=" " required data-validate/>
                 <label for="subject" class="form__item__label">subject*</label>
-                <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
-                <i class="fas fa-check form__item__icon form__item__icon-success"></i>
-              </div>
-              <div class="form__error form__error-last">
-                <p class="form__error-text"></p>
+                <i class="fas form__item__icon" data-icon></i>
+                <p class="form__item__error" data-error></p>
               </div>
             </li>
             <li>
               <div class="form__item">
-                <textarea name="description" id="description" class="form__item__field form__item__field--last js-form__item__field-description" placeholder=" " required data-validate="description"></textarea>
+                <textarea name="description" id="description" class="form__item__field form__item__field--last" placeholder=" " required data-validate data-area></textarea>
                 <label for="description" class="form__item__label form__item__label--last">description*</label>
-                <i class="fas fa-exclamation-circle form__item__icon form__item__icon-failure"></i>
-                <i class="fas fa-check form__item__icon form__item__icon-success"></i>
-              </div>
-              <div class="form__error">
-                <p class="form__error-text"></p>
+                <i class="fas form__item__icon" data-icon></i>
+                <p class="form__item__error form__item__error--last" data-error></p>
               </div>
             </li>
           </ul>
