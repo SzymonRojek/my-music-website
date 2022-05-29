@@ -6,32 +6,6 @@ const $icons = document.querySelectorAll("[data-icon]");
 const HIDE_ICON = 0;
 const SHOW_ICON = 1;
 
-const validation = {
-  isLengthValid(input, errorMessage) {
-    const trimedValue = input.trim();
-    return trimedValue.length > 0 || { message: errorMessage };
-  },
-  isMinLength(input, min, errorMessage) {
-    const trimedValue = input.trim();
-    return trimedValue.length >= min || { message: errorMessage };
-  },
-  isOverMaxLength(input, max, errorMessage) {
-    const trimedValue = input.trim();
-    return trimedValue.length <= max || { message: errorMessage };
-  },
-  isEmailValid(input, errorMessage) {
-    const trimedValue = input.trim();
-    const regexPattern =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    return (
-      regexPattern.test(String(trimedValue).toLowerCase()) || {
-        message: errorMessage,
-      }
-    );
-  },
-};
-
 class Validator {
   constructor(form, validationCallback) {
     this.form = form;
@@ -130,6 +104,34 @@ class Validator {
 }
 
 const form = new Validator($form, getValidationErrors);
+
+// helpers
+
+const validation = {
+  isLengthValid(input, errorMessage) {
+    const trimedValue = input.trim();
+    return trimedValue.length > 0 || { message: errorMessage };
+  },
+  isMinLength(input, min, errorMessage) {
+    const trimedValue = input.trim();
+    return trimedValue.length >= min || { message: errorMessage };
+  },
+  isOverMaxLength(input, max, errorMessage) {
+    const trimedValue = input.trim();
+    return trimedValue.length <= max || { message: errorMessage };
+  },
+  isEmailValid(input, errorMessage) {
+    const trimedValue = input.trim();
+    const regexPattern =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return (
+      regexPattern.test(String(trimedValue).toLowerCase()) || {
+        message: errorMessage,
+      }
+    );
+  },
+};
 
 function getValidationErrors(formData) {
   const { name, email, subject, description } = formData;
