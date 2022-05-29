@@ -32,18 +32,18 @@ const validation = {
   },
 };
 
-const Validator = {
+class Validator {
   constructor(form, validationCallback) {
     this.form = form;
     this.validationCallback = validationCallback;
 
     this.init();
-  },
+  }
 
   init() {
     this.addListenerOnChange();
     this.addListenerOnSubmit();
-  },
+  }
 
   addListenerOnChange() {
     this.form.addEventListener(
@@ -66,7 +66,7 @@ const Validator = {
       },
       false
     );
-  },
+  }
 
   addListenerOnSubmit() {
     this.form.addEventListener(
@@ -105,7 +105,7 @@ const Validator = {
 
       false
     );
-  },
+  }
 
   toggleIcon(error, icon) {
     const classesSuccessIcon = ["fa-check", "form__item__icon-success"];
@@ -122,16 +122,16 @@ const Validator = {
     }
 
     icon.style.opacity = SHOW_ICON;
-  },
+  }
 
   resetIcons(icons) {
     return icons.forEach((icon) => (icon.style.opacity = HIDE_ICON));
-  },
-};
+  }
+}
 
-const form = Object.create(Validator);
+const form = new Validator($form, getValidationErrors);
 
-form.constructor($form, (formData) => {
+function getValidationErrors(formData) {
   const { name, email, subject, description } = formData;
 
   const validationData = {
@@ -160,7 +160,7 @@ form.constructor($form, (formData) => {
   };
 
   return validationData;
-});
+}
 
 function showSuccessModal() {
   Swal.fire({
