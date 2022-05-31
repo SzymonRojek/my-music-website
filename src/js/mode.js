@@ -1,21 +1,13 @@
 const STORAGE_KEY = "mode";
 const COLOR_MODE_KEY = "--color-mode";
 
-const $modeToggle = document.querySelector(".js-buttonToggle__mode");
+const $modeToggle = document.querySelector("[data-button-toggle]");
 
-const getCSSCustomProp = (propKey) => {
-  let response = getComputedStyle(document.documentElement).getPropertyValue(
-    propKey
-  );
+applySetting();
 
-  if (response.length) {
-    response = response.replace(/\"/g, "").trim();
-  }
+$modeToggle.addEventListener("click", () => applySetting(toggleSetting()));
 
-  return response;
-};
-
-const applySetting = (passedSetting) => {
+function applySetting(passedSetting) {
   let currentSetting = passedSetting || localStorage.getItem(STORAGE_KEY);
 
   if (currentSetting) {
@@ -24,9 +16,9 @@ const applySetting = (passedSetting) => {
       currentSetting
     );
   }
-};
+}
 
-const toggleSetting = () => {
+function toggleSetting() {
   let currentSetting = localStorage.getItem(STORAGE_KEY);
 
   switch (currentSetting) {
@@ -47,8 +39,18 @@ const toggleSetting = () => {
   localStorage.setItem(STORAGE_KEY, currentSetting);
 
   return currentSetting;
-};
+}
 
-$modeToggle.addEventListener("click", () => applySetting(toggleSetting()));
+// helpers
 
-applySetting();
+function getCSSCustomProp(propKey) {
+  let response = getComputedStyle(document.documentElement).getPropertyValue(
+    propKey
+  );
+
+  if (response.length) {
+    response = response.replace(/\"/g, "").trim();
+  }
+
+  return response;
+}
