@@ -1,22 +1,26 @@
-const $navigation = document.querySelector(".navigation");
-const $hamburgerButton = document.querySelector(".navigation__hamburgerButton");
-const $navigationLinkList = document.querySelector(".navigation__list");
-const $navigationLinks = document.querySelectorAll(".navigation__link");
+const $navigation = document.querySelector("[data-navigation]");
+const $hamburgerButton = document.querySelector("[data-menu-button]");
+const $navigationLinkList = document.querySelector("[data-navigation-list");
+const $navigationLinks = document.querySelectorAll("[data-link]");
 
 init();
 
 function init() {
-  $navigation.addEventListener("wheel", preventScroll, { passive: false });
+  // $navigation.addEventListener("wheel", preventScroll, { passive: false });
   $navigation.addEventListener("click", (event) => setNavigationAction(event));
 }
 
 function preventScroll(event) {
   event.preventDefault();
-  event.stopPropagation();
 }
 
 function setNavigationAction(event) {
-  if (!(event.target.closest("button") || event.target.closest("li"))) {
+  if (
+    !(
+      event.target.closest("[data-menu-button]") ||
+      event.target.closest("[data-link]")
+    )
+  ) {
     return;
   }
 
