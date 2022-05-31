@@ -1,9 +1,8 @@
-import { fieldsValidationErrorsData } from "./fieldsValidationErrorsData";
 import { FieldsFormValidator } from "./FieldsFormValidator";
 
 const $form = document.querySelector("[data-form]");
 
-new FieldsFormValidator($form, fieldsValidationErrorsData);
+new FieldsFormValidator($form);
 
 // text area functionality
 function resizeTextArea({ target }) {
