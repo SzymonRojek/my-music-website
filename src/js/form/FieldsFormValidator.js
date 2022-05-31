@@ -1,9 +1,10 @@
 import { DisplayFieldsErrors } from "./DisplayFieldsErrors";
+import { FieldsValidationFormData } from "./FieldsValidationFormData";
 
-export class FieldsFormValidator {
-  constructor(form, validationData) {
+export class FieldsFormValidator extends FieldsValidationFormData {
+  constructor(form, getErrors) {
+    super(getErrors);
     this.form = form;
-    this.validationData = validationData;
 
     this.init();
   }
@@ -18,9 +19,10 @@ export class FieldsFormValidator {
       "keyup",
       (e) => {
         const formData = this.getFormData(this.form);
-        const errors = this.validationData.getErrors(formData);
+        const errors = this.getErrors(formData);
+
         const displayErrors = new DisplayFieldsErrors(errors);
-        displayErrors.displayErrorsOnChange(e, errors);
+        displayErrors.displayErrorsOnChange(e);
       },
       false
     );
@@ -32,7 +34,7 @@ export class FieldsFormValidator {
       (e) => {
         e.preventDefault();
         const formData = this.getFormData(this.form);
-        const errors = this.validationData.getErrors(formData);
+        const errors = this.getErrors(formData);
 
         const displayErrors = new DisplayFieldsErrors(errors);
         displayErrors.displayErrorsOnSubmit(errors);
