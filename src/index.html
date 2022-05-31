@@ -29,53 +29,53 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script defer src="./js/particles.min.js"></script>
-  <script type="module" src="./js/animation-dots.js"></script>
-  <script type="module" src="./js/navigation.js"></script>
-  <script type="module" src="./js/mode.js"></script>
-  <script type="module" src="./js/form.js"></script>
-  <script type="module" src="./js/navigationObserver.js"></script>
-  <script type="module" src="./js/footerButtonsObserver.js"></script>
+  <script defer type="module" src="./js/animation-dots.js"></script>
+  <script defer type="module" src="./js/navigation.js"></script>
+  <script defer type="module" src="./js/mode.js"></script>
+  <script defer type="module" src="./js/form/form.js"></script>
+  <script defer type="module" src="./js/navigationObserver.js"></script>
+  <script defer type="module" src="./js/footerButtonsObserver.js"></script>
 </head>
 
 <body class="body">
   <div class="page container" id="home">
       <header>
-        <nav class="navigation">
+        <nav class="navigation" data-navigation>
           <div class="navigation__container">
-            <div class="navigation__container-content"><h1 class="navigation__container-content-heading obs-styles">Szymon Rojek</h1>
+            <div class="navigation__container-content"><h1 class="navigation__container-content-heading">Szymon Rojek</h1>
           </div>
           </div>
-          <ul class="navigation__list">
-            <li class="navigation__item">
-              <a class="navigation__link navigation__link--drawBorders js-navigation__link-home" href="#home">home</a>
+          <ul class="navigation__list" data-navigation-list>
+            <li class="navigation__item" data-link="home">
+              <a class="navigation__link navigation__link--drawBorders" href="#home" data-link="home">home</a>
             </li>
             <li class="navigation__item">
-              <a class="navigation__link navigation__link--drawBorders js-navigation__link-intro" href="#intro">intro</a>
+              <a class="navigation__link navigation__link--drawBorders" href="#intro" data-link="intro">intro</a>
             </li>
             <li class="navigation__item">
-              <a class="navigation__link navigation__link--drawBorders js-navigation__link-music" href="#music">music</a>
+              <a class="navigation__link navigation__link--drawBorders" href="#music" data-link="music">music</a>
             </li>
             <li class="navigation__item">
-              <a class="navigation__link navigation__link--drawBorders js-navigation__link-feedback" href="#feedback">feedback</a>
+              <a class="navigation__link navigation__link--drawBorders" href="#feedback" data-link="feedback">feedback</a>
             </li>
             <li class="navigation__item">
-              <a class="navigation__link navigation__link--drawBorders js-navigation__link-contact" href="#contact">contact</a>
+              <a class="navigation__link navigation__link--drawBorders" href="#contact" data-link="contact">contact</a>
             </li>
           </ul>
 
-          <button class="navigation__hamburgerButton" type="button" aria-expanded="false">
+          <button class="navigation__hamburgerButton" type="button" aria-expanded="false" data-menu-button>
             <span class="sr-only">Menu</span>
             <div class="navigation__firstLine"></div>
           </button>
         </nav>
       </header>
 
-      <div class="hero-container">
+      <div class="hero-container" data-hero-container>
         <div id="bg-dots"></div>
       </div>
 
     <main class="main-container">
-      <button class="buttonToggle js-buttonToggle__mode"></button>
+      <button class="buttonToggle" data-button-toggle></button>
 
       <section class="intro" id="intro">
         <article class="article">
@@ -291,7 +291,7 @@
         </form>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer js-footer">
       <p class="footer__paragraph">
         &#169; 2021 | Coded by Szymon Rojek
       </p>
