@@ -1,6 +1,6 @@
 // navigation background-color change
-const $navigation = document.querySelector(".navigation");
-const $heroContainer = document.querySelector(".hero-container");
+const $navigation = document.querySelector("[data-navigation]");
+const $heroContainer = document.querySelector("[data-hero-container]");
 
 const sectionOneOptions = {
   rootMargin: "-100px 0px 0px 0px",
@@ -33,17 +33,17 @@ function getPropertyValue(selector, property) {
 // navigation links change - add border depends on the section page
 
 const sections = [
-  selectElementByClass("intro"),
-  selectElementByClass("music"),
-  selectElementByClass("feedback"),
-  selectElementByClass("contact"),
+  document.getElementById("intro"),
+  document.getElementById("music"),
+  document.getElementById("feedback"),
+  document.getElementById("contact"),
 ];
 
 const navigationLinks = [
-  selectElementByClass("js-navigation__link-intro"),
-  selectElementByClass("js-navigation__link-music"),
-  selectElementByClass("js-navigation__link-feedback"),
-  selectElementByClass("js-navigation__link-contact"),
+  document.querySelector(`[data-link="intro"]`),
+  document.querySelector(`[data-link="music"]`),
+  document.querySelector(`[data-link="feedback"]`),
+  document.querySelector(`[data-link="contact"]`),
 ];
 
 function linksObserverCallback(entries, observer) {
@@ -56,9 +56,9 @@ function linksObserverCallback(entries, observer) {
       });
       navigationLinks[index].classList.add("navigation__link--active");
     } else {
-      selectElementByClass("js-navigation__link-intro").classList.remove(
-        "navigation__link--active"
-      );
+      document
+        .querySelector("[data-link=intro]")
+        .classList.remove("navigation__link--active");
     }
   });
 }
@@ -68,9 +68,3 @@ const sectionsObserver = new IntersectionObserver(linksObserverCallback, {
 });
 
 sections.forEach((section) => sectionsObserver.observe(section));
-
-// helpers
-
-function selectElementByClass(className) {
-  return document.querySelector(`.${className}`);
-}
