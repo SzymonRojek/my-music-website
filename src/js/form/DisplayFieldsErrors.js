@@ -55,6 +55,7 @@ export class DisplayFieldsErrors {
       "fa-exclamation-circle",
       "form__item__icon-failure",
     ];
+
     if (error?.message) {
       icon.classList.add(...classesFailureIcon);
       icon.classList.remove(...classesSuccessIcon);
