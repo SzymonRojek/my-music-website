@@ -1,9 +1,8 @@
 import { DisplayFieldsErrors } from "./DisplayFieldsErrors";
 import { FieldsValidationFormData } from "./FieldsValidationFormData";
 
-export class FieldsFormValidator extends FieldsValidationFormData {
-  constructor(form, getErrors) {
-    super(getErrors);
+export class FieldsFormValidator {
+  constructor(form) {
     this.form = form;
 
     this.init();
@@ -19,10 +18,11 @@ export class FieldsFormValidator extends FieldsValidationFormData {
       "keyup",
       (e) => {
         const formData = this.getFormData(this.form);
-        const errors = this.getErrors(formData);
+        const fieldData = this.createFieldDataObject(e, formData);
 
-        const displayErrors = new DisplayFieldsErrors(errors);
-        displayErrors.displayErrorsOnChange(e);
+        const errors = FieldsValidationFormData.getErrors(fieldData);
+
+        DisplayFieldsErrors.displayErrorsOnChange(e, errors);
       },
       false
     );
@@ -34,10 +34,9 @@ export class FieldsFormValidator extends FieldsValidationFormData {
       (e) => {
         e.preventDefault();
         const formData = this.getFormData(this.form);
-        const errors = this.getErrors(formData);
+        const errors = FieldsValidationFormData.getErrors(formData);
 
-        const displayErrors = new DisplayFieldsErrors(errors);
-        displayErrors.displayErrorsOnSubmit(errors);
+        DisplayFieldsErrors.displayErrorsOnSubmit(errors);
       },
       false
     );
@@ -45,5 +44,15 @@ export class FieldsFormValidator extends FieldsValidationFormData {
 
   getFormData(form) {
     return Object.fromEntries(new FormData(form).entries());
+  }
+
+  createFieldDataObject(e, formData) {
+    const currentTarget = e.target.attributes["name"].value;
+    const currentFieldValue = formData[currentTarget];
+
+    const fieldData = {};
+    fieldData[currentTarget] = currentFieldValue;
+
+    return fieldData;
   }
 }
