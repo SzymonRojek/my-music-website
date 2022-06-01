@@ -5,12 +5,12 @@ const HIDE_ICON = 0;
 const SHOW_ICON = 1;
 
 export class DisplayFieldsErrors {
-  static displayErrorsOnChange(e, errors) {
-    const targetCurrentName = e.target.attributes["name"].value;
+  static displayErrorsOnChange({ target }, errors) {
+    const targetCurrentName = target.attributes["name"].value;
     const currentErrorsArray = errors[targetCurrentName];
-    const error = currentErrorsArray.find((error) => error.message);
+    const error = currentErrorsArray.find(({ message }) => message);
 
-    const parentElement = e.target.parentElement;
+    const parentElement = target.parentElement;
     const errorText = parentElement.querySelector("[data-error]");
     const targetIcon = parentElement.querySelector("[data-icon]");
 
@@ -23,7 +23,7 @@ export class DisplayFieldsErrors {
     Object.values(errors).forEach((arrayErrors, index) => {
       const errorText = $errorsText[index];
       const icon = $icons[index];
-      const foundError = arrayErrors.find((el) => el.message);
+      const foundError = arrayErrors.find(({ message }) => message);
 
       errorText.textContent = foundError?.message || "";
 
@@ -32,7 +32,7 @@ export class DisplayFieldsErrors {
 
     const isError = Object.values(errors)
       .flat(Infinity)
-      .find((el) => el.message);
+      .find(({ message }) => message);
 
     if (!isError) {
       this.showSuccessModal();
