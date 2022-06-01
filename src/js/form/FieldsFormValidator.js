@@ -14,45 +14,53 @@ export class FieldsFormValidator {
   }
 
   addListenerOnChange() {
-    this.form.addEventListener(
-      "keyup",
-      (e) => {
-        const formData = this.getFormData(this.form);
-        const fieldData = this.createFieldDataObject(e, formData);
+    const handlerOnChange = (e) => {
+      const formData = this.getFormData(this.form);
+      const fieldData = this.createFieldDataObject(e, formData);
 
-        const errors = FieldsValidationFormData.getErrors(fieldData);
+      const errors = FieldsValidationFormData.getErrors(fieldData);
 
-        DisplayFieldsErrors.displayErrorsOnChange(e, errors);
-      },
-      false
-    );
+      DisplayFieldsErrors.displayErrorsOnChange(e, errors);
+    };
+
+    this.form.addEventListener("keyup", this.debounce(handlerOnChange, 400));
   }
 
   addListenerOnSubmit() {
-    this.form.addEventListener(
-      "submit",
-      (e) => {
-        e.preventDefault();
-        const formData = this.getFormData(this.form);
-        const errors = FieldsValidationFormData.getErrors(formData);
+    const handlerOnSubmit = (e) => {
+      e.preventDefault();
+      const formData = this.getFormData(this.form);
+      const errors = FieldsValidationFormData.getErrors(formData);
 
-        DisplayFieldsErrors.displayErrorsOnSubmit(errors);
-      },
-      false
-    );
+      DisplayFieldsErrors.displayErrorsOnSubmit(errors);
+    };
+
+    this.form.addEventListener("submit", handlerOnSubmit);
   }
 
   getFormData(form) {
     return Object.fromEntries(new FormData(form).entries());
   }
 
-  createFieldDataObject(e, formData) {
-    const currentTarget = e.target.attributes["name"].value;
+  createFieldDataObject({ target }, formData) {
+    const currentTarget = target.attributes["name"].value;
     const currentFieldValue = formData[currentTarget];
 
     const fieldData = {};
     fieldData[currentTarget] = currentFieldValue;
 
     return fieldData;
+  }
+
+  debounce(fn, delay) {
+    let timeoutId;
+
+    return (...args) => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+
+      timeoutId = setTimeout(() => fn(...args), delay);
+    };
   }
 }
