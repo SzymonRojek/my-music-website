@@ -5,13 +5,9 @@ const HIDE_ICON = 0;
 const SHOW_ICON = 1;
 
 export class DisplayFieldsErrors {
-  constructor(errors) {
-    this.errors = errors;
-  }
-
-  displayErrorsOnChange(e) {
+  static displayErrorsOnChange(e, errors) {
     const targetCurrentName = e.target.attributes["name"].value;
-    const currentErrorsArray = this.errors[targetCurrentName];
+    const currentErrorsArray = errors[targetCurrentName];
     const error = currentErrorsArray.find((error) => error.message);
 
     const parentElement = e.target.parentElement;
@@ -23,17 +19,18 @@ export class DisplayFieldsErrors {
     this.toggleIcon(error, targetIcon);
   }
 
-  displayErrorsOnSubmit() {
-    Object.values(this.errors).forEach((arrayErrors, index) => {
+  static displayErrorsOnSubmit(errors) {
+    Object.values(errors).forEach((arrayErrors, index) => {
       const errorText = $errorsText[index];
       const icon = $icons[index];
       const foundError = arrayErrors.find((el) => el.message);
 
       errorText.textContent = foundError?.message || "";
+
       this.toggleIcon(foundError, icon);
     });
 
-    const isError = Object.values(this.errors)
+    const isError = Object.values(errors)
       .flat(Infinity)
       .find((el) => el.message);
 
@@ -49,7 +46,7 @@ export class DisplayFieldsErrors {
     }
   }
 
-  toggleIcon(error, icon) {
+  static toggleIcon(error, icon) {
     const classesSuccessIcon = ["fa-check", "form__item__icon-success"];
     const classesFailureIcon = [
       "fa-exclamation-circle",
@@ -67,11 +64,11 @@ export class DisplayFieldsErrors {
     icon.style.opacity = SHOW_ICON;
   }
 
-  resetIcons(icons) {
+  static resetIcons(icons) {
     return icons.forEach((icon) => (icon.style.opacity = HIDE_ICON));
   }
 
-  showSuccessModal() {
+  static showSuccessModal() {
     Swal.fire({
       position: "center",
       icon: "success",
